@@ -1,0 +1,4 @@
+# Temporary probe copies; canonical assets are under site/pagefind/
+/pagefind/
+__pycache__/
+*.pyc

@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ext="http://exslt.org/common"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>DCCISW | Jon's Arm Reference</title><meta name="description" content="Clean and Invalidate data or unified cache line by set/way."></meta><meta name="viewport" content="width=device-width, initial-scale=1"></meta><link rel="stylesheet" href="/pagefind/pagefind-component-ui.css"></link><link rel="stylesheet" type="text/css" href="/static/normalize.css"></link><link rel="stylesheet" type="text/css" href="/static/main.css"></link></head><body><p class="discontinuation-notice" data-pagefind-ignore="all"><b>PER ARM'S REQUEST, THIS SITE WILL BE DISCONTINUED ON 4 DECEMBER 2026. :(</b><br></br>
+
+      Arm's lawyers have notified me to take down this site or face legal action. <br></br>
+
+      To all of the fans of this site over the years (even the ones at Arm): thank you for your support! I'm glad I could provide a resource so many people found value in. I will look into solutions that can potentially keep bookmarks and links working. <br></br>
+
+      — Jon
+    </p><a href="/">← Home</a><pagefind-searchbox></pagefind-searchbox><script type="module" src="/pagefind/pagefind-component-ui.js"></script><script type="text/javascript" src="/static/pagefind.js"></script><h1 class="register-section" data-pagefind-body="1" data-pagefind-weight="10" data-pagefind-sort="title">DCCISW</h1><p class="insn_subtitle" data-pagefind-body="1">Data Cache line Clean and Invalidate by Set/Way</p><div data-pagefind-body="1">
+        <p>Clean and Invalidate data or unified cache line by set/way.</p>
+      </div><h3>Configuration</h3><p>AArch32 System instruction DCCISW performs the same function as AArch64 System instruction <a href="AArch64-dc-cisw.html">DC CISW</a>.</p><p>This instruction is present only when FEAT_AA32EL1 is implemented. Otherwise, direct accesses to DCCISW are <span class="arm-defined-word">UNDEFINED</span>.</p><h3>Attributes</h3>
+        <p>DCCISW is a 32-bit System instruction.</p>
+      <h2>Field descriptions</h2><table class="regdiagram" id="fieldset_0"><thead><tr><td>31</td><td>30</td><td>29</td><td>28</td><td>27</td><td>26</td><td>25</td><td>24</td><td>23</td><td>22</td><td>21</td><td>20</td><td>19</td><td>18</td><td>17</td><td>16</td><td>15</td><td>14</td><td>13</td><td>12</td><td>11</td><td>10</td><td>9</td><td>8</td><td>7</td><td>6</td><td>5</td><td>4</td><td>3</td><td>2</td><td>1</td><td>0</td></tr></thead><tbody><tr class="firstrow"><td class="lr" colspan="28"><a href="#fieldset_0-31_4">SetWay</a></td><td class="lr" colspan="3"><a href="#fieldset_0-3_1">Level</a></td><td class="lr" colspan="1"><a href="#fieldset_0-0_0">RES0</a></td></tr></tbody></table><h4 id="fieldset_0-31_4">SetWay, bits [31:4]:
+      </h4><div class="field"><p>Contains two fields:</p>
+<ul>
+<li>Way, bits[31:32-A], the number of the way to operate on.
+</li><li>Set, bits[B-1:L], the number of the set to operate on.
+</li></ul>
+<p>Bits[L-1:4] are <span class="arm-defined-word">RES0</span>.</p>
+<p>A = Log<sub>2</sub>(ASSOCIATIVITY), L = Log<sub>2</sub>(LINELEN), B = (L + S), S = Log<sub>2</sub>(NSETS).</p>
+<p>ASSOCIATIVITY, LINELEN (line length, in bytes), and NSETS (number of sets) have their usual meanings and are the values for the cache level being operated on. The values of A and S are rounded up to the next integer.</p></div><h4 id="fieldset_0-3_1">Level, bits [3:1]:
+      </h4><div class="field">
+      <p>Cache level to operate on, minus 1. For example, this field is 0 for operations on L1 cache, or 1 for operations on L2 cache.</p>
+    </div><h4 id="fieldset_0-0_0">Bit [0]:
+      </h4><div class="field">
+      <p>Reserved, <span class="arm-defined-word">RES0</span>.</p>
+    </div><div class="access_mechanisms"><h2>Executing DCCISW</h2>
+        <p>If this instruction is executed with a set, way or level argument that is larger than the value supported by the implementation then the behavior is <span class="arm-defined-word">CONSTRAINED UNPREDICTABLE</span> and one of the following occurs:</p>
+
+      
+        <ul>
+<li>The instruction is <span class="arm-defined-word">UNDEFINED</span>
+</li><li>The instruction performs cache maintenance on one of:<ul>
+<li>No cache lines.
+</li><li>A single arbitrary cache line.
+</li><li>Multiple arbitrary cache lines.
+</li></ul>
+
+</li></ul>
+      <p>Accesses to this instruction use the following encodings in the System instruction encoding space:</p><div class="access_block"><div class="encoding"><p class="asm-code">MCR{&lt;c&gt;}{&lt;q&gt;} &lt;coproc&gt;, {#}&lt;opc1&gt;, &lt;Rt&gt;, &lt;CRn&gt;, &lt;CRm&gt;{, {#}&lt;opc2&gt;}</p></div></div><p style="text-align: right">
+      (coproc = 0b1111, opc1 = 0b000, CRn = 0b0111, CRm = 0b1110, opc2 = 0b010)
+      </p><p class="pseudocode">
+if !IsFeatureImplemented(FEAT_AA32EL1) then
+    Undefined();
+elsif PSTATE.EL == EL0 then
+    Undefined();
+elsif PSTATE.EL == EL1 then
+    if EL2Enabled() &amp;&amp; IsFeatureImplemented(FEAT_AA64EL2) &amp;&amp; !ELUsingAArch32(EL2) &amp;&amp; HSTR_EL2().T7 == '1' then
+        AArch64_AArch32SystemAccessTrap(EL2, 0x03);
+    elsif EL2Enabled() &amp;&amp; IsFeatureImplemented(FEAT_AA32EL2) &amp;&amp; ELUsingAArch32(EL2) &amp;&amp; HSTR().T7 == '1' then
+        AArch32_TakeHypTrapException(0x03);
+    elsif EL2Enabled() &amp;&amp; IsFeatureImplemented(FEAT_AA64EL2) &amp;&amp; !ELUsingAArch32(EL2) &amp;&amp; HCR_EL2().TSW == '1' then
+        AArch64_AArch32SystemAccessTrap(EL2, 0x03);
+    elsif EL2Enabled() &amp;&amp; IsFeatureImplemented(FEAT_AA32EL2) &amp;&amp; ELUsingAArch32(EL2) &amp;&amp; HCR().TSW == '1' then
+        AArch32_TakeHypTrapException(0x03);
+    else
+        AArch32_DC(R(t), CacheOp_CleanInvalidate, CacheOpScope_SetWay);
+    end;
+elsif PSTATE.EL == EL2 then
+    AArch32_DC(R(t), CacheOp_CleanInvalidate, CacheOpScope_SetWay);
+elsif PSTATE.EL == EL3 then
+    AArch32_DC(R(t), CacheOp_CleanInvalidate, CacheOpScope_SetWay);
+end;
+                </p></div><hr class="bottom_line"></hr><p class="copyconf">Version 2026.09 — Copyright © 2010-2026 Arm Limited or its affiliates.</p><small>This site is provided as a community resource and is NOT affiliated with nor endorsed by Arm Limited.</small><!-- Cloudflare Pages Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "de55e78a4e194365a81a0724c5c0ee91"}'></script><!-- Cloudflare Pages Analytics --></body></html>

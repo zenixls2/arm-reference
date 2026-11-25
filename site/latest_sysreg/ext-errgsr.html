@@ -1,0 +1,83 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta
+      name="description"
+      content="This site offers reference documentation for the AArch64 instruction set and system registers defined by the Armv8-A and Armv9-A architectures."
+    />
+
+    <link rel="stylesheet" href="/pagefind/pagefind-component-ui.css" />
+
+    <link rel="stylesheet" href="/static/normalize.css" />
+    <link rel="stylesheet" href="/static/main.css" />
+
+    <title>Jon's Arm Reference</title>
+  </head>
+
+  <body>
+    <p class="discontinuation-notice" data-pagefind-ignore="all">
+      <b>PER ARM'S REQUEST, THIS SITE WILL BE DISCONTINUED ON 4 DECEMBER 2026. :(</b><br/><br/>
+
+      Arm's lawyers have notified me to take down this site or face legal action. <br/><br/>
+
+      To all of the fans of this site over the years (even the ones at Arm): thank you for your support! I'm glad I could provide a resource so many people found value in. I will look into solutions that can potentially keep bookmarks and links working. <br/><br/>
+
+      &mdash; Jon
+    </p>
+
+    <h1>Jon's Arm Reference</h1>
+
+    <p>
+      This site offers reference documentation for the AArch64 instruction set
+      and system registers defined by the Armv8-A and Armv9-A architectures.
+    </p>
+
+    <p>
+      You can use the search field below (and at the top of every page) to
+      search for an instruction or system register. Alternatively, you can
+      browse the full listings manually:
+    </p>
+
+    <ul>
+      <li>
+        All Instructions: <a href="/latest_aarch64/index.html">Base</a> |
+        <a href="/latest_aarch64/fpsimdindex.html">SIMD</a> |
+        <a href="/latest_aarch64/sveindex.html">SVE</a> |
+        <a href="/latest_aarch64/mortlachindex.html">SME</a>
+      </li>
+      <li>
+        All Registers:
+        <a href="/latest_sysreg/AArch64-regindex.html">AArch64</a> |
+        <a href="/latest_sysreg/AArch32-regindex.html">AArch32</a>
+      </li>
+    </ul>
+
+    <p>
+      If you find this site useful or have any suggestions, don't hesitate to
+      <a href="https://jonpalmisc.com/contact">let me know</a>.
+      <br />
+      <br />
+    </p>
+
+    <pagefind-searchbox autofocus></pagefind-searchbox>
+
+    <div id="wasm-note" class="note">
+      <p>
+        If you see this note instead of a search field, your browser either does
+        not support <a href="https://webassembly.org">WebAssembly</a> or it has
+        been disabled, e.g. in Apple's
+        <a href="https://support.apple.com/en-us/105120">Lockdown Mode</a>.
+      </p>
+    </div>
+
+    <script type="module" src="/pagefind/pagefind-component-ui.js"></script>
+    <script type="text/javascript" src="/static/pagefind.js"></script>
+
+    <script type="text/javascript">
+      if (typeof WebAssembly === "object") {
+        document.getElementById("wasm-note").style.display = "none";
+      }
+    </script>
+  <!-- Cloudflare Pages Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "de55e78a4e194365a81a0724c5c0ee91"}'></script><!-- Cloudflare Pages Analytics --></body>
+</html>

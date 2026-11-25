@@ -1,0 +1,106 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ext="http://exslt.org/common"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>DBGCLAIMSET | Jon's Arm Reference</title><meta name="description" content="Used by software to set the CLAIM tag bits to 1."></meta><meta name="viewport" content="width=device-width, initial-scale=1"></meta><link rel="stylesheet" href="/pagefind/pagefind-component-ui.css"></link><link rel="stylesheet" type="text/css" href="/static/normalize.css"></link><link rel="stylesheet" type="text/css" href="/static/main.css"></link></head><body><p class="discontinuation-notice" data-pagefind-ignore="all"><b>PER ARM'S REQUEST, THIS SITE WILL BE DISCONTINUED ON 4 DECEMBER 2026. :(</b><br></br>
+
+      Arm's lawyers have notified me to take down this site or face legal action. <br></br>
+
+      To all of the fans of this site over the years (even the ones at Arm): thank you for your support! I'm glad I could provide a resource so many people found value in. I will look into solutions that can potentially keep bookmarks and links working. <br></br>
+
+      — Jon
+    </p><a href="/">← Home</a><pagefind-searchbox></pagefind-searchbox><script type="module" src="/pagefind/pagefind-component-ui.js"></script><script type="text/javascript" src="/static/pagefind.js"></script><h1 class="register-section" data-pagefind-body="1" data-pagefind-weight="10" data-pagefind-sort="title">DBGCLAIMSET</h1><p class="insn_subtitle" data-pagefind-body="1">Debug CLAIM Tag Set register</p><div data-pagefind-body="1">
+        <p>Used by software to set the CLAIM tag bits to 1.</p>
+
+      
+        <p>The architecture does not define any functionality for the CLAIM tag bits.</p>
+
+      
+        <div class="note"><p>CLAIM tags are typically used for communication between the debugger and target software.</p></div>
+      
+        <p>Used in conjunction with the <a href="AArch32-dbgclaimclr.html">DBGCLAIMCLR</a> register.</p>
+      </div><h3>Configuration</h3><p>AArch32 System register DBGCLAIMSET bits [31:0] are architecturally mapped to AArch64 System register <a href="AArch64-dbgclaimset_el1.html">DBGCLAIMSET_EL1[31:0]</a>.</p><p>AArch32 System register DBGCLAIMSET bits [31:0] are architecturally mapped to AArch64 System register <a href="AArch64-dbgclaimclr_el1.html">DBGCLAIMCLR_EL1[31:0]</a>.</p><p>AArch32 System register DBGCLAIMSET bits [31:0] are architecturally mapped to AArch32 System register <a href="AArch32-dbgclaimclr.html">DBGCLAIMCLR[31:0]</a>.</p><p>AArch32 System register DBGCLAIMSET bits [31:0] are architecturally mapped to External register <a href="ext-dbgclaimset_el1.html">DBGCLAIMSET_EL1[31:0]</a>.</p><p>AArch32 System register DBGCLAIMSET bits [31:0] are architecturally mapped to External register <a href="ext-dbgclaimclr_el1.html">DBGCLAIMCLR_EL1[31:0]</a>.</p><p>This register is present only when FEAT_AA32EL1 is implemented. Otherwise, direct accesses to DBGCLAIMSET are <span class="arm-defined-word">UNDEFINED</span>.</p>
+        <p>An implementation must include eight CLAIM tag bits.</p>
+      <h3>Attributes</h3>
+        <p>DBGCLAIMSET is a 32-bit register.</p>
+      <h2>Field descriptions</h2><table class="regdiagram" id="fieldset_0"><thead><tr><td>31</td><td>30</td><td>29</td><td>28</td><td>27</td><td>26</td><td>25</td><td>24</td><td>23</td><td>22</td><td>21</td><td>20</td><td>19</td><td>18</td><td>17</td><td>16</td><td>15</td><td>14</td><td>13</td><td>12</td><td>11</td><td>10</td><td>9</td><td>8</td><td>7</td><td>6</td><td>5</td><td>4</td><td>3</td><td>2</td><td>1</td><td>0</td></tr></thead><tbody><tr class="firstrow"><td class="lr" colspan="24"><a href="#fieldset_0-31_8">RAZ/WI</a></td><td class="lr" colspan="1"><a href="#fieldset_0-7_0">CLAIM7</a></td><td class="lr" colspan="1"><a href="#fieldset_0-7_0">CLAIM6</a></td><td class="lr" colspan="1"><a href="#fieldset_0-7_0">CLAIM5</a></td><td class="lr" colspan="1"><a href="#fieldset_0-7_0">CLAIM4</a></td><td class="lr" colspan="1"><a href="#fieldset_0-7_0">CLAIM3</a></td><td class="lr" colspan="1"><a href="#fieldset_0-7_0">CLAIM2</a></td><td class="lr" colspan="1"><a href="#fieldset_0-7_0">CLAIM1</a></td><td class="lr" colspan="1"><a href="#fieldset_0-7_0">CLAIM0</a></td></tr></tbody></table><h4 id="fieldset_0-31_8">Bits [31:8]:
+      </h4><div class="field">
+      <p>Reserved, RAZ/WI.</p>
+    </div><h4 id="fieldset_0-7_0">CLAIM&lt;m&gt;, bit [m], for m = 7 to 0:
+      </h4><div class="field">
+      <p>Claim Tag Set. Used to set Claim Tag bit &lt;m&gt;  to 1.</p>
+    <table class="valuetable"><tr><th>CLAIM&lt;m&gt;</th><th>Meaning</th></tr><tr><td class="bitfield">0b0</td><td>
+          <p>On a write: Ignored.</p>
+        </td></tr><tr><td class="bitfield">0b1</td><td>
+          <p>On a write: Set Claim Tag bit &lt;m&gt; to 1.</p>
+        </td></tr></table><p>Access to this field is <span class="access_level">RAO/W1S</span>.</p></div><div class="access_mechanisms"><h2>Access Instructions</h2><p>Accesses to this register use the following encodings in the System register encoding space:</p><div class="access_block"><div class="encoding"><p class="asm-code">MRC{&lt;c&gt;}{&lt;q&gt;} &lt;coproc&gt;, {#}&lt;opc1&gt;, &lt;Rt&gt;, &lt;CRn&gt;, &lt;CRm&gt;{, {#}&lt;opc2&gt;}</p></div></div><p style="text-align: right">
+      (coproc = 0b1110, opc1 = 0b000, CRn = 0b0111, CRm = 0b1000, opc2 = 0b110)
+      </p><p class="pseudocode">
+if !IsFeatureImplemented(FEAT_AA32EL1) then
+    Undefined();
+elsif HaveEL(EL3) &amp;&amp; PSTATE.EL IN {EL1, EL2} &amp;&amp; EL3SDDUndefPriority() &amp;&amp; IsFeatureImplemented(FEAT_AA64EL3) &amp;&amp; !ELUsingAArch32(EL3) &amp;&amp; MDCR_EL3().TDA == '1' then
+    Undefined();
+elsif PSTATE.EL == EL0 then
+    Undefined();
+elsif PSTATE.EL == EL1 then
+    if EL2Enabled() &amp;&amp; IsFeatureImplemented(FEAT_AA64EL2) &amp;&amp; !ELUsingAArch32(EL2) &amp;&amp; MDCR_EL2().[TDE,TDA] != '00' then
+        AArch64_AArch32SystemAccessTrap(EL2, 0x05);
+    elsif EL2Enabled() &amp;&amp; IsFeatureImplemented(FEAT_AA32EL2) &amp;&amp; ELUsingAArch32(EL2) &amp;&amp; HDCR().[TDE,TDA] != '00' then
+        AArch32_TakeHypTrapException(0x05);
+    elsif HaveEL(EL3) &amp;&amp; IsFeatureImplemented(FEAT_AA64EL3) &amp;&amp; !ELUsingAArch32(EL3) &amp;&amp; MDCR_EL3().TDA == '1' then
+        if EL3SDDUndef() then
+            Undefined();
+        else
+            AArch64_AArch32SystemAccessTrap(EL3, 0x05);
+        end;
+    else
+        R(t) = DBGCLAIMSET();
+    end;
+elsif PSTATE.EL == EL2 then
+    if HaveEL(EL3) &amp;&amp; !ELUsingAArch32(EL3) &amp;&amp; MDCR_EL3().TDA == '1' then
+        if EL3SDDUndef() then
+            Undefined();
+        else
+            AArch64_AArch32SystemAccessTrap(EL3, 0x05);
+        end;
+    else
+        R(t) = DBGCLAIMSET();
+    end;
+elsif PSTATE.EL == EL3 then
+    R(t) = DBGCLAIMSET();
+end;
+                </p><div class="access_block"><div class="encoding"><p class="asm-code">MCR{&lt;c&gt;}{&lt;q&gt;} &lt;coproc&gt;, {#}&lt;opc1&gt;, &lt;Rt&gt;, &lt;CRn&gt;, &lt;CRm&gt;{, {#}&lt;opc2&gt;}</p></div></div><p style="text-align: right">
+      (coproc = 0b1110, opc1 = 0b000, CRn = 0b0111, CRm = 0b1000, opc2 = 0b110)
+      </p><p class="pseudocode">
+if !IsFeatureImplemented(FEAT_AA32EL1) then
+    Undefined();
+elsif HaveEL(EL3) &amp;&amp; PSTATE.EL IN {EL1, EL2} &amp;&amp; EL3SDDUndefPriority() &amp;&amp; IsFeatureImplemented(FEAT_AA64EL3) &amp;&amp; !ELUsingAArch32(EL3) &amp;&amp; MDCR_EL3().TDA == '1' then
+    Undefined();
+elsif PSTATE.EL == EL0 then
+    Undefined();
+elsif PSTATE.EL == EL1 then
+    if EL2Enabled() &amp;&amp; IsFeatureImplemented(FEAT_AA64EL2) &amp;&amp; !ELUsingAArch32(EL2) &amp;&amp; MDCR_EL2().[TDE,TDA] != '00' then
+        AArch64_AArch32SystemAccessTrap(EL2, 0x05);
+    elsif EL2Enabled() &amp;&amp; IsFeatureImplemented(FEAT_AA32EL2) &amp;&amp; ELUsingAArch32(EL2) &amp;&amp; HDCR().[TDE,TDA] != '00' then
+        AArch32_TakeHypTrapException(0x05);
+    elsif HaveEL(EL3) &amp;&amp; IsFeatureImplemented(FEAT_AA64EL3) &amp;&amp; !ELUsingAArch32(EL3) &amp;&amp; MDCR_EL3().TDA == '1' then
+        if EL3SDDUndef() then
+            Undefined();
+        else
+            AArch64_AArch32SystemAccessTrap(EL3, 0x05);
+        end;
+    else
+        Write_DBGCLAIMSET(R(t));
+    end;
+elsif PSTATE.EL == EL2 then
+    if HaveEL(EL3) &amp;&amp; !ELUsingAArch32(EL3) &amp;&amp; MDCR_EL3().TDA == '1' then
+        if EL3SDDUndef() then
+            Undefined();
+        else
+            AArch64_AArch32SystemAccessTrap(EL3, 0x05);
+        end;
+    else
+        Write_DBGCLAIMSET(R(t));
+    end;
+elsif PSTATE.EL == EL3 then
+    Write_DBGCLAIMSET(R(t));
+end;
+                </p></div><hr class="bottom_line"></hr><p class="copyconf">Version 2026.09 — Copyright © 2010-2026 Arm Limited or its affiliates.</p><small>This site is provided as a community resource and is NOT affiliated with nor endorsed by Arm Limited.</small><!-- Cloudflare Pages Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "de55e78a4e194365a81a0724c5c0ee91"}'></script><!-- Cloudflare Pages Analytics --></body></html>

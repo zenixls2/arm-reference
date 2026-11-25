@@ -1,0 +1,204 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ext="http://exslt.org/common"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>ICC_AP1R&lt;n&gt; | Jon's Arm Reference</title><meta name="description" content="Provides information about Group 1 active priorities."></meta><meta name="viewport" content="width=device-width, initial-scale=1"></meta><link rel="stylesheet" href="/pagefind/pagefind-component-ui.css"></link><link rel="stylesheet" type="text/css" href="/static/normalize.css"></link><link rel="stylesheet" type="text/css" href="/static/main.css"></link></head><body><p class="discontinuation-notice" data-pagefind-ignore="all"><b>PER ARM'S REQUEST, THIS SITE WILL BE DISCONTINUED ON 4 DECEMBER 2026. :(</b><br></br>
+
+      Arm's lawyers have notified me to take down this site or face legal action. <br></br>
+
+      To all of the fans of this site over the years (even the ones at Arm): thank you for your support! I'm glad I could provide a resource so many people found value in. I will look into solutions that can potentially keep bookmarks and links working. <br></br>
+
+      — Jon
+    </p><a href="/">← Home</a><pagefind-searchbox></pagefind-searchbox><script type="module" src="/pagefind/pagefind-component-ui.js"></script><script type="text/javascript" src="/static/pagefind.js"></script><h1 class="register-section" data-pagefind-body="1" data-pagefind-weight="10" data-pagefind-sort="title">ICC_AP1R&lt;n&gt;, n = 0 - 3</h1><p class="insn_subtitle" data-pagefind-body="1">Interrupt Controller Active Priorities Group 1 Registers</p><div data-pagefind-body="1">
+        <p>Provides information about Group 1 active priorities.</p>
+      </div><h3>Configuration</h3><p>This register is banked between ICC_AP1R&lt;n&gt; and ICC_AP1R&lt;n&gt;_S and ICC_AP1R&lt;n&gt;_NS.<br></br></p><p>AArch32 System register ICC_AP1R&lt;n&gt; bits [31:0] (ICC_AP1R&lt;n&gt;_S) are architecturally mapped to AArch64 System register <a href="AArch64-icc_ap1rn_el1.html">ICC_AP1R&lt;n&gt;_EL1[31:0]</a> (ICC_AP1R&lt;n&gt;_EL1_S).</p><p>AArch32 System register ICC_AP1R&lt;n&gt; bits [31:0] (ICC_AP1R&lt;n&gt;_NS) are architecturally mapped to AArch64 System register <a href="AArch64-icc_ap1rn_el1.html">ICC_AP1R&lt;n&gt;_EL1[31:0]</a> (ICC_AP1R&lt;n&gt;_EL1_NS).</p><p>This register is present only when FEAT_AA32EL1 is implemented and GICv3 is implemented. Otherwise, direct accesses to ICC_AP1R&lt;n&gt; are <span class="arm-defined-word">UNDEFINED</span>.</p><h3>Attributes</h3>
+        <p>ICC_AP1R&lt;n&gt; is a 32-bit register.</p>
+
+      
+        <p>This register has the following instances:</p>
+
+      
+        <ul>
+<li>ICC_AP1R&lt;n&gt;, when EL3 is not implemented or FEAT_AA64 is implemented.
+</li><li>ICC_AP1R&lt;n&gt;_S, when FEAT_AA32EL3 is implemented.
+</li><li>ICC_AP1R&lt;n&gt;_NS, when FEAT_AA32EL3 is implemented.
+</li></ul>
+      <h2>Field descriptions</h2><table class="regdiagram" id="fieldset_0"><thead><tr><td>31</td><td>30</td><td>29</td><td>28</td><td>27</td><td>26</td><td>25</td><td>24</td><td>23</td><td>22</td><td>21</td><td>20</td><td>19</td><td>18</td><td>17</td><td>16</td><td>15</td><td>14</td><td>13</td><td>12</td><td>11</td><td>10</td><td>9</td><td>8</td><td>7</td><td>6</td><td>5</td><td>4</td><td>3</td><td>2</td><td>1</td><td>0</td></tr></thead><tbody><tr class="firstrow"><td class="lr" colspan="32"><a href="#fieldset_0-31_0">IMPLEMENTATION DEFINED</a></td></tr></tbody></table><h4 id="fieldset_0-31_0">IMPLEMENTATION DEFINED, bits [31:0]:
+      </h4><div class="field">
+      <p><span class="arm-defined-word">IMPLEMENTATION DEFINED</span>.</p>
+    <p>The reset behavior of this field is:</p><ul><li>On a Warm reset, 
+      this field resets
+       to the expression <span class="pseudocode">0x00000000</span>.</li></ul></div><h4>Additional information</h4><div class="text_after_fields">
+    <p>The contents of these registers are <span class="arm-defined-word">IMPLEMENTATION DEFINED</span> with the one architectural requirement that the value <span class="hexnumber">0x00000000</span> is consistent with no interrupts being active.</p>
+  </div><div class="access_mechanisms"><h2>Access Instructions</h2>
+        <p>Writing to these registers with any value other than the last read value of the register (or <span class="hexnumber">0x00000000</span> when there are no Group 1 active priorities) might result in <span class="arm-defined-word">UNPREDICTABLE</span> behavior of the interrupt prioritization system, causing:</p>
+
+      
+        <ul>
+<li>Interrupts that should preempt execution to not preempt execution.
+</li><li>Interrupts that should not preempt execution to preempt execution.
+</li></ul>
+
+      
+        <p>ICC_AP1R1 is implemented only in implementations that support 6 or more bits of preemption. ICC_AP1R2 and ICC_AP1R3 are implemented only in implementations that support 7 bits of preemption. Unimplemented registers are <span class="arm-defined-word">UNDEFINED</span>.</p>
+
+      
+        <div class="note"><p>The number of bits of preemption is indicated by <a href="AArch32-ich_vtr.html">ICH_VTR</a>.PREbits.</p></div>
+      
+        <p>Writing to the active priority registers in any order other than the following order will result in <span class="arm-defined-word">UNPREDICTABLE</span> behavior:</p>
+
+      
+        <ul>
+<li><a href="AArch32-icc_ap0rn.html">ICC_AP0R&lt;n&gt;</a>
+</li><li>Secure ICC_AP1R&lt;n&gt;
+</li><li>Non-secure ICC_AP1R&lt;n&gt;
+</li></ul>
+      <p>Accesses to this register use the following encodings in the System register encoding space:</p><div class="access_block"><div class="encoding"><p class="asm-code">MRC{&lt;c&gt;}{&lt;q&gt;} &lt;coproc&gt;, {#}&lt;opc1&gt;, &lt;Rt&gt;, &lt;CRn&gt;, &lt;CRm&gt;{, {#}&lt;opc2&gt;}
+          ; Where m = 0-3</p></div></div><p style="text-align: right">
+      (coproc = 0b1111, opc1 = 0b000, CRn = 0b1100, CRm = 0b1001, opc2 = 0b0:m[1:0])
+      </p><p class="pseudocode">
+let m:integer = UInt(opc2[1:0]);
+
+if !(IsFeatureImplemented(FEAT_AA32EL1) &amp;&amp; IsFeatureImplemented(FEAT_GICv3)) then
+    Undefined();
+elsif m == 1 &amp;&amp; NUM_GIC_PRIORITY_BITS &lt; 6 then
+    Undefined();
+elsif (m == 2 || m == 3) &amp;&amp; NUM_GIC_PRIORITY_BITS &lt; 7 then
+    Undefined();
+elsif HaveEL(EL3) &amp;&amp; PSTATE.EL IN {EL1, EL2} &amp;&amp; EL3SDDUndefPriority() &amp;&amp; IsFeatureImplemented(FEAT_AA64EL3) &amp;&amp; !ELUsingAArch32(EL3) &amp;&amp; SCR_EL3().IRQ == '1' then
+    Undefined();
+elsif HaveEL(EL3) &amp;&amp; PSTATE.EL IN {EL1, EL2} &amp;&amp; EL3SDDUndefPriority() &amp;&amp; IsFeatureImplemented(FEAT_AA32EL3) &amp;&amp; ELUsingAArch32(EL3) &amp;&amp; SCR().IRQ == '1' then
+    Undefined();
+elsif PSTATE.EL == EL0 then
+    Undefined();
+elsif PSTATE.EL == EL1 then
+    if EL2Enabled() &amp;&amp; IsFeatureImplemented(FEAT_AA64EL2) &amp;&amp; !ELUsingAArch32(EL2) &amp;&amp; HSTR_EL2().T12 == '1' then
+        AArch64_AArch32SystemAccessTrap(EL2, 0x03);
+    elsif EL2Enabled() &amp;&amp; IsFeatureImplemented(FEAT_AA32EL2) &amp;&amp; ELUsingAArch32(EL2) &amp;&amp; HSTR().T12 == '1' then
+        AArch32_TakeHypTrapException(0x03);
+    elsif ICC_SRE().SRE == '0' then
+        Undefined();
+    elsif EL2Enabled() &amp;&amp; IsFeatureImplemented(FEAT_AA64EL2) &amp;&amp; !ELUsingAArch32(EL2) &amp;&amp; ICH_HCR_EL2().TALL1 == '1' then
+        AArch64_AArch32SystemAccessTrap(EL2, 0x03);
+    elsif EL2Enabled() &amp;&amp; IsFeatureImplemented(FEAT_AA32EL2) &amp;&amp; ELUsingAArch32(EL2) &amp;&amp; ICH_HCR().TALL1 == '1' then
+        AArch32_TakeHypTrapException(0x03);
+    elsif EL2Enabled() &amp;&amp; IsFeatureImplemented(FEAT_AA64EL2) &amp;&amp; !ELUsingAArch32(EL2) &amp;&amp; HCR_EL2().IMO == '1' then
+        R(t) = ICV_AP1R(m);
+    elsif EL2Enabled() &amp;&amp; IsFeatureImplemented(FEAT_AA32EL2) &amp;&amp; ELUsingAArch32(EL2) &amp;&amp; HCR().IMO == '1' then
+        R(t) = ICV_AP1R(m);
+    elsif HaveEL(EL3) &amp;&amp; IsFeatureImplemented(FEAT_AA64EL3) &amp;&amp; !ELUsingAArch32(EL3) &amp;&amp; SCR_EL3().IRQ == '1' then
+        if EL3SDDUndef() then
+            Undefined();
+        else
+            AArch64_AArch32SystemAccessTrap(EL3, 0x03);
+        end;
+    elsif HaveEL(EL3) &amp;&amp; IsFeatureImplemented(FEAT_AA32EL3) &amp;&amp; ELUsingAArch32(EL3) &amp;&amp; SCR().IRQ == '1' then
+        Undefined();
+    elsif HaveEL(EL3) then
+        R(t) = ICC_AP1R_NS(m);
+    else
+        R(t) = ICC_AP1R(m);
+    end;
+elsif PSTATE.EL == EL2 then
+    if ICC_HSRE().SRE == '0' then
+        Undefined();
+    elsif HaveEL(EL3) &amp;&amp; !ELUsingAArch32(EL3) &amp;&amp; SCR_EL3().IRQ == '1' then
+        if EL3SDDUndef() then
+            Undefined();
+        else
+            AArch64_AArch32SystemAccessTrap(EL3, 0x03);
+        end;
+    elsif HaveEL(EL3) &amp;&amp; ELUsingAArch32(EL3) &amp;&amp; SCR().IRQ == '1' then
+        Undefined();
+    elsif HaveEL(EL3) then
+        R(t) = ICC_AP1R_NS(m);
+    else
+        R(t) = ICC_AP1R(m);
+    end;
+elsif PSTATE.EL == EL3 then
+    if ICC_MSRE().SRE == '0' then
+        Undefined();
+    elsif SCR().IRQ == '1' &amp;&amp; PSTATE.M != M32_Monitor then
+        Undefined();
+    else
+        if EffectiveSCR_EL3_NS() == '0' then
+            R(t) = ICC_AP1R_S(m);
+        else
+            R(t) = ICC_AP1R_NS(m);
+        end;
+    end;
+end;
+                </p><div class="access_block"><div class="encoding"><p class="asm-code">MCR{&lt;c&gt;}{&lt;q&gt;} &lt;coproc&gt;, {#}&lt;opc1&gt;, &lt;Rt&gt;, &lt;CRn&gt;, &lt;CRm&gt;{, {#}&lt;opc2&gt;}
+          ; Where m = 0-3</p></div></div><p style="text-align: right">
+      (coproc = 0b1111, opc1 = 0b000, CRn = 0b1100, CRm = 0b1001, opc2 = 0b0:m[1:0])
+      </p><p class="pseudocode">
+let m:integer = UInt(opc2[1:0]);
+
+if !(IsFeatureImplemented(FEAT_AA32EL1) &amp;&amp; IsFeatureImplemented(FEAT_GICv3)) then
+    Undefined();
+elsif m == 1 &amp;&amp; NUM_GIC_PRIORITY_BITS &lt; 6 then
+    Undefined();
+elsif (m == 2 || m == 3) &amp;&amp; NUM_GIC_PRIORITY_BITS &lt; 7 then
+    Undefined();
+elsif HaveEL(EL3) &amp;&amp; PSTATE.EL IN {EL1, EL2} &amp;&amp; EL3SDDUndefPriority() &amp;&amp; IsFeatureImplemented(FEAT_AA64EL3) &amp;&amp; !ELUsingAArch32(EL3) &amp;&amp; SCR_EL3().IRQ == '1' then
+    Undefined();
+elsif HaveEL(EL3) &amp;&amp; PSTATE.EL IN {EL1, EL2} &amp;&amp; EL3SDDUndefPriority() &amp;&amp; IsFeatureImplemented(FEAT_AA32EL3) &amp;&amp; ELUsingAArch32(EL3) &amp;&amp; SCR().IRQ == '1' then
+    Undefined();
+elsif PSTATE.EL == EL0 then
+    Undefined();
+elsif PSTATE.EL == EL1 then
+    if EL2Enabled() &amp;&amp; IsFeatureImplemented(FEAT_AA64EL2) &amp;&amp; !ELUsingAArch32(EL2) &amp;&amp; HSTR_EL2().T12 == '1' then
+        AArch64_AArch32SystemAccessTrap(EL2, 0x03);
+    elsif EL2Enabled() &amp;&amp; IsFeatureImplemented(FEAT_AA32EL2) &amp;&amp; ELUsingAArch32(EL2) &amp;&amp; HSTR().T12 == '1' then
+        AArch32_TakeHypTrapException(0x03);
+    elsif ICC_SRE().SRE == '0' then
+        Undefined();
+    elsif EL2Enabled() &amp;&amp; IsFeatureImplemented(FEAT_AA64EL2) &amp;&amp; !ELUsingAArch32(EL2) &amp;&amp; ICH_HCR_EL2().TALL1 == '1' then
+        AArch64_AArch32SystemAccessTrap(EL2, 0x03);
+    elsif EL2Enabled() &amp;&amp; IsFeatureImplemented(FEAT_AA32EL2) &amp;&amp; ELUsingAArch32(EL2) &amp;&amp; ICH_HCR().TALL1 == '1' then
+        AArch32_TakeHypTrapException(0x03);
+    elsif EL2Enabled() &amp;&amp; IsFeatureImplemented(FEAT_AA64EL2) &amp;&amp; !ELUsingAArch32(EL2) &amp;&amp; HCR_EL2().IMO == '1' then
+        ICV_AP1R(m) = R(t);
+    elsif EL2Enabled() &amp;&amp; IsFeatureImplemented(FEAT_AA32EL2) &amp;&amp; ELUsingAArch32(EL2) &amp;&amp; HCR().IMO == '1' then
+        ICV_AP1R(m) = R(t);
+    elsif HaveEL(EL3) &amp;&amp; IsFeatureImplemented(FEAT_AA64EL3) &amp;&amp; !ELUsingAArch32(EL3) &amp;&amp; SCR_EL3().IRQ == '1' then
+        if EL3SDDUndef() then
+            Undefined();
+        else
+            AArch64_AArch32SystemAccessTrap(EL3, 0x03);
+        end;
+    elsif HaveEL(EL3) &amp;&amp; IsFeatureImplemented(FEAT_AA32EL3) &amp;&amp; ELUsingAArch32(EL3) &amp;&amp; SCR().IRQ == '1' then
+        Undefined();
+    elsif HaveEL(EL3) then
+        ICC_AP1R_NS(m) = R(t);
+    else
+        ICC_AP1R(m) = R(t);
+    end;
+elsif PSTATE.EL == EL2 then
+    if ICC_HSRE().SRE == '0' then
+        Undefined();
+    elsif HaveEL(EL3) &amp;&amp; !ELUsingAArch32(EL3) &amp;&amp; SCR_EL3().IRQ == '1' then
+        if EL3SDDUndef() then
+            Undefined();
+        else
+            AArch64_AArch32SystemAccessTrap(EL3, 0x03);
+        end;
+    elsif HaveEL(EL3) &amp;&amp; ELUsingAArch32(EL3) &amp;&amp; SCR().IRQ == '1' then
+        Undefined();
+    elsif HaveEL(EL3) then
+        ICC_AP1R_NS(m) = R(t);
+    else
+        ICC_AP1R(m) = R(t);
+    end;
+elsif PSTATE.EL == EL3 then
+    if ICC_MSRE().SRE == '0' then
+        Undefined();
+    elsif SCR().IRQ == '1' &amp;&amp; PSTATE.M != M32_Monitor then
+        Undefined();
+    else
+        if EffectiveSCR_EL3_NS() == '0' then
+            ICC_AP1R_S(m) = R(t);
+        else
+            ICC_AP1R_NS(m) = R(t);
+        end;
+    end;
+end;
+                </p></div><hr class="bottom_line"></hr><p class="copyconf">Version 2026.09 — Copyright © 2010-2026 Arm Limited or its affiliates.</p><small>This site is provided as a community resource and is NOT affiliated with nor endorsed by Arm Limited.</small><!-- Cloudflare Pages Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "de55e78a4e194365a81a0724c5c0ee91"}'></script><!-- Cloudflare Pages Analytics --></body></html>

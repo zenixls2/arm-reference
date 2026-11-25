@@ -1,0 +1,1 @@
+window.addEventListener("DOMContentLoaded",_=>{const searchbox=document.getElementsByTagName("pagefind-searchbox")[0];let input=searchbox.getElementsByTagName("input")[0];input.setAttribute("spellcheck","false")});

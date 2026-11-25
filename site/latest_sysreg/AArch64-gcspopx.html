@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ext="http://exslt.org/common"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>GCSPOPX | Jon's Arm Reference</title><meta name="description" content="Loads a GCS exception return record from the location indicated by the current GCS pointer register, checks that the record is a GCS exception return record, and increments the current GCS pointer register by the size of a GCS exception return record."></meta><meta name="viewport" content="width=device-width, initial-scale=1"></meta><link rel="stylesheet" href="/pagefind/pagefind-component-ui.css"></link><link rel="stylesheet" type="text/css" href="/static/normalize.css"></link><link rel="stylesheet" type="text/css" href="/static/main.css"></link></head><body><p class="discontinuation-notice" data-pagefind-ignore="all"><b>PER ARM'S REQUEST, THIS SITE WILL BE DISCONTINUED ON 4 DECEMBER 2026. :(</b><br></br>
+
+      Arm's lawyers have notified me to take down this site or face legal action. <br></br>
+
+      To all of the fans of this site over the years (even the ones at Arm): thank you for your support! I'm glad I could provide a resource so many people found value in. I will look into solutions that can potentially keep bookmarks and links working. <br></br>
+
+      — Jon
+    </p><a href="/">← Home</a><pagefind-searchbox></pagefind-searchbox><script type="module" src="/pagefind/pagefind-component-ui.js"></script><script type="text/javascript" src="/static/pagefind.js"></script><h1 class="register-section" data-pagefind-body="1" data-pagefind-weight="10" data-pagefind-sort="title">GCSPOPX</h1><p class="insn_subtitle" data-pagefind-body="1">Guarded Control Stack Pop exception return record</p><div data-pagefind-body="1">
+        <p>Loads a GCS exception return record from the location indicated by the current GCS pointer register, checks that the record is a GCS exception return record, and increments the current GCS pointer register by the size of a GCS exception return record.</p>
+      </div><h3>Configuration</h3><p>This instruction is present only when FEAT_GCS is implemented and FEAT_AA64 is implemented. Otherwise, direct accesses to GCSPOPX are <span class="arm-defined-word">UNDEFINED</span>.</p><h3>Attributes</h3>
+        <p>GCSPOPX is a 64-bit System instruction.</p>
+      <h2>Field descriptions</h2><p>This instruction has no applicable fields.</p><p>The value in the register specified by &lt;Xt&gt; is ignored.</p><div class="access_mechanisms"><h2>Executing GCSPOPX</h2>
+        <p>Rt should be encoded as <span class="binarynumber">0b11111</span>. If the Rt field is not set to <span class="binarynumber">0b11111</span>, it is <span class="arm-defined-word">CONSTRAINED UNPREDICTABLE</span> whether:</p>
+
+      
+        <ul>
+<li>
+<p>The instruction is <span class="arm-defined-word">UNDEFINED</span>.</p>
+
+</li><li>
+<p>The instruction behaves as if the Rt field is set to <span class="binarynumber">0b11111</span>.</p>
+
+</li></ul>
+
+      
+        <p>This system instruction is an alias of the SYS instruction.</p>
+      <p>Accesses to this instruction use the following encodings in the System instruction encoding space:</p><div class="access_block"><div class="encoding"><p class="asm-code">GCSPOPX</p></div></div><p style="text-align: right">
+      (op0 = 0b01, op1 = 0b000, CRn = 0b0111, CRm = 0b0111, op2 = 0b110)
+      </p><p class="pseudocode">
+if !(IsFeatureImplemented(FEAT_GCS) &amp;&amp; IsFeatureImplemented(FEAT_AA64)) then
+    Undefined();
+elsif PSTATE.EL == EL0 then
+    Undefined();
+elsif PSTATE.EL == EL1 then
+    if GCSEnabled(EL1) then
+        GCSPOPX();
+    end;
+elsif PSTATE.EL == EL2 then
+    if GCSEnabled(EL2) then
+        GCSPOPX();
+    end;
+elsif PSTATE.EL == EL3 then
+    if GCSEnabled(EL3) then
+        GCSPOPX();
+    end;
+end;
+                </p></div><hr class="bottom_line"></hr><p class="copyconf">Version 2026.09 — Copyright © 2010-2026 Arm Limited or its affiliates.</p><small>This site is provided as a community resource and is NOT affiliated with nor endorsed by Arm Limited.</small><!-- Cloudflare Pages Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "de55e78a4e194365a81a0724c5c0ee91"}'></script><!-- Cloudflare Pages Analytics --></body></html>

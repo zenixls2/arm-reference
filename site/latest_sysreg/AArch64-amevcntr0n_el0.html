@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ext="http://exslt.org/common"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>AMEVCNTR0&lt;n&gt;_EL0 | Jon's Arm Reference</title><meta name="description" content="Provides access to the architected activity monitor event counters."></meta><meta name="viewport" content="width=device-width, initial-scale=1"></meta><link rel="stylesheet" href="/pagefind/pagefind-component-ui.css"></link><link rel="stylesheet" type="text/css" href="/static/normalize.css"></link><link rel="stylesheet" type="text/css" href="/static/main.css"></link></head><body><p class="discontinuation-notice" data-pagefind-ignore="all"><b>PER ARM'S REQUEST, THIS SITE WILL BE DISCONTINUED ON 4 DECEMBER 2026. :(</b><br></br>
+
+      Arm's lawyers have notified me to take down this site or face legal action. <br></br>
+
+      To all of the fans of this site over the years (even the ones at Arm): thank you for your support! I'm glad I could provide a resource so many people found value in. I will look into solutions that can potentially keep bookmarks and links working. <br></br>
+
+      — Jon
+    </p><a href="/">← Home</a><pagefind-searchbox></pagefind-searchbox><script type="module" src="/pagefind/pagefind-component-ui.js"></script><script type="text/javascript" src="/static/pagefind.js"></script><h1 class="register-section" data-pagefind-body="1" data-pagefind-weight="10" data-pagefind-sort="title">AMEVCNTR0&lt;n&gt;_EL0, n = 0 - 3</h1><p class="insn_subtitle" data-pagefind-body="1">Activity Monitors Event Counter Registers 0</p><div data-pagefind-body="1">
+        <p>Provides access to the architected activity monitor event counters.</p>
+      </div><h3>Configuration</h3><p>AArch64 System register AMEVCNTR0&lt;n&gt;_EL0 bits [63:0] are architecturally mapped to AArch32 System register <a href="AArch32-amevcntr0n.html">AMEVCNTR0&lt;n&gt;[63:0]</a>.</p><p>AArch64 System register AMEVCNTR0&lt;n&gt;_EL0 bits [63:0] are architecturally mapped to External register <a href="amu.amevcntr0n.html">AMEVCNTR0&lt;n&gt;[63:0]</a>.</p><p>This register is present only when FEAT_AMUv1 is implemented. Otherwise, direct accesses to AMEVCNTR0&lt;n&gt;_EL0 are <span class="arm-defined-word">UNDEFINED</span>.</p><h3>Attributes</h3>
+        <p>AMEVCNTR0&lt;n&gt;_EL0 is a 64-bit register.</p>
+      <h2>Field descriptions</h2><table class="regdiagram" id="fieldset_0"><thead><tr><td>63</td><td>62</td><td>61</td><td>60</td><td>59</td><td>58</td><td>57</td><td>56</td><td>55</td><td>54</td><td>53</td><td>52</td><td>51</td><td>50</td><td>49</td><td>48</td><td>47</td><td>46</td><td>45</td><td>44</td><td>43</td><td>42</td><td>41</td><td>40</td><td>39</td><td>38</td><td>37</td><td>36</td><td>35</td><td>34</td><td>33</td><td>32</td></tr></thead><tfoot><tr><td>31</td><td>30</td><td>29</td><td>28</td><td>27</td><td>26</td><td>25</td><td>24</td><td>23</td><td>22</td><td>21</td><td>20</td><td>19</td><td>18</td><td>17</td><td>16</td><td>15</td><td>14</td><td>13</td><td>12</td><td>11</td><td>10</td><td>9</td><td>8</td><td>7</td><td>6</td><td>5</td><td>4</td><td>3</td><td>2</td><td>1</td><td>0</td></tr></tfoot><tbody><tr class="firstrow"><td class="lr" colspan="32"><a href="#fieldset_0-63_0">ACNT</a></td></tr><tr class="firstrow"><td class="lr" colspan="32"><a href="#fieldset_0-63_0">ACNT</a></td></tr></tbody></table><h4 id="fieldset_0-63_0">ACNT, bits [63:0]:
+      </h4><div class="field"><p>Architected activity monitor event counter n.</p>
+<p>Value of architected activity monitor event counter n, where n is the number of this register and is a number from 0 to 3.</p>
+<p>If all of the following are true, reads of the AMEVCNTR0&lt;n&gt;_EL0 registers from EL0 or EL1 return (PCount&lt;63:0&gt; - <a href="AArch64-amevcntvoff0n_el2.html">AMEVCNTVOFF0&lt;n&gt;_EL2</a>&lt;63:0&gt;), where PCount is the physical count returned when AMEVCNTR0&lt;n&gt;_EL0 is read from EL2 or EL3:</p>
+<ul>
+<li><span class="xref">FEAT_AMUv1p1</span> is implemented.
+</li><li><a href="AArch64-hcr_el2.html">HCR_EL2</a>.AMVOFFEN and <a href="AArch64-scr_el3.html">SCR_EL3</a>.AMVOFFEN are 1.
+</li><li>EL2 is implemented and enabled in the current Security state, and the Effective value of <a href="AArch64-hcr_el2.html">HCR_EL2</a>.{E2H, TGE} is not {1, 1}.
+</li></ul>
+      <p>If the counter is enabled, writes to this register have <span class="arm-defined-word">UNPREDICTABLE</span> results.</p>
+    <p>The reset behavior of this field is:</p><ul><li>On an AMU reset, 
+      this field resets
+       to the expression <span class="pseudocode">0x0000000000000000</span>.</li></ul></div><div class="access_mechanisms"><h2>Access Instructions</h2>
+        <p>If &lt;n&gt; is greater than or equal to the number of architected activity monitor event counters, reads and writes of AMEVCNTR0&lt;n&gt;_EL0 are <span class="arm-defined-word">UNDEFINED</span>.</p>
+
+      
+        <div class="note"><p><a href="AArch64-amcgcr_el0.html">AMCGCR_EL0</a>.CG0NC identifies the number of architected activity monitor event counters.</p></div>
+      <p>Accesses to this register use the following encodings in the System register encoding space:</p><div class="access_block"><div class="encoding"><p class="asm-code">MRS &lt;Xt&gt;, AMEVCNTR0&lt;n&gt;_EL0
+          ; Where n = 0-3</p></div></div><p style="text-align: right">
+      (op0 = 0b11, op1 = 0b011, CRn = 0b1101, CRm = 0b010:n[3], op2 = n[2:0])
+      </p><p class="pseudocode">
+let n:integer = UInt(CRm[0] :: op2[2:0]);
+
+if !IsFeatureImplemented(FEAT_AMUv1) then
+    Undefined();
+elsif n &gt;= 4 then
+    Undefined();
+elsif HaveEL(EL3) &amp;&amp; PSTATE.EL != EL3 &amp;&amp; EL3SDDUndefPriority() &amp;&amp; CPTR_EL3().TAM == '1' then
+    Undefined();
+elsif PSTATE.EL == EL0 then
+    if AMUSERENR_EL0().EN == '0' then
+        AArch64_SystemAccessTraptoEL1orEL2(0x18);
+    elsif EL2Enabled() &amp;&amp; CPTR_EL2().TAM == '1' then
+        AArch64_SystemAccessTrap(EL2, 0x18);
+    elsif EL2Enabled() &amp;&amp; EffectivelyAtEL0NotInHost() &amp;&amp; IsFeatureImplemented(FEAT_FGT) &amp;&amp; (!HaveEL(EL3) || SCR_EL3().FGTEn == '1') &amp;&amp; HAFGRTR_EL2()[n + 1] == '1' then
+        AArch64_SystemAccessTrap(EL2, 0x18);
+    elsif HaveEL(EL3) &amp;&amp; CPTR_EL3().TAM == '1' then
+        if EL3SDDUndef() then
+            Undefined();
+        else
+            AArch64_SystemAccessTrap(EL3, 0x18);
+        end;
+    else
+        X{64}(t) = AMEVCNTR0_EL0(n);
+    end;
+elsif PSTATE.EL == EL1 then
+    if EL2Enabled() &amp;&amp; CPTR_EL2().TAM == '1' then
+        AArch64_SystemAccessTrap(EL2, 0x18);
+    elsif EL2Enabled() &amp;&amp; IsFeatureImplemented(FEAT_FGT) &amp;&amp; (!HaveEL(EL3) || SCR_EL3().FGTEn == '1') &amp;&amp; HAFGRTR_EL2()[n + 1] == '1' then
+        AArch64_SystemAccessTrap(EL2, 0x18);
+    elsif HaveEL(EL3) &amp;&amp; CPTR_EL3().TAM == '1' then
+        if EL3SDDUndef() then
+            Undefined();
+        else
+            AArch64_SystemAccessTrap(EL3, 0x18);
+        end;
+    else
+        X{64}(t) = AMEVCNTR0_EL0(n);
+    end;
+elsif PSTATE.EL == EL2 then
+    if HaveEL(EL3) &amp;&amp; CPTR_EL3().TAM == '1' then
+        if EL3SDDUndef() then
+            Undefined();
+        else
+            AArch64_SystemAccessTrap(EL3, 0x18);
+        end;
+    else
+        X{64}(t) = AMEVCNTR0_EL0(n);
+    end;
+elsif PSTATE.EL == EL3 then
+    X{64}(t) = AMEVCNTR0_EL0(n);
+end;
+                </p><div class="access_block"><div class="encoding"><p class="asm-code">MSR AMEVCNTR0&lt;n&gt;_EL0, &lt;Xt&gt;
+          ; Where n = 0-3</p></div></div><p style="text-align: right">
+      (op0 = 0b11, op1 = 0b011, CRn = 0b1101, CRm = 0b010:n[3], op2 = n[2:0])
+      </p><p class="pseudocode">
+let n:integer = UInt(CRm[0] :: op2[2:0]);
+
+if !IsFeatureImplemented(FEAT_AMUv1) then
+    Undefined();
+elsif n &gt;= 4 then
+    Undefined();
+elsif IsHighestEL(PSTATE.EL) then
+    AMEVCNTR0_EL0(n) = X{64}(t);
+else
+    Undefined();
+end;
+                </p></div><hr class="bottom_line"></hr><p class="copyconf">Version 2026.09 — Copyright © 2010-2026 Arm Limited or its affiliates.</p><small>This site is provided as a community resource and is NOT affiliated with nor endorsed by Arm Limited.</small><!-- Cloudflare Pages Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "de55e78a4e194365a81a0724c5c0ee91"}'></script><!-- Cloudflare Pages Analytics --></body></html>

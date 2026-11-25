@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ext="http://exslt.org/common"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>MVFR2 | Jon's Arm Reference</title><meta name="description" content="Describes the features provided by the AArch32 Advanced SIMD and floating-point implementation."></meta><meta name="viewport" content="width=device-width, initial-scale=1"></meta><link rel="stylesheet" href="/pagefind/pagefind-component-ui.css"></link><link rel="stylesheet" type="text/css" href="/static/normalize.css"></link><link rel="stylesheet" type="text/css" href="/static/main.css"></link></head><body><p class="discontinuation-notice" data-pagefind-ignore="all"><b>PER ARM'S REQUEST, THIS SITE WILL BE DISCONTINUED ON 4 DECEMBER 2026. :(</b><br></br>
+
+      Arm's lawyers have notified me to take down this site or face legal action. <br></br>
+
+      To all of the fans of this site over the years (even the ones at Arm): thank you for your support! I'm glad I could provide a resource so many people found value in. I will look into solutions that can potentially keep bookmarks and links working. <br></br>
+
+      — Jon
+    </p><a href="/">← Home</a><pagefind-searchbox></pagefind-searchbox><script type="module" src="/pagefind/pagefind-component-ui.js"></script><script type="text/javascript" src="/static/pagefind.js"></script><h1 class="register-section" data-pagefind-body="1" data-pagefind-weight="10" data-pagefind-sort="title">MVFR2</h1><p class="insn_subtitle" data-pagefind-body="1">Media and VFP Feature Register 2</p><div data-pagefind-body="1">
+        <p>Describes the features provided by the AArch32 Advanced SIMD and floating-point implementation.</p>
+
+      
+        <p>Must be interpreted with <a href="AArch32-mvfr0.html">MVFR0</a> and <a href="AArch32-mvfr1.html">MVFR1</a>.</p>
+
+      
+        <p>For general information about the interpretation of the ID registers see <span class="xref">'Principles of the ID scheme for fields in ID registers'</span>.</p>
+      </div><h3>Configuration</h3><p>AArch32 System register MVFR2 bits [31:0] are architecturally mapped to AArch64 System register <a href="AArch64-mvfr2_el1.html">MVFR2_EL1[31:0]</a>.</p><p>This register is present only when FEAT_AA32EL1 is implemented. Otherwise, direct accesses to MVFR2 are <span class="arm-defined-word">UNDEFINED</span>.</p>
+        <p>Implemented only if the implementation includes Advanced SIMD and floating-point instructions.</p>
+      <h3>Attributes</h3>
+        <p>MVFR2 is a 32-bit register.</p>
+      <h2>Field descriptions</h2><table class="regdiagram" id="fieldset_0"><thead><tr><td>31</td><td>30</td><td>29</td><td>28</td><td>27</td><td>26</td><td>25</td><td>24</td><td>23</td><td>22</td><td>21</td><td>20</td><td>19</td><td>18</td><td>17</td><td>16</td><td>15</td><td>14</td><td>13</td><td>12</td><td>11</td><td>10</td><td>9</td><td>8</td><td>7</td><td>6</td><td>5</td><td>4</td><td>3</td><td>2</td><td>1</td><td>0</td></tr></thead><tbody><tr class="firstrow"><td class="lr" colspan="24"><a href="#fieldset_0-31_8">RES0</a></td><td class="lr" colspan="4"><a href="#fieldset_0-7_4">FPMisc</a></td><td class="lr" colspan="4"><a href="#fieldset_0-3_0">SIMDMisc</a></td></tr></tbody></table><h4 id="fieldset_0-31_8">Bits [31:8]:
+      </h4><div class="field">
+      <p>Reserved, <span class="arm-defined-word">RES0</span>.</p>
+    </div><h4 id="fieldset_0-7_4">FPMisc, bits [7:4]:
+      </h4><div class="field">
+      <p>Indicates whether the floating-point implementation provides support for miscellaneous VFP features.</p>
+    <p> The value of this field is an <span class="arm-defined-word">IMPLEMENTATION DEFINED</span> choice of:</p><table class="valuetable"><tr><th>FPMisc</th><th>Meaning</th></tr><tr><td class="bitfield">0b0000</td><td>
+          <p>Not implemented, or no support for miscellaneous features.</p>
+        </td></tr><tr><td class="bitfield">0b0001</td><td>
+          <p>Support for Floating-point selection.</p>
+        </td></tr><tr><td class="bitfield">0b0010</td><td>
+          <p>As <span class="binarynumber">0b0001</span>, and Floating-point Conversion to Integer with Directed Rounding modes.</p>
+        </td></tr><tr><td class="bitfield">0b0011</td><td>
+          <p>As <span class="binarynumber">0b0010</span>, and Floating-point Round to Integer Floating-point.</p>
+        </td></tr><tr><td class="bitfield">0b0100</td><td>
+          <p>As <span class="binarynumber">0b0011</span>, and Floating-point MaxNum and MinNum.</p>
+        </td></tr></table><p>All other values are reserved.</p>
+<p>In Armv8, the permitted values are <span class="binarynumber">0b0000</span> and <span class="binarynumber">0b0100</span>.</p><p>Access to this field is <span class="access_level">RO</span>.</p></div><h4 id="fieldset_0-3_0">SIMDMisc, bits [3:0]:
+      </h4><div class="field">
+      <p>Indicates whether the Advanced SIMD implementation provides support for miscellaneous Advanced SIMD features.</p>
+    <p> The value of this field is an <span class="arm-defined-word">IMPLEMENTATION DEFINED</span> choice of:</p><table class="valuetable"><tr><th>SIMDMisc</th><th>Meaning</th></tr><tr><td class="bitfield">0b0000</td><td>
+          <p>Not implemented, or no support for miscellaneous features.</p>
+        </td></tr><tr><td class="bitfield">0b0001</td><td>
+          <p>Floating-point Conversion to Integer with Directed Rounding modes.</p>
+        </td></tr><tr><td class="bitfield">0b0010</td><td>
+          <p>As <span class="binarynumber">0b0001</span>, and Floating-point Round to Integer Floating-point.</p>
+        </td></tr><tr><td class="bitfield">0b0011</td><td>
+          <p>As <span class="binarynumber">0b0010</span>, and Floating-point MaxNum and MinNum.</p>
+        </td></tr></table><p>All other values are reserved.</p>
+<p>In Armv8, the permitted values are <span class="binarynumber">0b0000</span> and <span class="binarynumber">0b0011</span>.</p><p>Access to this field is <span class="access_level">RO</span>.</p></div><div class="access_mechanisms"><h2>Access Instructions</h2><p>Accesses to this register use the following encodings in the System register encoding space:</p><div class="access_block"><div class="encoding"><p class="asm-code">VMRS{&lt;c&gt;}{&lt;q&gt;} &lt;Rt&gt;, &lt;spec_reg&gt;</p></div></div><p style="text-align: right">
+      (reg = 0b0101)
+      </p><p class="pseudocode">
+if !IsFeatureImplemented(FEAT_AA32EL1) then
+    Undefined();
+elsif HaveEL(EL3) &amp;&amp; PSTATE.EL IN {EL1, EL2} &amp;&amp; EL3SDDUndefPriority() &amp;&amp; IsFeatureImplemented(FEAT_AA64EL3) &amp;&amp; !ELUsingAArch32(EL3) &amp;&amp; CPTR_EL3().TFP == '1' then
+    Undefined();
+elsif PSTATE.EL == EL0 then
+    Undefined();
+elsif PSTATE.EL == EL1 then
+    if (IsFeatureImplemented(FEAT_AA32EL3) &amp;&amp; ELUsingAArch32(EL3) &amp;&amp; SCR().NS == '1' &amp;&amp; NSACR().cp10 == '0') || CPACR().cp10 == '00' then
+        Undefined();
+    elsif EL2Enabled() &amp;&amp; IsFeatureImplemented(FEAT_AA64EL2) &amp;&amp; !ELUsingAArch32(EL2) &amp;&amp; !ELIsInHost(EL2) &amp;&amp; CPTR_EL2().TFP == '1' then
+        AArch64_AArch32SystemAccessTrap(EL2, 0x07);
+    elsif ELIsInHost(EL2) &amp;&amp; IsFeatureImplemented(FEAT_AA64EL2) &amp;&amp; !ELUsingAArch32(EL2) &amp;&amp; CPTR_EL2().FPEN IN {'x0'} then
+        AArch64_AArch32SystemAccessTrap(EL2, 0x07);
+    elsif EL2Enabled() &amp;&amp; IsFeatureImplemented(FEAT_AA32EL2) &amp;&amp; ELUsingAArch32(EL2) &amp;&amp; ((IsFeatureImplemented(FEAT_AA32EL3) &amp;&amp; ELUsingAArch32(EL3) &amp;&amp; SCR().NS == '1' &amp;&amp; NSACR().cp10 == '0') || HCPTR().TCP10 == '1') then
+        AArch32_TakeHypTrapException(0x08);
+    elsif EL2Enabled() &amp;&amp; IsFeatureImplemented(FEAT_AA64EL2) &amp;&amp; !ELUsingAArch32(EL2) &amp;&amp; HCR_EL2().TID3 == '1' then
+        AArch64_AArch32SystemAccessTrap(EL2, 0x08);
+    elsif EL2Enabled() &amp;&amp; IsFeatureImplemented(FEAT_AA32EL2) &amp;&amp; ELUsingAArch32(EL2) &amp;&amp; HCR().TID3 == '1' then
+        AArch32_TakeHypTrapException(0x08);
+    elsif HaveEL(EL3) &amp;&amp; IsFeatureImplemented(FEAT_AA64EL3) &amp;&amp; !ELUsingAArch32(EL3) &amp;&amp; CPTR_EL3().TFP == '1' then
+        if EL3SDDUndef() then
+            Undefined();
+        else
+            AArch64_AArch32SystemAccessTrap(EL3, 0x07);
+        end;
+    else
+        R(t) = MVFR2();
+    end;
+elsif PSTATE.EL == EL2 then
+    if EL2Enabled() &amp;&amp; ((ELUsingAArch32(EL3) &amp;&amp; SCR().NS == '1' &amp;&amp; NSACR().cp10 == '0') || HCPTR().TCP10 == '1') then
+        AArch32_TakeHypTrapException(0x00);
+    elsif HaveEL(EL3) &amp;&amp; !ELUsingAArch32(EL3) &amp;&amp; CPTR_EL3().TFP == '1' then
+        if EL3SDDUndef() then
+            Undefined();
+        else
+            AArch64_AArch32SystemAccessTrap(EL3, 0x07);
+        end;
+    else
+        R(t) = MVFR2();
+    end;
+elsif PSTATE.EL == EL3 then
+    if CPACR().cp10 == '00' then
+        Undefined();
+    else
+        R(t) = MVFR2();
+    end;
+end;
+                </p></div><hr class="bottom_line"></hr><p class="copyconf">Version 2026.09 — Copyright © 2010-2026 Arm Limited or its affiliates.</p><small>This site is provided as a community resource and is NOT affiliated with nor endorsed by Arm Limited.</small><!-- Cloudflare Pages Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "de55e78a4e194365a81a0724c5c0ee91"}'></script><!-- Cloudflare Pages Analytics --></body></html>

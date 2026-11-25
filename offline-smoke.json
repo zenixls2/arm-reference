@@ -1,0 +1,24 @@
+{
+  "page": "{\"title\":\"Jon's Arm Reference\",\"hasSearchbox\":true,\"resultCount\":1418}",
+  "worker_count": 1,
+  "pagefind_responses": 15,
+  "pagefind_status_errors": [],
+  "pagefind_failed_requests": [],
+  "pagefind_urls": [
+    "http://127.0.0.1:44963/pagefind/fragment/unknown_1029f2e.pf_fragment",
+    "http://127.0.0.1:44963/pagefind/fragment/unknown_15c4e01.pf_fragment",
+    "http://127.0.0.1:44963/pagefind/fragment/unknown_1d6053a.pf_fragment",
+    "http://127.0.0.1:44963/pagefind/fragment/unknown_4dcfd71.pf_fragment",
+    "http://127.0.0.1:44963/pagefind/fragment/unknown_5ba246b.pf_fragment",
+    "http://127.0.0.1:44963/pagefind/fragment/unknown_6e1cdac.pf_fragment",
+    "http://127.0.0.1:44963/pagefind/fragment/unknown_99e2991.pf_fragment",
+    "http://127.0.0.1:44963/pagefind/index/unknown_d166aec.pf_index",
+    "http://127.0.0.1:44963/pagefind/pagefind-component-ui.css",
+    "http://127.0.0.1:44963/pagefind/pagefind-component-ui.js",
+    "http://127.0.0.1:44963/pagefind/pagefind-entry.json?ts=1795646288812",
+    "http://127.0.0.1:44963/pagefind/pagefind.js",
+    "http://127.0.0.1:44963/pagefind/pagefind.unknown_31e3de96b4321bf.pf_meta",
+    "http://127.0.0.1:44963/pagefind/wasm.unknown.pagefind",
+    "http://127.0.0.1:44963/static/pagefind.js"
+  ]
+}

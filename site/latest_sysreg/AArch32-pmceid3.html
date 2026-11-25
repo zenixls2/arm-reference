@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ext="http://exslt.org/common"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>PMCEID3 | Jon's Arm Reference</title><meta name="description" content="Defines which Common architectural events and Common microarchitectural events are implemented, or counted, using PMU events in the range 0x4020 to 0x403F."></meta><meta name="viewport" content="width=device-width, initial-scale=1"></meta><link rel="stylesheet" href="/pagefind/pagefind-component-ui.css"></link><link rel="stylesheet" type="text/css" href="/static/normalize.css"></link><link rel="stylesheet" type="text/css" href="/static/main.css"></link></head><body><p class="discontinuation-notice" data-pagefind-ignore="all"><b>PER ARM'S REQUEST, THIS SITE WILL BE DISCONTINUED ON 4 DECEMBER 2026. :(</b><br></br>
+
+      Arm's lawyers have notified me to take down this site or face legal action. <br></br>
+
+      To all of the fans of this site over the years (even the ones at Arm): thank you for your support! I'm glad I could provide a resource so many people found value in. I will look into solutions that can potentially keep bookmarks and links working. <br></br>
+
+      — Jon
+    </p><a href="/">← Home</a><pagefind-searchbox></pagefind-searchbox><script type="module" src="/pagefind/pagefind-component-ui.js"></script><script type="text/javascript" src="/static/pagefind.js"></script><h1 class="register-section" data-pagefind-body="1" data-pagefind-weight="10" data-pagefind-sort="title">PMCEID3</h1><p class="insn_subtitle" data-pagefind-body="1">Performance Monitors Common Event Identification register 3</p><div data-pagefind-body="1">
+        <p>Defines which Common architectural events and Common microarchitectural events are implemented, or counted, using PMU events in the range <span class="hexnumber">0x4020</span> to <span class="hexnumber">0x403F</span>.</p>
+
+      
+        <p>For more information about the Common events and the use of the PMCEIDn registers see <span class="xref">'The PMU event number space and common events'</span>.</p>
+      </div><h3>Configuration</h3><p>AArch32 System register PMCEID3 bits [31:0] are architecturally mapped to AArch64 System register <a href="AArch64-pmceid1_el0.html">PMCEID1_EL0[63:32]</a>.</p><p>AArch32 System register PMCEID3 bits [31:0] are architecturally mapped to External register <a href="pmu.pmceid3.html">PMCEID3[31:0]</a>.</p><p>This register is present only when FEAT_AA32 is implemented and FEAT_PMUv3p1 is implemented. Otherwise, direct accesses to PMCEID3 are <span class="arm-defined-word">UNDEFINED</span>.</p><h3>Attributes</h3>
+        <p>PMCEID3 is a 32-bit register.</p>
+      <h2>Field descriptions</h2><table class="regdiagram" id="fieldset_0"><thead><tr><td>31</td><td>30</td><td>29</td><td>28</td><td>27</td><td>26</td><td>25</td><td>24</td><td>23</td><td>22</td><td>21</td><td>20</td><td>19</td><td>18</td><td>17</td><td>16</td><td>15</td><td>14</td><td>13</td><td>12</td><td>11</td><td>10</td><td>9</td><td>8</td><td>7</td><td>6</td><td>5</td><td>4</td><td>3</td><td>2</td><td>1</td><td>0</td></tr></thead><tbody><tr class="firstrow"><td class="lr" colspan="1"><a href="#fieldset_0-31_0">IDhi31</a></td><td class="lr" colspan="1"><a href="#fieldset_0-31_0">IDhi30</a></td><td class="lr" colspan="1"><a href="#fieldset_0-31_0">IDhi29</a></td><td class="lr" colspan="1"><a href="#fieldset_0-31_0">IDhi28</a></td><td class="lr" colspan="1"><a href="#fieldset_0-31_0">IDhi27</a></td><td class="lr" colspan="1"><a href="#fieldset_0-31_0">IDhi26</a></td><td class="lr" colspan="1"><a href="#fieldset_0-31_0">IDhi25</a></td><td class="lr" colspan="1"><a href="#fieldset_0-31_0">IDhi24</a></td><td class="lr" colspan="1"><a href="#fieldset_0-31_0">IDhi23</a></td><td class="lr" colspan="1"><a href="#fieldset_0-31_0">IDhi22</a></td><td class="lr" colspan="1"><a href="#fieldset_0-31_0">IDhi21</a></td><td class="lr" colspan="1"><a href="#fieldset_0-31_0">IDhi20</a></td><td class="lr" colspan="1"><a href="#fieldset_0-31_0">IDhi19</a></td><td class="lr" colspan="1"><a href="#fieldset_0-31_0">IDhi18</a></td><td class="lr" colspan="1"><a href="#fieldset_0-31_0">IDhi17</a></td><td class="lr" colspan="1"><a href="#fieldset_0-31_0">IDhi16</a></td><td class="lr" colspan="1"><a href="#fieldset_0-31_0">IDhi15</a></td><td class="lr" colspan="1"><a href="#fieldset_0-31_0">IDhi14</a></td><td class="lr" colspan="1"><a href="#fieldset_0-31_0">IDhi13</a></td><td class="lr" colspan="1"><a href="#fieldset_0-31_0">IDhi12</a></td><td class="lr" colspan="1"><a href="#fieldset_0-31_0">IDhi11</a></td><td class="lr" colspan="1"><a href="#fieldset_0-31_0">IDhi10</a></td><td class="lr" colspan="1"><a href="#fieldset_0-31_0">IDhi9</a></td><td class="lr" colspan="1"><a href="#fieldset_0-31_0">IDhi8</a></td><td class="lr" colspan="1"><a href="#fieldset_0-31_0">IDhi7</a></td><td class="lr" colspan="1"><a href="#fieldset_0-31_0">IDhi6</a></td><td class="lr" colspan="1"><a href="#fieldset_0-31_0">IDhi5</a></td><td class="lr" colspan="1"><a href="#fieldset_0-31_0">IDhi4</a></td><td class="lr" colspan="1"><a href="#fieldset_0-31_0">IDhi3</a></td><td class="lr" colspan="1"><a href="#fieldset_0-31_0">IDhi2</a></td><td class="lr" colspan="1"><a href="#fieldset_0-31_0">IDhi1</a></td><td class="lr" colspan="1"><a href="#fieldset_0-31_0">IDhi0</a></td></tr></tbody></table><h4 id="fieldset_0-31_0">IDhi&lt;n&gt;, bit [n], for n = 31 to 0:
+      </h4><div class="field"><p>IDhi[n] corresponds to Common event (<span class="hexnumber">0x4020</span> + n).</p>
+<p>For each bit:</p><table class="valuetable"><tr><th>IDhi&lt;n&gt;</th><th>Meaning</th></tr><tr><td class="bitfield">0b0</td><td>
+          <p>The Common event is not implemented, or not counted.</p>
+        </td></tr><tr><td class="bitfield">0b1</td><td>
+          <p>The Common event is implemented.</p>
+        </td></tr></table><p>When the value of a bit in the field is 1, the corresponding Common event is implemented and counted.</p>
+<div class="note"><p>Arm recommends that if a Common event is never counted, the value of the corresponding bit is 0.</p></div><p>A bit that corresponds to a reserved event number is reserved. The value might be used in a future revision of the architecture to identify an additional Common event.</p>
+<div class="note"><p>Such an event might be added retrospectively to an earlier version of the PMU architecture, provided the event does not require any additional PMU features and has an event number that can be represented in the PMCEID&lt;n&gt; registers of that earlier version of the PMU architecture.</p></div></div><div class="access_mechanisms"><h2>Access Instructions</h2><p>Accesses to this register use the following encodings in the System register encoding space:</p><div class="access_block"><div class="encoding"><p class="asm-code">MRC{&lt;c&gt;}{&lt;q&gt;} &lt;coproc&gt;, {#}&lt;opc1&gt;, &lt;Rt&gt;, &lt;CRn&gt;, &lt;CRm&gt;{, {#}&lt;opc2&gt;}</p></div></div><p style="text-align: right">
+      (coproc = 0b1111, opc1 = 0b000, CRn = 0b1001, CRm = 0b1110, opc2 = 0b101)
+      </p><p class="pseudocode">
+if !(IsFeatureImplemented(FEAT_AA32) &amp;&amp; IsFeatureImplemented(FEAT_PMUv3p1)) then
+    Undefined();
+elsif HaveEL(EL3) &amp;&amp; PSTATE.EL != EL3 &amp;&amp; EL3SDDUndefPriority() &amp;&amp; IsFeatureImplemented(FEAT_AA64EL3) &amp;&amp; !ELUsingAArch32(EL3) &amp;&amp; MDCR_EL3().TPM == '1' then
+    Undefined();
+elsif PSTATE.EL == EL0 then
+    if IsFeatureImplemented(FEAT_AA64EL1) &amp;&amp; !ELUsingAArch32(EL1) &amp;&amp; (PMUSERENR_EL0().EN == '0' &amp;&amp; (!IsFeatureImplemented(FEAT_PMUv3p9) || PMUSERENR_EL0().UEN == '0')) then
+        AArch64_AArch32SystemAccessTraptoEL1orEL2(0x03);
+    elsif IsFeatureImplemented(FEAT_AA64EL1) &amp;&amp; !ELUsingAArch32(EL1) &amp;&amp; IsFeatureImplemented(FEAT_PMUv3p9) &amp;&amp; PMUSERENR_EL0().TID == '1' then
+        AArch64_AArch32SystemAccessTraptoEL1orEL2(0x03);
+    elsif IsFeatureImplemented(FEAT_AA32EL1) &amp;&amp; ELUsingAArch32(EL1) &amp;&amp; PMUSERENR().EN == '0' then
+        if EL2Enabled() &amp;&amp; (IsFeatureImplemented(FEAT_AA64EL2) &amp;&amp; !ELUsingAArch32(EL2)) &amp;&amp; HCR_EL2().TGE == '1' then
+            AArch64_AArch32SystemAccessTrap(EL2, 0x03);
+        elsif EL2Enabled() &amp;&amp; (IsFeatureImplemented(FEAT_AA32EL2) &amp;&amp; ELUsingAArch32(EL2)) &amp;&amp; HCR().TGE == '1' then
+            AArch32_TakeHypTrapException(0x00);
+        else
+            Undefined();
+        end;
+    elsif IsFeatureImplemented(FEAT_AA32EL1) &amp;&amp; ELUsingAArch32(EL1) &amp;&amp; IsFeatureImplemented(FEAT_PMUv3p9) &amp;&amp; PMUSERENR().TID == '1' then
+        if EL2Enabled() &amp;&amp; (IsFeatureImplemented(FEAT_AA64EL2) &amp;&amp; !ELUsingAArch32(EL2)) &amp;&amp; HCR_EL2().TGE == '1' then
+            AArch64_AArch32SystemAccessTrap(EL2, 0x03);
+        elsif EL2Enabled() &amp;&amp; (IsFeatureImplemented(FEAT_AA32EL2) &amp;&amp; ELUsingAArch32(EL2)) &amp;&amp; HCR().TGE == '1' then
+            AArch32_TakeHypTrapException(0x00);
+        else
+            Undefined();
+        end;
+    elsif EL2Enabled() &amp;&amp; (IsFeatureImplemented(FEAT_AA64EL2) &amp;&amp; !ELUsingAArch32(EL2)) &amp;&amp; EffectivelyAtEL0NotInHost() &amp;&amp; HSTR_EL2().T9 == '1' then
+        AArch64_AArch32SystemAccessTrap(EL2, 0x03);
+    elsif EL2Enabled() &amp;&amp; (IsFeatureImplemented(FEAT_AA32EL2) &amp;&amp; ELUsingAArch32(EL2)) &amp;&amp; HSTR().T9 == '1' then
+        AArch32_TakeHypTrapException(0x03);
+    elsif EL2Enabled() &amp;&amp; (IsFeatureImplemented(FEAT_AA64EL1) &amp;&amp; !ELUsingAArch32(EL1)) &amp;&amp; EffectivelyAtEL0NotInHost() &amp;&amp; IsFeatureImplemented(FEAT_FGT) &amp;&amp; (!HaveEL(EL3) || SCR_EL3().FGTEn == '1') &amp;&amp; HDFGRTR_EL2().PMCEIDn_EL0 == '1' then
+        AArch64_AArch32SystemAccessTrap(EL2, 0x03);
+    elsif EL2Enabled() &amp;&amp; (IsFeatureImplemented(FEAT_AA64EL2) &amp;&amp; !ELUsingAArch32(EL2)) &amp;&amp; MDCR_EL2().TPM == '1' then
+        AArch64_AArch32SystemAccessTrap(EL2, 0x03);
+    elsif EL2Enabled() &amp;&amp; (IsFeatureImplemented(FEAT_AA32EL2) &amp;&amp; ELUsingAArch32(EL2)) &amp;&amp; HDCR().TPM == '1' then
+        AArch32_TakeHypTrapException(0x03);
+    elsif HaveEL(EL3) &amp;&amp; IsFeatureImplemented(FEAT_AA64EL3) &amp;&amp; !ELUsingAArch32(EL3) &amp;&amp; MDCR_EL3().TPM == '1' then
+        if EL3SDDUndef() then
+            Undefined();
+        else
+            AArch64_AArch32SystemAccessTrap(EL3, 0x03);
+        end;
+    else
+        R(t) = PMCEID3();
+    end;
+elsif PSTATE.EL == EL1 then
+    if EL2Enabled() &amp;&amp; IsFeatureImplemented(FEAT_AA64EL2) &amp;&amp; !ELUsingAArch32(EL2) &amp;&amp; HSTR_EL2().T9 == '1' then
+        AArch64_AArch32SystemAccessTrap(EL2, 0x03);
+    elsif EL2Enabled() &amp;&amp; IsFeatureImplemented(FEAT_AA32EL2) &amp;&amp; ELUsingAArch32(EL2) &amp;&amp; HSTR().T9 == '1' then
+        AArch32_TakeHypTrapException(0x03);
+    elsif EL2Enabled() &amp;&amp; IsFeatureImplemented(FEAT_AA64EL2) &amp;&amp; !ELUsingAArch32(EL2) &amp;&amp; MDCR_EL2().TPM == '1' then
+        AArch64_AArch32SystemAccessTrap(EL2, 0x03);
+    elsif EL2Enabled() &amp;&amp; IsFeatureImplemented(FEAT_AA32EL2) &amp;&amp; ELUsingAArch32(EL2) &amp;&amp; HDCR().TPM == '1' then
+        AArch32_TakeHypTrapException(0x03);
+    elsif HaveEL(EL3) &amp;&amp; IsFeatureImplemented(FEAT_AA64EL3) &amp;&amp; !ELUsingAArch32(EL3) &amp;&amp; MDCR_EL3().TPM == '1' then
+        if EL3SDDUndef() then
+            Undefined();
+        else
+            AArch64_AArch32SystemAccessTrap(EL3, 0x03);
+        end;
+    else
+        R(t) = PMCEID3();
+    end;
+elsif PSTATE.EL == EL2 then
+    if HaveEL(EL3) &amp;&amp; IsFeatureImplemented(FEAT_AA64EL3) &amp;&amp; !ELUsingAArch32(EL3) &amp;&amp; MDCR_EL3().TPM == '1' then
+        if EL3SDDUndef() then
+            Undefined();
+        else
+            AArch64_AArch32SystemAccessTrap(EL3, 0x03);
+        end;
+    else
+        R(t) = PMCEID3();
+    end;
+elsif PSTATE.EL == EL3 then
+    R(t) = PMCEID3();
+end;
+                </p></div><hr class="bottom_line"></hr><p class="copyconf">Version 2026.09 — Copyright © 2010-2026 Arm Limited or its affiliates.</p><small>This site is provided as a community resource and is NOT affiliated with nor endorsed by Arm Limited.</small><!-- Cloudflare Pages Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "de55e78a4e194365a81a0724c5c0ee91"}'></script><!-- Cloudflare Pages Analytics --></body></html>

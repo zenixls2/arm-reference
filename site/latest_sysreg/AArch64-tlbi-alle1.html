@@ -1,0 +1,120 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ext="http://exslt.org/common"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>TLBI ALLE1, TLBI ALLE1NXS | Jon's Arm Reference</title><meta name="description" content="Invalidates cached copies of translation table entries from TLBs that meet all the following requirements:"></meta><meta name="viewport" content="width=device-width, initial-scale=1"></meta><link rel="stylesheet" href="/pagefind/pagefind-component-ui.css"></link><link rel="stylesheet" type="text/css" href="/static/normalize.css"></link><link rel="stylesheet" type="text/css" href="/static/main.css"></link></head><body><p class="discontinuation-notice" data-pagefind-ignore="all"><b>PER ARM'S REQUEST, THIS SITE WILL BE DISCONTINUED ON 4 DECEMBER 2026. :(</b><br></br>
+
+      Arm's lawyers have notified me to take down this site or face legal action. <br></br>
+
+      To all of the fans of this site over the years (even the ones at Arm): thank you for your support! I'm glad I could provide a resource so many people found value in. I will look into solutions that can potentially keep bookmarks and links working. <br></br>
+
+      — Jon
+    </p><a href="/">← Home</a><pagefind-searchbox></pagefind-searchbox><script type="module" src="/pagefind/pagefind-component-ui.js"></script><script type="text/javascript" src="/static/pagefind.js"></script><h1 class="register-section" data-pagefind-body="1" data-pagefind-weight="10" data-pagefind-sort="title">TLBI ALLE1, TLBI ALLE1NXS</h1><p class="insn_subtitle" data-pagefind-body="1">TLB Invalidate All, EL1</p><div data-pagefind-body="1">
+        <p>Invalidates cached copies of translation table entries from TLBs that meet all the following requirements:</p>
+
+      
+        <ul>
+<li>
+<p>The entry is a stage 1 or stage 2 translation table entry, from any level of the translation table walk.</p>
+
+</li><li>
+<p>If <span class="xref">FEAT_RME</span> is implemented, one of the following applies:</p>
+<ul>
+<li><a href="AArch64-scr_el3.html">SCR_EL3</a>.{NSE, NS} is {0, 0} and the entry would be required to translate an address using the Secure EL1&amp;0 translation regime.
+</li><li><a href="AArch64-scr_el3.html">SCR_EL3</a>.{NSE, NS} is {0, 1} and the entry would be required to translate an address using the Non-secure EL1&amp;0 translation regime.
+</li><li><a href="AArch64-scr_el3.html">SCR_EL3</a>.{NSE, NS} is {1, 1} and the entry would be required to translate an address using the Realm EL1&amp;0 translation regime.
+</li></ul>
+
+</li><li>
+<p>If <span class="xref">FEAT_RME</span> is not implemented, one of the following applies:</p>
+<ul>
+<li><a href="AArch64-scr_el3.html">SCR_EL3</a>.NS is 0 and the entry would be required to translate an address using the Secure EL1&amp;0 translation regime.
+</li><li><a href="AArch64-scr_el3.html">SCR_EL3</a>.NS is 1 and the entry would be required to translate an address using the Non-secure EL1&amp;0 translation regime.
+</li></ul>
+
+</li><li>
+<p>The entry would be used with any VMID.</p>
+
+</li></ul>
+
+      
+        <p>The invalidation only applies to the PE that executes this System instruction.</p>
+
+      
+        <div class="note"><p>For the EL1&amp;0 translation regimes, the invalidation applies to both global entries and non-global entries with any ASID.</p></div>
+      
+        <p>If <span class="xref">FEAT_XS</span> is implemented, the nXS variant of this System instruction is defined.</p>
+
+      
+        <p>It is <span class="arm-defined-word">IMPLEMENTATION SPECIFIC</span> whether the TLBI System instruction with the nXS qualifier invalidates TLB entries with the XS attribute set to 1.</p>
+
+      
+        <p>The TLBI System instruction without the nXS qualifier waits for all memory accesses using in-scope old translation information to complete before it is considered complete.</p>
+
+      
+        <p>The TLBI System instruction with the nXS qualifier is considered complete when the subset of these memory accesses with XS attribute set to 0 are complete.</p>
+      </div><h3>Configuration</h3><p>This instruction is present only when FEAT_AA64 is implemented. Otherwise, direct accesses to TLBI ALLE1, TLBI ALLE1NXS are <span class="arm-defined-word">UNDEFINED</span>.</p><h3>Attributes</h3>
+        <p>TLBI ALLE1, TLBI ALLE1NXS is a 64-bit System instruction.</p>
+      <h2>Field descriptions</h2><p>This instruction has no applicable fields.</p><p>The value in the register specified by &lt;Xt&gt; is ignored.</p><div class="access_mechanisms"><h2>Executing TLBI ALLE1, TLBI ALLE1NXS</h2>
+        <p>The Rt field should be set to <span class="binarynumber">0b11111</span>. If the Rt field is not set to <span class="binarynumber">0b11111</span>, it is <span class="arm-defined-word">CONSTRAINED UNPREDICTABLE</span> whether:</p>
+
+      
+        <ul>
+<li>
+<p>The instruction is <span class="arm-defined-word">UNDEFINED</span>.</p>
+
+</li><li>
+<p>The instruction behaves as if the Rt field is set to <span class="binarynumber">0b11111</span>.</p>
+
+</li></ul>
+
+      
+        <p>This system instruction is an alias of the SYS instruction.</p>
+
+      
+        <p>The following pseudocode describes traps which apply to the System instruction. For information about changes to the scope of the invalidation to the instruction under different conditions, see <span class="instruction">AArch64_TLBI_ALL()</span> in the <span class="xref">Pseudocode for AArch64 operation</span>.</p>
+      <p>Accesses to this instruction use the following encodings in the System instruction encoding space:</p><div class="access_block"><div class="encoding"><p class="asm-code">TLBI ALLE1{, &lt;Xt&gt;}</p></div></div><p style="text-align: right">
+      (op0 = 0b01, op1 = 0b100, CRn = 0b1000, CRm = 0b0111, op2 = 0b100)
+      </p><p class="pseudocode">
+if !IsFeatureImplemented(FEAT_AA64) then
+    Undefined();
+elsif PSTATE.EL == EL0 then
+    Undefined();
+elsif PSTATE.EL == EL1 then
+    if EffectiveHCR_EL2_NVx() IN {'xx1'} then
+        AArch64_SystemAccessTrap(EL2, 0x18);
+    else
+        Undefined();
+    end;
+elsif PSTATE.EL == EL2 then
+    AArch64_TLBI_ALL(SecurityStateAtEL(EL1), Regime_EL10, Broadcast_NSH, TLBI_AllAttr, X{64}(t));
+elsif PSTATE.EL == EL3 then
+    if IsFeatureImplemented(FEAT_RME) &amp;&amp; !ValidSecurityStateAtEL(EL1) then
+        return;
+    else
+        AArch64_TLBI_ALL(SecurityStateAtEL(EL1), Regime_EL10, Broadcast_NSH, TLBI_AllAttr, X{64}(t));
+    end;
+end;
+                </p><div class="access_block"><h4 class="condition">When FEAT_XS is implemented:</h4><div class="encoding"><p class="asm-code">TLBI ALLE1NXS{, &lt;Xt&gt;}</p></div></div><p style="text-align: right">
+      (op0 = 0b01, op1 = 0b100, CRn = 0b1001, CRm = 0b0111, op2 = 0b100)
+      </p><p class="pseudocode">
+if !IsFeatureImplemented(FEAT_AA64) then
+    Undefined();
+elsif !IsFeatureImplemented(FEAT_XS) then
+    Undefined();
+elsif PSTATE.EL == EL0 then
+    Undefined();
+elsif PSTATE.EL == EL1 then
+    if EffectiveHCR_EL2_NVx() IN {'xx1'} then
+        AArch64_SystemAccessTrap(EL2, 0x18);
+    else
+        Undefined();
+    end;
+elsif PSTATE.EL == EL2 then
+    AArch64_TLBI_ALL(SecurityStateAtEL(EL1), Regime_EL10, Broadcast_NSH, TLBI_ExcludeXS, X{64}(t));
+elsif PSTATE.EL == EL3 then
+    if IsFeatureImplemented(FEAT_RME) &amp;&amp; !ValidSecurityStateAtEL(EL1) then
+        return;
+    else
+        AArch64_TLBI_ALL(SecurityStateAtEL(EL1), Regime_EL10, Broadcast_NSH, TLBI_ExcludeXS, X{64}(t));
+    end;
+end;
+                </p></div><hr class="bottom_line"></hr><p class="copyconf">Version 2026.09 — Copyright © 2010-2026 Arm Limited or its affiliates.</p><small>This site is provided as a community resource and is NOT affiliated with nor endorsed by Arm Limited.</small><!-- Cloudflare Pages Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "de55e78a4e194365a81a0724c5c0ee91"}'></script><!-- Cloudflare Pages Analytics --></body></html>

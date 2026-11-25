@@ -1,0 +1,62 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ext="http://exslt.org/common"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>TLBI PAALL | Jon's Arm Reference</title><meta name="description" content="Invalidates cached copies of GPT entries from TLBs. Details:"></meta><meta name="viewport" content="width=device-width, initial-scale=1"></meta><link rel="stylesheet" href="/pagefind/pagefind-component-ui.css"></link><link rel="stylesheet" type="text/css" href="/static/normalize.css"></link><link rel="stylesheet" type="text/css" href="/static/main.css"></link></head><body><p class="discontinuation-notice" data-pagefind-ignore="all"><b>PER ARM'S REQUEST, THIS SITE WILL BE DISCONTINUED ON 4 DECEMBER 2026. :(</b><br></br>
+
+      Arm's lawyers have notified me to take down this site or face legal action. <br></br>
+
+      To all of the fans of this site over the years (even the ones at Arm): thank you for your support! I'm glad I could provide a resource so many people found value in. I will look into solutions that can potentially keep bookmarks and links working. <br></br>
+
+      — Jon
+    </p><a href="/">← Home</a><pagefind-searchbox></pagefind-searchbox><script type="module" src="/pagefind/pagefind-component-ui.js"></script><script type="text/javascript" src="/static/pagefind.js"></script><h1 class="register-section" data-pagefind-body="1" data-pagefind-weight="10" data-pagefind-sort="title">TLBI PAALL</h1><p class="insn_subtitle" data-pagefind-body="1">TLB Invalidate GPT Information by PA, All Entries, Local</p><div data-pagefind-body="1">
+        <p>Invalidates cached copies of GPT entries from TLBs. Details:</p>
+
+      
+        <ul>
+<li>
+<p>The invalidation applies to TLB entries containing GPT information that relates to a physical address.</p>
+
+</li><li>
+<p>The invalidation applies to all TLB entries containing GPT information.</p>
+
+</li><li>
+<p>The invalidation affects only the TLBs for the PE executing the operation.</p>
+
+</li></ul>
+
+      
+        <p>The full set of TLB maintenance instructions that invalidate cached GPT entries is: <a href="AArch64-tlbi-paall.html">TLBI PAALL</a>, <a href="AArch64-tlbi-paallos.html">TLBI PAALLOS</a>, <a href="AArch64-tlbi-rpalos.html">TLBI RPALOS</a>, and <a href="AArch64-tlbi-rpaos.html">TLBI RPAOS</a>.</p>
+
+      
+        <p>These instructions have the same ordering, observability, and completion behavior as all other TLBI instructions.</p>
+      </div><h3>Configuration</h3><p>This instruction is present only when FEAT_RME is implemented and FEAT_AA64 is implemented. Otherwise, direct accesses to TLBI PAALL are <span class="arm-defined-word">UNDEFINED</span>.</p><h3>Attributes</h3>
+        <p>TLBI PAALL is a 64-bit System instruction.</p>
+      <h2>Field descriptions</h2><p>This instruction has no applicable fields.</p><p>The value in the register specified by &lt;Xt&gt; is ignored.</p><div class="access_mechanisms"><h2>Executing TLBI PAALL</h2>
+        <p>The Rt field should be set to <span class="binarynumber">0b11111</span>. If the Rt field is not set to <span class="binarynumber">0b11111</span>, it is <span class="arm-defined-word">CONSTRAINED UNPREDICTABLE</span> whether:</p>
+
+      
+        <ul>
+<li>
+<p>The instruction is <span class="arm-defined-word">UNDEFINED</span>.</p>
+
+</li><li>
+<p>The instruction behaves as if the Rt field is set to <span class="binarynumber">0b11111</span>.</p>
+
+</li></ul>
+
+      
+        <p>This system instruction is an alias of the SYS instruction.</p>
+      <p>Accesses to this instruction use the following encodings in the System instruction encoding space:</p><div class="access_block"><div class="encoding"><p class="asm-code">TLBI PAALL{, &lt;Xt&gt;}</p></div></div><p style="text-align: right">
+      (op0 = 0b01, op1 = 0b110, CRn = 0b1000, CRm = 0b0111, op2 = 0b100)
+      </p><p class="pseudocode">
+if !(IsFeatureImplemented(FEAT_RME) &amp;&amp; IsFeatureImplemented(FEAT_AA64)) then
+    Undefined();
+elsif PSTATE.EL == EL0 then
+    Undefined();
+elsif PSTATE.EL == EL1 then
+    Undefined();
+elsif PSTATE.EL == EL2 then
+    Undefined();
+elsif PSTATE.EL == EL3 then
+    AArch64_TLBI_PAALL(Broadcast_NSH);
+end;
+                </p></div><hr class="bottom_line"></hr><p class="copyconf">Version 2026.09 — Copyright © 2010-2026 Arm Limited or its affiliates.</p><small>This site is provided as a community resource and is NOT affiliated with nor endorsed by Arm Limited.</small><!-- Cloudflare Pages Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "de55e78a4e194365a81a0724c5c0ee91"}'></script><!-- Cloudflare Pages Analytics --></body></html>

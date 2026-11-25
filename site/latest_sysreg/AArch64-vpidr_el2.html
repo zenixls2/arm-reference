@@ -1,0 +1,166 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ext="http://exslt.org/common"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>VPIDR_EL2 | Jon's Arm Reference</title><meta name="description" content="Holds the value of the Virtualization Processor ID. This is the value returned by EL1 reads of MIDR_EL1."></meta><meta name="viewport" content="width=device-width, initial-scale=1"></meta><link rel="stylesheet" href="/pagefind/pagefind-component-ui.css"></link><link rel="stylesheet" type="text/css" href="/static/normalize.css"></link><link rel="stylesheet" type="text/css" href="/static/main.css"></link></head><body><p class="discontinuation-notice" data-pagefind-ignore="all"><b>PER ARM'S REQUEST, THIS SITE WILL BE DISCONTINUED ON 4 DECEMBER 2026. :(</b><br></br>
+
+      Arm's lawyers have notified me to take down this site or face legal action. <br></br>
+
+      To all of the fans of this site over the years (even the ones at Arm): thank you for your support! I'm glad I could provide a resource so many people found value in. I will look into solutions that can potentially keep bookmarks and links working. <br></br>
+
+      — Jon
+    </p><a href="/">← Home</a><pagefind-searchbox></pagefind-searchbox><script type="module" src="/pagefind/pagefind-component-ui.js"></script><script type="text/javascript" src="/static/pagefind.js"></script><h1 class="register-section" data-pagefind-body="1" data-pagefind-weight="10" data-pagefind-sort="title">VPIDR_EL2</h1><p class="insn_subtitle" data-pagefind-body="1">Virtualization Processor ID Register</p><div data-pagefind-body="1">
+        <p>Holds the value of the Virtualization Processor ID. This is the value returned by EL1 reads of <a href="AArch64-midr_el1.html">MIDR_EL1</a>.</p>
+      </div><h3>Configuration</h3><p>AArch64 System register VPIDR_EL2 bits [31:0] are architecturally mapped to AArch32 System register <a href="AArch32-vpidr.html">VPIDR[31:0]</a>.</p><p>This register is present only when FEAT_AA64 is implemented. Otherwise, direct accesses to VPIDR_EL2 are <span class="arm-defined-word">UNDEFINED</span>.</p>
+        <p>If EL2 is not implemented, reads of this register return the value of the <a href="AArch64-midr_el1.html">MIDR_EL1</a> and writes to the register are ignored.</p>
+
+      
+        <p>This register has no effect if EL2 is not enabled in the current Security state.</p>
+      <h3>Attributes</h3>
+        <p>VPIDR_EL2 is a 64-bit register.</p>
+      <h2>Field descriptions</h2><table class="regdiagram" id="fieldset_0"><thead><tr><td>63</td><td>62</td><td>61</td><td>60</td><td>59</td><td>58</td><td>57</td><td>56</td><td>55</td><td>54</td><td>53</td><td>52</td><td>51</td><td>50</td><td>49</td><td>48</td><td>47</td><td>46</td><td>45</td><td>44</td><td>43</td><td>42</td><td>41</td><td>40</td><td>39</td><td>38</td><td>37</td><td>36</td><td>35</td><td>34</td><td>33</td><td>32</td></tr></thead><tfoot><tr><td>31</td><td>30</td><td>29</td><td>28</td><td>27</td><td>26</td><td>25</td><td>24</td><td>23</td><td>22</td><td>21</td><td>20</td><td>19</td><td>18</td><td>17</td><td>16</td><td>15</td><td>14</td><td>13</td><td>12</td><td>11</td><td>10</td><td>9</td><td>8</td><td>7</td><td>6</td><td>5</td><td>4</td><td>3</td><td>2</td><td>1</td><td>0</td></tr></tfoot><tbody><tr class="firstrow"><td class="lr" colspan="32"><a href="#fieldset_0-63_32">RES0</a></td></tr><tr class="firstrow"><td class="lr" colspan="8"><a href="#fieldset_0-31_24">Implementer</a></td><td class="lr" colspan="4"><a href="#fieldset_0-23_20">Variant</a></td><td class="lr" colspan="4"><a href="#fieldset_0-19_16">Architecture</a></td><td class="lr" colspan="12"><a href="#fieldset_0-15_4">PartNum</a></td><td class="lr" colspan="4"><a href="#fieldset_0-3_0">Revision</a></td></tr></tbody></table><h4 id="fieldset_0-63_32">Bits [63:32]:
+      </h4><div class="field">
+      <p>Reserved, <span class="arm-defined-word">RES0</span>.</p>
+    </div><h4 id="fieldset_0-31_24">Implementer, bits [31:24]:
+      </h4><div class="field">
+      <p>The Implementer code. This field must hold an implementer code that has been assigned by Arm.</p>
+    <table class="valuetable"><tr><th>Implementer</th><th>Meaning</th></tr><tr><td class="bitfield">0x00</td><td>
+          <p>Reserved for software use.</p>
+        </td></tr><tr><td class="bitfield">0x41</td><td>
+          <p>Arm Limited.</p>
+        </td></tr><tr><td class="bitfield">0x42</td><td>
+          <p>Broadcom Corporation.</p>
+        </td></tr><tr><td class="bitfield">0x43</td><td>
+          <p>Cavium Inc.</p>
+        </td></tr><tr><td class="bitfield">0x44</td><td>
+          <p>Digital Equipment Corporation.</p>
+        </td></tr><tr><td class="bitfield">0x46</td><td>
+          <p>Fujitsu Ltd.</p>
+        </td></tr><tr><td class="bitfield">0x49</td><td>
+          <p>Infineon Technologies AG.</p>
+        </td></tr><tr><td class="bitfield">0x4D</td><td>
+          <p>Motorola or Freescale Semiconductor Inc.</p>
+        </td></tr><tr><td class="bitfield">0x4E</td><td>
+          <p>NVIDIA Corporation.</p>
+        </td></tr><tr><td class="bitfield">0x50</td><td>
+          <p>Applied Micro Circuits Corporation.</p>
+        </td></tr><tr><td class="bitfield">0x51</td><td>
+          <p>Qualcomm Inc.</p>
+        </td></tr><tr><td class="bitfield">0x56</td><td>
+          <p>Marvell International Ltd.</p>
+        </td></tr><tr><td class="bitfield">0x69</td><td>
+          <p>Intel Corporation.</p>
+        </td></tr><tr><td class="bitfield">0xC0</td><td>
+          <p>Ampere Computing.</p>
+        </td></tr></table>
+      <p>Arm can assign codes that are not published in this manual. All values not assigned by Arm are reserved and must not be used.</p>
+    <p>The reset behavior of this field is:</p><ul><li>On a Warm reset, 
+      this field resets
+       to an architecturally <span class="arm-defined-word">UNKNOWN</span> value.</li></ul></div><h4 id="fieldset_0-23_20">Variant, bits [23:20]:
+      </h4><div class="field">
+      <p>An <span class="arm-defined-word">IMPLEMENTATION DEFINED</span> variant number. Typically, this field is used to distinguish between different product variants, or major revisions of a product.</p>
+    <p>The reset behavior of this field is:</p><ul><li>On a Warm reset, 
+      this field resets
+       to an architecturally <span class="arm-defined-word">UNKNOWN</span> value.</li></ul></div><h4 id="fieldset_0-19_16">Architecture, bits [19:16]:
+      </h4><div class="field">
+      <p>Architecture version.</p>
+    <table class="valuetable"><tr><th>Architecture</th><th>Meaning</th></tr><tr><td class="bitfield">0b0001</td><td>
+          <p>Armv4.</p>
+        </td></tr><tr><td class="bitfield">0b0010</td><td>
+          <p>Armv4T.</p>
+        </td></tr><tr><td class="bitfield">0b0011</td><td>
+          <p>Armv5 (obsolete).</p>
+        </td></tr><tr><td class="bitfield">0b0100</td><td>
+          <p>Armv5T.</p>
+        </td></tr><tr><td class="bitfield">0b0101</td><td>
+          <p>Armv5TE.</p>
+        </td></tr><tr><td class="bitfield">0b0110</td><td>
+          <p>Armv5TEJ.</p>
+        </td></tr><tr><td class="bitfield">0b0111</td><td>
+          <p>Armv6.</p>
+        </td></tr><tr><td class="bitfield">0b1111</td><td>
+          <p>Architectural features are individually identified in the ID_* registers.</p>
+        </td></tr></table>
+      <p>All other values are reserved.</p>
+    <p>The reset behavior of this field is:</p><ul><li>On a Warm reset, 
+      this field resets
+       to an architecturally <span class="arm-defined-word">UNKNOWN</span> value.</li></ul></div><h4 id="fieldset_0-15_4">PartNum, bits [15:4]:
+      </h4><div class="field"><p>An <span class="arm-defined-word">IMPLEMENTATION DEFINED</span> primary part number for the device.</p>
+<p>On processors implemented by Arm, if the top four bits of the primary part number are <span class="hexnumber">0x0</span> or <span class="hexnumber">0x7</span>, the variant and architecture are encoded differently.</p><p>The reset behavior of this field is:</p><ul><li>On a Warm reset, 
+      this field resets
+       to an architecturally <span class="arm-defined-word">UNKNOWN</span> value.</li></ul></div><h4 id="fieldset_0-3_0">Revision, bits [3:0]:
+      </h4><div class="field">
+      <p>An <span class="arm-defined-word">IMPLEMENTATION DEFINED</span> revision number for the device.</p>
+    <p>The reset behavior of this field is:</p><ul><li>On a Warm reset, 
+      this field resets
+       to an architecturally <span class="arm-defined-word">UNKNOWN</span> value.</li></ul></div><div class="access_mechanisms"><h2>Access Instructions</h2><p>Accesses to this register use the following encodings in the System register encoding space:</p><div class="access_block"><div class="encoding"><p class="asm-code">MRS &lt;Xt&gt;, VPIDR_EL2</p></div></div><p style="text-align: right">
+      (op0 = 0b11, op1 = 0b100, CRn = 0b0000, CRm = 0b0000, op2 = 0b000)
+      </p><p class="pseudocode">
+if !IsFeatureImplemented(FEAT_AA64) then
+    Undefined();
+elsif PSTATE.EL == EL0 then
+    Undefined();
+elsif PSTATE.EL == EL1 then
+    if EffectiveHCR_EL2_NVx() IN {'1x1'} then
+        X{64}(t) = NVMem(0x088);
+    elsif EffectiveHCR_EL2_NVx() IN {'xx1'} then
+        AArch64_SystemAccessTrap(EL2, 0x18);
+    else
+        Undefined();
+    end;
+elsif PSTATE.EL == EL2 then
+    X{64}(t) = VPIDR_EL2();
+elsif PSTATE.EL == EL3 then
+    if !HaveEL(EL2) then
+        X{64}(t) = MIDR_EL1();
+    else
+        X{64}(t) = VPIDR_EL2();
+    end;
+end;
+                </p><div class="access_block"><div class="encoding"><p class="asm-code">MSR VPIDR_EL2, &lt;Xt&gt;</p></div></div><p style="text-align: right">
+      (op0 = 0b11, op1 = 0b100, CRn = 0b0000, CRm = 0b0000, op2 = 0b000)
+      </p><p class="pseudocode">
+if !IsFeatureImplemented(FEAT_AA64) then
+    Undefined();
+elsif PSTATE.EL == EL0 then
+    Undefined();
+elsif PSTATE.EL == EL1 then
+    if EffectiveHCR_EL2_NVx() IN {'1x1'} then
+        NVMem(0x088) = X{64}(t);
+    elsif EffectiveHCR_EL2_NVx() IN {'xx1'} then
+        AArch64_SystemAccessTrap(EL2, 0x18);
+    else
+        Undefined();
+    end;
+elsif PSTATE.EL == EL2 then
+    VPIDR_EL2() = X{64}(t);
+elsif PSTATE.EL == EL3 then
+    if !HaveEL(EL2) then
+        return;
+    else
+        VPIDR_EL2() = X{64}(t);
+    end;
+end;
+                </p><div class="access_block"><div class="encoding"><p class="asm-code">MRS &lt;Xt&gt;, MIDR_EL1</p></div></div><p style="text-align: right">
+      (op0 = 0b11, op1 = 0b000, CRn = 0b0000, CRm = 0b0000, op2 = 0b000)
+      </p><p class="pseudocode">
+if !IsFeatureImplemented(FEAT_AA64) then
+    UnimplementedIDRegister();
+elsif PSTATE.EL == EL0 then
+    if IsFeatureImplemented(FEAT_IDST) then
+        AArch64_SystemAccessTraptoEL1orEL2(0x18);
+    else
+        Undefined();
+    end;
+elsif PSTATE.EL == EL1 then
+    if EL2Enabled() &amp;&amp; IsFeatureImplemented(FEAT_FGT) &amp;&amp; (!HaveEL(EL3) || SCR_EL3().FGTEn == '1') &amp;&amp; HFGRTR_EL2().MIDR_EL1 == '1' then
+        AArch64_SystemAccessTrap(EL2, 0x18);
+    elsif EL2Enabled() then
+        X{64}(t) = VPIDR_EL2();
+    else
+        X{64}(t) = MIDR_EL1();
+    end;
+elsif PSTATE.EL == EL2 then
+    X{64}(t) = MIDR_EL1();
+elsif PSTATE.EL == EL3 then
+    X{64}(t) = MIDR_EL1();
+end;
+                </p></div><hr class="bottom_line"></hr><p class="copyconf">Version 2026.09 — Copyright © 2010-2026 Arm Limited or its affiliates.</p><small>This site is provided as a community resource and is NOT affiliated with nor endorsed by Arm Limited.</small><!-- Cloudflare Pages Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "de55e78a4e194365a81a0724c5c0ee91"}'></script><!-- Cloudflare Pages Analytics --></body></html>

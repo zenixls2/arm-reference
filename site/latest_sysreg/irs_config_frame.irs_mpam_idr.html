@@ -1,0 +1,64 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ext="http://exslt.org/common"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>IRS_MPAM_IDR | Jon's Arm Reference</title><meta name="description" content="IRS MPAM Identification Register. Contains read-only fields with information about the IRS support for MPAM."></meta><meta name="viewport" content="width=device-width, initial-scale=1"></meta><link rel="stylesheet" href="/pagefind/pagefind-component-ui.css"></link><link rel="stylesheet" type="text/css" href="/static/normalize.css"></link><link rel="stylesheet" type="text/css" href="/static/main.css"></link></head><body><p class="discontinuation-notice" data-pagefind-ignore="all"><b>PER ARM'S REQUEST, THIS SITE WILL BE DISCONTINUED ON 4 DECEMBER 2026. :(</b><br></br>
+
+      Arm's lawyers have notified me to take down this site or face legal action. <br></br>
+
+      To all of the fans of this site over the years (even the ones at Arm): thank you for your support! I'm glad I could provide a resource so many people found value in. I will look into solutions that can potentially keep bookmarks and links working. <br></br>
+
+      — Jon
+    </p><a href="/">← Home</a><pagefind-searchbox></pagefind-searchbox><script type="module" src="/pagefind/pagefind-component-ui.js"></script><script type="text/javascript" src="/static/pagefind.js"></script><h1 class="register-section" data-pagefind-body="1" data-pagefind-weight="10" data-pagefind-sort="title">IRS_MPAM_IDR</h1><p class="insn_subtitle" data-pagefind-body="1">IRS MPAM Identification Register</p><div data-pagefind-body="1">
+        <p>IRS MPAM Identification Register. Contains read-only fields with information about the IRS support for MPAM.</p>
+      </div><h3>Configuration</h3><p>This register is present only when FEAT_GICv5_EXT is implemented and (IRS_IDR0.MPAM == '1' or IRS_IDR0.MPAM2 == '1'). Otherwise, direct accesses to IRS_MPAM_IDR are <span class="arm-defined-word">RES0</span>.</p><h3>Attributes</h3>
+        <p>IRS_MPAM_IDR is a 32-bit register.</p>
+      <p>This  register is part of the <a href="irs_config_frame.html">IRS_CONFIG_FRAME</a> block.</p><h2>Field descriptions</h2><h3>When IRS_IDR0.MPAM == '1':</h3><table class="regdiagram" id="fieldset_0"><thead><tr><td>31</td><td>30</td><td>29</td><td>28</td><td>27</td><td>26</td><td>25</td><td>24</td><td>23</td><td>22</td><td>21</td><td>20</td><td>19</td><td>18</td><td>17</td><td>16</td><td>15</td><td>14</td><td>13</td><td>12</td><td>11</td><td>10</td><td>9</td><td>8</td><td>7</td><td>6</td><td>5</td><td>4</td><td>3</td><td>2</td><td>1</td><td>0</td></tr></thead><tbody><tr class="firstrow"><td class="lr" colspan="7"><a href="#fieldset_0-31_25">RES0</a></td><td class="lr" colspan="1"><a href="#fieldset_0-24_24">HAS_MPAM_SP</a></td><td class="lr" colspan="8"><a href="#fieldset_0-23_16">PMG_MAX</a></td><td class="lr" colspan="16"><a href="#fieldset_0-15_0">PARTID_MAX</a></td></tr></tbody></table><h4 id="fieldset_0-31_25">Bits [31:25]:
+      </h4><div class="field">
+      <p>Reserved, <span class="arm-defined-word">RES0</span>.</p>
+    </div><h4 id="fieldset_0-24_24">HAS_MPAM_SP, bit [24]:
+      </h4><div class="field">
+      <p>Whether the IRS has support for MPAM PARTID space selection for the Interrupt Domain.</p>
+    <p> The value of this field is an <span class="arm-defined-word">IMPLEMENTATION DEFINED</span> choice of:</p><table class="valuetable"><tr><th>HAS_MPAM_SP</th><th>Meaning</th></tr><tr><td class="bitfield">0b0</td><td>
+          <p>MPAM PARTID space selection is not implemented.</p>
+        </td></tr><tr><td class="bitfield">0b1</td><td>
+          <p>MPAM PARTID space selection is implemented.</p>
+        </td></tr></table><p>If HAS_MPAM_SP is 1, the IRS uses the MPAM PARTID specified by <a href="irs_config_frame.irs_mpam_partid_r.html">IRS_MPAM_PARTID_R</a>.MPAM_SP.</p>
+<p>If HAS_MPAM_SP is 0, the following PARTID space is used for IRS accesses to memory:</p>
+<ul>
+<li>
+<p>Accesses made for the Secure Interrupt Domain use the Secure PARTID space.</p>
+
+</li><li>
+<p>Accesses made for the Non-secure Interrupt Domain use the Non-secure PARTID space.</p>
+
+</li><li>
+<p>Accesses made for the EL3 Interrupt Domain use the Root or Secure PARTID space.</p>
+
+</li><li>
+<p>Accesses made for the Realm Interrupt Domain use the Realm PARTID space.</p>
+
+</li></ul>
+<p>The value of this field is the same across all Interrupt Domains for an IRS.</p><p>Access to this field is <span class="access_level">RO</span>.</p></div><h4 id="fieldset_0-23_16">PMG_MAX, bits [23:16]:
+      </h4><div class="field">
+      <p>The maximum PMG value that is permitted to be used for the IRS for the Interrupt Domain.</p>
+    <p>The PMG bit width is defined as the bit position of the most significant 1 in PMG_MAX[7:0], plus one, or is defined as zero if PMG_MAX is zero.</p>
+<p>For example, if PMG_MAX == <span class="hexnumber">0x0F</span>, the PMG bit width is 4.</p>
+<p>This field is permitted to be zero-sized.</p></div><h4 id="fieldset_0-15_0">PARTID_MAX, bits [15:0]:
+      </h4><div class="field">
+      <p>The maximum PARTID value that is permitted to be used for the IRS for the Interrupt Domain.</p>
+    <p>The PARTID bit width is defined as the bit position of the most significant 1 in PARTID_MAX[15:0], plus one, or is defined as zero if PARTID_MAX is zero.</p>
+<p>For example, if PARTID_MAX == <span class="hexnumber">0x0034</span>, the PARTID bit width is 6.</p>
+<p>This field is permitted to be zero-sized, but Arm recommends that it is nonzero when MPAM is implemented.</p></div><h3>When IRS_IDR0.MPAM2 == '1':</h3><table class="regdiagram" id="fieldset_1"><thead><tr><td>31</td><td>30</td><td>29</td><td>28</td><td>27</td><td>26</td><td>25</td><td>24</td><td>23</td><td>22</td><td>21</td><td>20</td><td>19</td><td>18</td><td>17</td><td>16</td><td>15</td><td>14</td><td>13</td><td>12</td><td>11</td><td>10</td><td>9</td><td>8</td><td>7</td><td>6</td><td>5</td><td>4</td><td>3</td><td>2</td><td>1</td><td>0</td></tr></thead><tbody><tr class="firstrow"><td class="lr" colspan="16"><a href="#fieldset_1-31_16">PMG_MAX</a></td><td class="lr" colspan="16"><a href="#fieldset_1-15_0">PARTID_MAX</a></td></tr></tbody></table><h4 id="fieldset_1-31_16">PMG_MAX, bits [31:16]:
+      </h4><div class="field">
+      <p>The maximum PMG value that is permitted to be used for the IRS for the Interrupt Domain.</p>
+    <p>The PMG bit width is defined as the bit position of the most significant 1 in PMG_MAX[15:0], plus one, or is defined as zero if PMG_MAX is zero.</p>
+<p>For example, if PMG_MAX == <span class="hexnumber">0x0F</span>, the PMG bit width is 4.</p>
+<p>This field is permitted to be zero-sized.</p>
+<p>The sum of the PMG bit width plus the PARTID bit width, defined in the PARTID_MAX field must not exceed 24.</p></div><h4 id="fieldset_1-15_0">PARTID_MAX, bits [15:0]:
+      </h4><div class="field">
+      <p>The maximum PARTID value that is permitted to be used for the IRS for the Interrupt Domain.</p>
+    <p>The PARTID bit width is defined as the bit position of the most significant 1 in PARTID_MAX[15:0], plus one, or is defined as zero if PARTID_MAX is zero.</p>
+<p>For example, if PARTID_MAX == <span class="hexnumber">0x0034</span>, the PARTID bit width is 6.</p>
+<p>This field is permitted to be zero-sized, but Arm recommends that it is nonzero when MPAM is implemented.</p>
+<p>The sum of the PARTID bit width plus the PMG bit width, defined in the PMG_MAX field must not exceed 24.</p></div><div class="access_mechanisms"><h2>Access Instructions</h2><p>Accesses to this register use the following encodings:</p><div class="access_block"><p>Accessible at offset <span class="hexnumber">0x0380</span> from IRS_CONFIG_FRAME</p></div><p>Accesses to this register are <span class="access_level">RO</span>.</p><p style="text-align: right">
+      ()
+      </p></div><hr class="bottom_line"></hr><p class="copyconf">Version 2026.09 — Copyright © 2010-2026 Arm Limited or its affiliates.</p><small>This site is provided as a community resource and is NOT affiliated with nor endorsed by Arm Limited.</small><!-- Cloudflare Pages Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "de55e78a4e194365a81a0724c5c0ee91"}'></script><!-- Cloudflare Pages Analytics --></body></html>

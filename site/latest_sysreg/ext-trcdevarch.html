@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ext="http://exslt.org/common"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>TRCDEVARCH | Jon's Arm Reference</title><meta name="description" content="Provides discovery information for the component."></meta><meta name="viewport" content="width=device-width, initial-scale=1"></meta><link rel="stylesheet" href="/pagefind/pagefind-component-ui.css"></link><link rel="stylesheet" type="text/css" href="/static/normalize.css"></link><link rel="stylesheet" type="text/css" href="/static/main.css"></link></head><body><p class="discontinuation-notice" data-pagefind-ignore="all"><b>PER ARM'S REQUEST, THIS SITE WILL BE DISCONTINUED ON 4 DECEMBER 2026. :(</b><br></br>
+
+      Arm's lawyers have notified me to take down this site or face legal action. <br></br>
+
+      To all of the fans of this site over the years (even the ones at Arm): thank you for your support! I'm glad I could provide a resource so many people found value in. I will look into solutions that can potentially keep bookmarks and links working. <br></br>
+
+      — Jon
+    </p><a href="/">← Home</a><pagefind-searchbox></pagefind-searchbox><script type="module" src="/pagefind/pagefind-component-ui.js"></script><script type="text/javascript" src="/static/pagefind.js"></script><h1 class="register-section" data-pagefind-body="1" data-pagefind-weight="10" data-pagefind-sort="title">TRCDEVARCH</h1><p class="insn_subtitle" data-pagefind-body="1">Trace Device Architecture Register</p><div data-pagefind-body="1">
+        <p>Provides discovery information for the component.</p>
+
+      
+        <p>For additional information, see the CoreSight Architecture Specification.</p>
+      </div><h3>Configuration</h3><p>External register TRCDEVARCH bits [31:0] are architecturally mapped to AArch64 System register <a href="AArch64-trcdevarch.html">TRCDEVARCH[31:0]</a>.</p><p>This register is present only when FEAT_ETE is implemented and FEAT_TRC_EXT is implemented. Otherwise, direct accesses to TRCDEVARCH are <span class="arm-defined-word">RES0</span>.</p><h3>Attributes</h3>
+        <p>TRCDEVARCH is a 32-bit register.</p>
+      <h2>Field descriptions</h2><table class="regdiagram" id="fieldset_0"><thead><tr><td>31</td><td>30</td><td>29</td><td>28</td><td>27</td><td>26</td><td>25</td><td>24</td><td>23</td><td>22</td><td>21</td><td>20</td><td>19</td><td>18</td><td>17</td><td>16</td><td>15</td><td>14</td><td>13</td><td>12</td><td>11</td><td>10</td><td>9</td><td>8</td><td>7</td><td>6</td><td>5</td><td>4</td><td>3</td><td>2</td><td>1</td><td>0</td></tr></thead><tbody><tr class="firstrow"><td class="lr" colspan="11"><a href="#fieldset_0-31_21">ARCHITECT</a></td><td class="lr" colspan="1"><a href="#fieldset_0-20_20">PRESENT</a></td><td class="lr" colspan="4"><a href="#fieldset_0-19_16">REVISION</a></td><td class="lr" colspan="4"><a href="#fieldset_0-15_12">ARCHVER</a></td><td class="lr" colspan="12"><a href="#fieldset_0-11_0">ARCHPART</a></td></tr></tbody></table><h4 id="fieldset_0-31_21">ARCHITECT, bits [31:21]:
+      </h4><div class="field"><p>Defines the architect of the component. For Trace, this is Arm Limited.</p>
+<p>Bits [31:28] are the JEP106 continuation code, <span class="binarynumber">0b0100</span>.</p>
+<p>Bits [27:21] are the JEP106 identification code, <span class="binarynumber">0b0111011</span>.</p>
+      <p>Reads as <span class="binarynumber">0b01000111011</span>.</p>
+    <p>Access to this field is <span class="access_level">RO</span>.</p></div><h4 id="fieldset_0-20_20">PRESENT, bit [20]:
+      </h4><div class="field">
+      <p>DEVARCH presence. Indicates that the TRCDEVARCH register provides architecture information.</p>
+    
+      <p>Reads as <span class="binarynumber">0b1</span>.</p>
+    <p>Access to this field is <span class="access_level">RO</span>.</p></div><h4 id="fieldset_0-19_16">REVISION, bits [19:16]:
+      </h4><div class="field">
+      <p>Revision. Defines the architecture revision of the component.</p>
+    <p> The value of this field is an <span class="arm-defined-word">IMPLEMENTATION DEFINED</span> choice of:</p><table class="valuetable"><tr><th>REVISION</th><th>Meaning</th></tr><tr><td class="bitfield">0b0000</td><td>
+          <p>ETEv1.0, <span class="xref">FEAT_ETE</span>.</p>
+        </td></tr><tr><td class="bitfield">0b0001</td><td>
+          <p>ETEv1.1, <span class="xref">FEAT_ETEv1p1</span>.</p>
+        </td></tr><tr><td class="bitfield">0b0010</td><td>
+          <p>ETEv1.2, <span class="xref">FEAT_ETEv1p2</span>.</p>
+        </td></tr><tr><td class="bitfield">0b0011</td><td>
+          <p>ETEv1.3, <span class="xref">FEAT_ETEv1p3</span>.</p>
+        </td></tr></table>
+      <p>All other values are reserved.</p>
+    <p>Access to this field is <span class="access_level">RO</span>.</p></div><h4 id="fieldset_0-15_12">ARCHVER, bits [15:12]:
+      </h4><div class="field">
+      <p>Architecture Version. Defines the architecture version of the component.</p>
+    <table class="valuetable"><tr><th>ARCHVER</th><th>Meaning</th></tr><tr><td class="bitfield">0b0101</td><td>
+          <p>ETEv1.</p>
+        </td></tr></table><p>ARCHVER and ARCHPART are also defined as a single field, ARCHID, so that ARCHVER is ARCHID[15:12].</p>
+<p>This field reads as <span class="hexnumber">0x5</span>.</p><p>Access to this field is <span class="access_level">RO</span>.</p></div><h4 id="fieldset_0-11_0">ARCHPART, bits [11:0]:
+      </h4><div class="field">
+      <p>Architecture Part. Defines the architecture of the component.</p>
+    <table class="valuetable"><tr><th>ARCHPART</th><th>Meaning</th></tr><tr><td class="bitfield">0xA13</td><td>
+          <p>Arm PE trace architecture.</p>
+        </td></tr></table><p>ARCHVER and ARCHPART are also defined as a single field, ARCHID, so that ARCHPART is ARCHID[11:0].</p>
+<p>This field reads as <span class="hexnumber">0xA13</span>.</p><p>Access to this field is <span class="access_level">RO</span>.</p></div><h2>Accessing TRCDEVARCH</h2>
+        <p>External debugger accesses to this register are unaffected by the OS Lock.</p>
+      <h4>TRCDEVARCH can be accessed through the external debug interface:</h4><table class="info"><tr><th>Component</th><th>Offset</th><th>Instance</th></tr><tr><td>ETE</td><td><span class="hexnumber">0xFBC</span></td><td>TRCDEVARCH</td></tr></table><p>Accessible as follows:</p><ul><li>When !IsTraceCorePowered(), accesses to this register generate an error response.
+          </li><li>Otherwise, accesses to this register are <span class="access_level">RO</span>.
+          </li></ul><hr class="bottom_line"></hr><p class="copyconf">Version 2026.09 — Copyright © 2010-2026 Arm Limited or its affiliates.</p><small>This site is provided as a community resource and is NOT affiliated with nor endorsed by Arm Limited.</small><!-- Cloudflare Pages Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "de55e78a4e194365a81a0724c5c0ee91"}'></script><!-- Cloudflare Pages Analytics --></body></html>

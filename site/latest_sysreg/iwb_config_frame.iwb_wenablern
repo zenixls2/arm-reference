@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ext="http://exslt.org/common"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>IWB_WENABLER&lt;n&gt; | Jon's Arm Reference</title><meta name="description" content="IWB Wire Enable Register. Allows software to configure if individual wires are enabled or disabled."></meta><meta name="viewport" content="width=device-width, initial-scale=1"></meta><link rel="stylesheet" href="/pagefind/pagefind-component-ui.css"></link><link rel="stylesheet" type="text/css" href="/static/normalize.css"></link><link rel="stylesheet" type="text/css" href="/static/main.css"></link></head><body><p class="discontinuation-notice" data-pagefind-ignore="all"><b>PER ARM'S REQUEST, THIS SITE WILL BE DISCONTINUED ON 4 DECEMBER 2026. :(</b><br></br>
+
+      Arm's lawyers have notified me to take down this site or face legal action. <br></br>
+
+      To all of the fans of this site over the years (even the ones at Arm): thank you for your support! I'm glad I could provide a resource so many people found value in. I will look into solutions that can potentially keep bookmarks and links working. <br></br>
+
+      — Jon
+    </p><a href="/">← Home</a><pagefind-searchbox></pagefind-searchbox><script type="module" src="/pagefind/pagefind-component-ui.js"></script><script type="text/javascript" src="/static/pagefind.js"></script><h1 class="register-section" data-pagefind-body="1" data-pagefind-weight="10" data-pagefind-sort="title">IWB_WENABLER&lt;n&gt;, n = 0 - 2047</h1><p class="insn_subtitle" data-pagefind-body="1">IWB Wire Enable Register</p><div data-pagefind-body="1">
+        <p>IWB Wire Enable Register. Allows software to configure if individual wires are enabled or disabled.</p>
+      </div><h3>Configuration</h3><p>This register is present only when FEAT_GICv5_EXT is implemented. Otherwise, direct accesses to IWB_WENABLER&lt;n&gt; are <span class="arm-defined-word">RES0</span>.</p>
+        <p>The number of implemented IWB_WENABLER&lt;n&gt; registers is IWB_IDR0.IW_RANGE + 1.</p>
+
+      
+        <p>The effects of a write to this register are not guaranteed to have completed before IWB_WENABLE_STATUSR.IDLE is 1.</p>
+      <h3>Attributes</h3>
+        <p>IWB_WENABLER&lt;n&gt; is a 32-bit register.</p>
+      <p>This  register is part of the <a href="iwb_config_frame.html">IWB_CONFIG_FRAME</a> block.</p><h2>Field descriptions</h2><table class="regdiagram" id="fieldset_0"><thead><tr><td>31</td><td>30</td><td>29</td><td>28</td><td>27</td><td>26</td><td>25</td><td>24</td><td>23</td><td>22</td><td>21</td><td>20</td><td>19</td><td>18</td><td>17</td><td>16</td><td>15</td><td>14</td><td>13</td><td>12</td><td>11</td><td>10</td><td>9</td><td>8</td><td>7</td><td>6</td><td>5</td><td>4</td><td>3</td><td>2</td><td>1</td><td>0</td></tr></thead><tbody><tr class="firstrow"><td class="lr" colspan="1"><a href="#fieldset_0-31_0">WEN31</a></td><td class="lr" colspan="1"><a href="#fieldset_0-31_0">WEN30</a></td><td class="lr" colspan="1"><a href="#fieldset_0-31_0">WEN29</a></td><td class="lr" colspan="1"><a href="#fieldset_0-31_0">WEN28</a></td><td class="lr" colspan="1"><a href="#fieldset_0-31_0">WEN27</a></td><td class="lr" colspan="1"><a href="#fieldset_0-31_0">WEN26</a></td><td class="lr" colspan="1"><a href="#fieldset_0-31_0">WEN25</a></td><td class="lr" colspan="1"><a href="#fieldset_0-31_0">WEN24</a></td><td class="lr" colspan="1"><a href="#fieldset_0-31_0">WEN23</a></td><td class="lr" colspan="1"><a href="#fieldset_0-31_0">WEN22</a></td><td class="lr" colspan="1"><a href="#fieldset_0-31_0">WEN21</a></td><td class="lr" colspan="1"><a href="#fieldset_0-31_0">WEN20</a></td><td class="lr" colspan="1"><a href="#fieldset_0-31_0">WEN19</a></td><td class="lr" colspan="1"><a href="#fieldset_0-31_0">WEN18</a></td><td class="lr" colspan="1"><a href="#fieldset_0-31_0">WEN17</a></td><td class="lr" colspan="1"><a href="#fieldset_0-31_0">WEN16</a></td><td class="lr" colspan="1"><a href="#fieldset_0-31_0">WEN15</a></td><td class="lr" colspan="1"><a href="#fieldset_0-31_0">WEN14</a></td><td class="lr" colspan="1"><a href="#fieldset_0-31_0">WEN13</a></td><td class="lr" colspan="1"><a href="#fieldset_0-31_0">WEN12</a></td><td class="lr" colspan="1"><a href="#fieldset_0-31_0">WEN11</a></td><td class="lr" colspan="1"><a href="#fieldset_0-31_0">WEN10</a></td><td class="lr" colspan="1"><a href="#fieldset_0-31_0">WEN9</a></td><td class="lr" colspan="1"><a href="#fieldset_0-31_0">WEN8</a></td><td class="lr" colspan="1"><a href="#fieldset_0-31_0">WEN7</a></td><td class="lr" colspan="1"><a href="#fieldset_0-31_0">WEN6</a></td><td class="lr" colspan="1"><a href="#fieldset_0-31_0">WEN5</a></td><td class="lr" colspan="1"><a href="#fieldset_0-31_0">WEN4</a></td><td class="lr" colspan="1"><a href="#fieldset_0-31_0">WEN3</a></td><td class="lr" colspan="1"><a href="#fieldset_0-31_0">WEN2</a></td><td class="lr" colspan="1"><a href="#fieldset_0-31_0">WEN1</a></td><td class="lr" colspan="1"><a href="#fieldset_0-31_0">WEN0</a></td></tr></tbody></table><h4 id="fieldset_0-31_0">WEN&lt;x&gt;, bit [x], for x = 31 to 0:
+      </h4><div class="field"><p>Configures if wire ((32 * n) + x) is enabled or disabled.</p>
+<p>Access to control fields for wires which are not implemented are RAZ/WI.</p><table class="valuetable"><tr><th>WEN&lt;x&gt;</th><th>Meaning</th></tr><tr><td class="bitfield">0b0</td><td>
+          <p>Wire disabled</p>
+        </td></tr><tr><td class="bitfield">0b1</td><td>
+          <p>Wire enabled</p>
+        </td></tr></table><p>The reset behavior of this field is:</p><ul><li>On a GIC reset, 
+      this field resets
+       to an <span class="arm-defined-word">UNKNOWN</span> value.</li></ul><p>Accessing this field has the following behavior:</p><ul><li>When !IsWireAccessible(n, x), access to this field
+                            is <span class="access_level">RAZ/WI</span>.
+                        </li><li>
+                  Otherwise,
+                  
+                  access to this field
+                  is <span class="access_level">RW</span>.
+                </li></ul></div><div class="access_mechanisms"><h2>Access Instructions</h2>
+        <p>When accessed using the MPPAS of the IWB, all fields are RW.</p>
+
+      
+        <p>When accessed using any other PAS, a field is RW if all of the following are true:</p>
+
+      
+        <ul>
+<li>
+<p>The wire corresponding to the field is assigned to an Interrupt Domain that is implemented by the IWB.</p>
+
+</li><li>
+<p>The PAS corresponding to the access is same as the PAS associated with the Interrupt Domain to which the wire is assigned.</p>
+
+</li></ul>
+
+      
+        <p>Otherwise, the field is RAZ/WI for that access.</p>
+      <p>Accesses to this register use the following encodings:</p><div class="access_block"><p>Accessible at offset <span class="hexnumber">0x2000 + (4 * n)</span> from IWB_CONFIG_FRAME</p></div><ul><li>When IWB_CR0.IDLE == '0', accesses to this register are <span class="access_level">RO</span>.
+          </li><li>Otherwise, accesses to this register are <span class="access_level">RW</span>.
+          </li></ul><p style="text-align: right">
+      ()
+      </p></div><hr class="bottom_line"></hr><p class="copyconf">Version 2026.09 — Copyright © 2010-2026 Arm Limited or its affiliates.</p><small>This site is provided as a community resource and is NOT affiliated with nor endorsed by Arm Limited.</small><!-- Cloudflare Pages Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "de55e78a4e194365a81a0724c5c0ee91"}'></script><!-- Cloudflare Pages Analytics --></body></html>

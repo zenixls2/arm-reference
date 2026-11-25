@@ -1,0 +1,492 @@
+{
+  "origin": "https://arm.jonpalmisc.com",
+  "user_agent": "personal-archive/1.0 (contact: https://github.com/zenixls2)",
+  "fetched_utc": "2026-11-25T21:43:16.823489+00:00",
+  "robots_allowed_root": true,
+  "html_pages": 7376,
+  "pagefind_advertised_page_count": 4276,
+  "pagefind_fragments_downloaded": 4276,
+  "records": 11718,
+  "failed_or_invalid": 47,
+  "total_bytes": 104282223,
+  "external_or_robots_exclusions": 7411,
+  "rate_limit_seconds": 0.18,
+  "complete": false,
+  "notes": [
+    "Only same-origin URLs discovered from site pages/assets or explicitly named by the site's Pagefind loader were fetched.",
+    "External links and third-party analytics were not copied.",
+    "A 200 text/html fallback at a binary Pagefind path is treated as a failure, not as a valid asset."
+  ],
+  "failures": [
+    {
+      "url": "https://arm.jonpalmisc.com/pagefind/fragment/unknown_15c8b56.pf_fragment",
+      "status": 200,
+      "final_url": "https://arm.jonpalmisc.com/pagefind/fragment/unknown_15c8b56.pf_fragment",
+      "content_type": "text/html",
+      "bytes": 3133,
+      "error": "html_fallback_for_binary_asset",
+      "source": "Pagefind metadata hash",
+      "fetched_utc": "2026-11-25T21:54:08.638825+00:00"
+    },
+    {
+      "url": "https://arm.jonpalmisc.com/pagefind/fragment/unknown_1b826fb.pf_fragment",
+      "status": 200,
+      "final_url": "https://arm.jonpalmisc.com/pagefind/fragment/unknown_1b826fb.pf_fragment",
+      "content_type": "text/html",
+      "bytes": 3133,
+      "error": "html_fallback_for_binary_asset",
+      "source": "Pagefind metadata hash",
+      "fetched_utc": "2026-11-25T21:54:30.252174+00:00"
+    },
+    {
+      "url": "https://arm.jonpalmisc.com/pagefind/fragment/unknown_1bfe3eb.pf_fragment",
+      "status": 200,
+      "final_url": "https://arm.jonpalmisc.com/pagefind/fragment/unknown_1bfe3eb.pf_fragment",
+      "content_type": "text/html",
+      "bytes": 3133,
+      "error": "html_fallback_for_binary_asset",
+      "source": "Pagefind metadata hash",
+      "fetched_utc": "2026-11-25T21:54:31.693821+00:00"
+    },
+    {
+      "url": "https://arm.jonpalmisc.com/pagefind/fragment/unknown_22d0441.pf_fragment",
+      "status": 200,
+      "final_url": "https://arm.jonpalmisc.com/pagefind/fragment/unknown_22d0441.pf_fragment",
+      "content_type": "text/html",
+      "bytes": 3133,
+      "error": "html_fallback_for_binary_asset",
+      "source": "Pagefind metadata hash",
+      "fetched_utc": "2026-11-25T21:54:53.544959+00:00"
+    },
+    {
+      "url": "https://arm.jonpalmisc.com/pagefind/fragment/unknown_24787e8.pf_fragment",
+      "status": 200,
+      "final_url": "https://arm.jonpalmisc.com/pagefind/fragment/unknown_24787e8.pf_fragment",
+      "content_type": "text/html",
+      "bytes": 3133,
+      "error": "html_fallback_for_binary_asset",
+      "source": "Pagefind metadata hash",
+      "fetched_utc": "2026-11-25T21:54:59.425796+00:00"
+    },
+    {
+      "url": "https://arm.jonpalmisc.com/pagefind/fragment/unknown_28fdcd1.pf_fragment",
+      "status": 200,
+      "final_url": "https://arm.jonpalmisc.com/pagefind/fragment/unknown_28fdcd1.pf_fragment",
+      "content_type": "text/html",
+      "bytes": 3133,
+      "error": "html_fallback_for_binary_asset",
+      "source": "Pagefind metadata hash",
+      "fetched_utc": "2026-11-25T21:55:12.533036+00:00"
+    },
+    {
+      "url": "https://arm.jonpalmisc.com/pagefind/fragment/unknown_2ba295d.pf_fragment",
+      "status": 200,
+      "final_url": "https://arm.jonpalmisc.com/pagefind/fragment/unknown_2ba295d.pf_fragment",
+      "content_type": "text/html",
+      "bytes": 3133,
+      "error": "html_fallback_for_binary_asset",
+      "source": "Pagefind metadata hash",
+      "fetched_utc": "2026-11-25T21:55:21.238748+00:00"
+    },
+    {
+      "url": "https://arm.jonpalmisc.com/pagefind/fragment/unknown_323425a.pf_fragment",
+      "status": 200,
+      "final_url": "https://arm.jonpalmisc.com/pagefind/fragment/unknown_323425a.pf_fragment",
+      "content_type": "text/html",
+      "bytes": 3133,
+      "error": "html_fallback_for_binary_asset",
+      "source": "Pagefind metadata hash",
+      "fetched_utc": "2026-11-25T21:55:40.076254+00:00"
+    },
+    {
+      "url": "https://arm.jonpalmisc.com/pagefind/fragment/unknown_456798b.pf_fragment",
+      "status": 200,
+      "final_url": "https://arm.jonpalmisc.com/pagefind/fragment/unknown_456798b.pf_fragment",
+      "content_type": "text/html",
+      "bytes": 3133,
+      "error": "html_fallback_for_binary_asset",
+      "source": "Pagefind metadata hash",
+      "fetched_utc": "2026-11-25T21:56:43.571425+00:00"
+    },
+    {
+      "url": "https://arm.jonpalmisc.com/pagefind/fragment/unknown_45f5982.pf_fragment",
+      "status": 200,
+      "final_url": "https://arm.jonpalmisc.com/pagefind/fragment/unknown_45f5982.pf_fragment",
+      "content_type": "text/html",
+      "bytes": 3133,
+      "error": "html_fallback_for_binary_asset",
+      "source": "Pagefind metadata hash",
+      "fetched_utc": "2026-11-25T21:56:45.011429+00:00"
+    },
+    {
+      "url": "https://arm.jonpalmisc.com/pagefind/fragment/unknown_58f4f2a.pf_fragment",
+      "status": 200,
+      "final_url": "https://arm.jonpalmisc.com/pagefind/fragment/unknown_58f4f2a.pf_fragment",
+      "content_type": "text/html",
+      "bytes": 3133,
+      "error": "html_fallback_for_binary_asset",
+      "source": "Pagefind metadata hash",
+      "fetched_utc": "2026-11-25T21:57:47.773845+00:00"
+    },
+    {
+      "url": "https://arm.jonpalmisc.com/pagefind/fragment/unknown_5eff604.pf_fragment",
+      "status": 200,
+      "final_url": "https://arm.jonpalmisc.com/pagefind/fragment/unknown_5eff604.pf_fragment",
+      "content_type": "text/html",
+      "bytes": 3133,
+      "error": "html_fallback_for_binary_asset",
+      "source": "Pagefind metadata hash",
+      "fetched_utc": "2026-11-25T21:58:06.989617+00:00"
+    },
+    {
+      "url": "https://arm.jonpalmisc.com/pagefind/fragment/unknown_62225e8.pf_fragment",
+      "status": 200,
+      "final_url": "https://arm.jonpalmisc.com/pagefind/fragment/unknown_62225e8.pf_fragment",
+      "content_type": "text/html",
+      "bytes": 3133,
+      "error": "html_fallback_for_binary_asset",
+      "source": "Pagefind metadata hash",
+      "fetched_utc": "2026-11-25T21:58:17.115438+00:00"
+    },
+    {
+      "url": "https://arm.jonpalmisc.com/pagefind/fragment/unknown_677d7b8.pf_fragment",
+      "status": 200,
+      "final_url": "https://arm.jonpalmisc.com/pagefind/fragment/unknown_677d7b8.pf_fragment",
+      "content_type": "text/html",
+      "bytes": 3133,
+      "error": "html_fallback_for_binary_asset",
+      "source": "Pagefind metadata hash",
+      "fetched_utc": "2026-11-25T21:58:34.375916+00:00"
+    },
+    {
+      "url": "https://arm.jonpalmisc.com/pagefind/fragment/unknown_67b315f.pf_fragment",
+      "status": 200,
+      "final_url": "https://arm.jonpalmisc.com/pagefind/fragment/unknown_67b315f.pf_fragment",
+      "content_type": "text/html",
+      "bytes": 3133,
+      "error": "html_fallback_for_binary_asset",
+      "source": "Pagefind metadata hash",
+      "fetched_utc": "2026-11-25T21:58:36.057740+00:00"
+    },
+    {
+      "url": "https://arm.jonpalmisc.com/pagefind/fragment/unknown_6ef14b2.pf_fragment",
+      "status": 200,
+      "final_url": "https://arm.jonpalmisc.com/pagefind/fragment/unknown_6ef14b2.pf_fragment",
+      "content_type": "text/html",
+      "bytes": 3133,
+      "error": "html_fallback_for_binary_asset",
+      "source": "Pagefind metadata hash",
+      "fetched_utc": "2026-11-25T21:59:00.885575+00:00"
+    },
+    {
+      "url": "https://arm.jonpalmisc.com/pagefind/fragment/unknown_724cf3f.pf_fragment",
+      "status": 200,
+      "final_url": "https://arm.jonpalmisc.com/pagefind/fragment/unknown_724cf3f.pf_fragment",
+      "content_type": "text/html",
+      "bytes": 3133,
+      "error": "html_fallback_for_binary_asset",
+      "source": "Pagefind metadata hash",
+      "fetched_utc": "2026-11-25T21:59:12.350538+00:00"
+    },
+    {
+      "url": "https://arm.jonpalmisc.com/pagefind/fragment/unknown_736557a.pf_fragment",
+      "status": 200,
+      "final_url": "https://arm.jonpalmisc.com/pagefind/fragment/unknown_736557a.pf_fragment",
+      "content_type": "text/html",
+      "bytes": 3133,
+      "error": "html_fallback_for_binary_asset",
+      "source": "Pagefind metadata hash",
+      "fetched_utc": "2026-11-25T21:59:13.793566+00:00"
+    },
+    {
+      "url": "https://arm.jonpalmisc.com/pagefind/fragment/unknown_78487ef.pf_fragment",
+      "status": 200,
+      "final_url": "https://arm.jonpalmisc.com/pagefind/fragment/unknown_78487ef.pf_fragment",
+      "content_type": "text/html",
+      "bytes": 3133,
+      "error": "html_fallback_for_binary_asset",
+      "source": "Pagefind metadata hash",
+      "fetched_utc": "2026-11-25T21:59:29.969636+00:00"
+    },
+    {
+      "url": "https://arm.jonpalmisc.com/pagefind/fragment/unknown_7a624f3.pf_fragment",
+      "status": 200,
+      "final_url": "https://arm.jonpalmisc.com/pagefind/fragment/unknown_7a624f3.pf_fragment",
+      "content_type": "text/html",
+      "bytes": 3133,
+      "error": "html_fallback_for_binary_asset",
+      "source": "Pagefind metadata hash",
+      "fetched_utc": "2026-11-25T21:59:37.540049+00:00"
+    },
+    {
+      "url": "https://arm.jonpalmisc.com/pagefind/fragment/unknown_7af6626.pf_fragment",
+      "status": 200,
+      "final_url": "https://arm.jonpalmisc.com/pagefind/fragment/unknown_7af6626.pf_fragment",
+      "content_type": "text/html",
+      "bytes": 3133,
+      "error": "html_fallback_for_binary_asset",
+      "source": "Pagefind metadata hash",
+      "fetched_utc": "2026-11-25T21:59:38.889474+00:00"
+    },
+    {
+      "url": "https://arm.jonpalmisc.com/pagefind/fragment/unknown_7df18e5.pf_fragment",
+      "status": 200,
+      "final_url": "https://arm.jonpalmisc.com/pagefind/fragment/unknown_7df18e5.pf_fragment",
+      "content_type": "text/html",
+      "bytes": 3133,
+      "error": "html_fallback_for_binary_asset",
+      "source": "Pagefind metadata hash",
+      "fetched_utc": "2026-11-25T21:59:49.227478+00:00"
+    },
+    {
+      "url": "https://arm.jonpalmisc.com/pagefind/fragment/unknown_85c538c.pf_fragment",
+      "status": 200,
+      "final_url": "https://arm.jonpalmisc.com/pagefind/fragment/unknown_85c538c.pf_fragment",
+      "content_type": "text/html",
+      "bytes": 3133,
+      "error": "html_fallback_for_binary_asset",
+      "source": "Pagefind metadata hash",
+      "fetched_utc": "2026-11-25T22:00:14.056312+00:00"
+    },
+    {
+      "url": "https://arm.jonpalmisc.com/pagefind/fragment/unknown_8ba581b.pf_fragment",
+      "status": 200,
+      "final_url": "https://arm.jonpalmisc.com/pagefind/fragment/unknown_8ba581b.pf_fragment",
+      "content_type": "text/html",
+      "bytes": 3133,
+      "error": "html_fallback_for_binary_asset",
+      "source": "Pagefind metadata hash",
+      "fetched_utc": "2026-11-25T22:00:34.098766+00:00"
+    },
+    {
+      "url": "https://arm.jonpalmisc.com/pagefind/fragment/unknown_8db8da6.pf_fragment",
+      "status": 200,
+      "final_url": "https://arm.jonpalmisc.com/pagefind/fragment/unknown_8db8da6.pf_fragment",
+      "content_type": "text/html",
+      "bytes": 3133,
+      "error": "html_fallback_for_binary_asset",
+      "source": "Pagefind metadata hash",
+      "fetched_utc": "2026-11-25T22:00:42.877258+00:00"
+    },
+    {
+      "url": "https://arm.jonpalmisc.com/pagefind/fragment/unknown_9172362.pf_fragment",
+      "status": 200,
+      "final_url": "https://arm.jonpalmisc.com/pagefind/fragment/unknown_9172362.pf_fragment",
+      "content_type": "text/html",
+      "bytes": 3133,
+      "error": "html_fallback_for_binary_asset",
+      "source": "Pagefind metadata hash",
+      "fetched_utc": "2026-11-25T22:00:54.445964+00:00"
+    },
+    {
+      "url": "https://arm.jonpalmisc.com/pagefind/fragment/unknown_9459a16.pf_fragment",
+      "status": 200,
+      "final_url": "https://arm.jonpalmisc.com/pagefind/fragment/unknown_9459a16.pf_fragment",
+      "content_type": "text/html",
+      "bytes": 3133,
+      "error": "html_fallback_for_binary_asset",
+      "source": "Pagefind metadata hash",
+      "fetched_utc": "2026-11-25T22:01:01.785684+00:00"
+    },
+    {
+      "url": "https://arm.jonpalmisc.com/pagefind/fragment/unknown_9ed7963.pf_fragment",
+      "status": 200,
+      "final_url": "https://arm.jonpalmisc.com/pagefind/fragment/unknown_9ed7963.pf_fragment",
+      "content_type": "text/html",
+      "bytes": 3133,
+      "error": "html_fallback_for_binary_asset",
+      "source": "Pagefind metadata hash",
+      "fetched_utc": "2026-11-25T22:01:42.323884+00:00"
+    },
+    {
+      "url": "https://arm.jonpalmisc.com/pagefind/fragment/unknown_ab2ca69.pf_fragment",
+      "status": 200,
+      "final_url": "https://arm.jonpalmisc.com/pagefind/fragment/unknown_ab2ca69.pf_fragment",
+      "content_type": "text/html",
+      "bytes": 3133,
+      "error": "html_fallback_for_binary_asset",
+      "source": "Pagefind metadata hash",
+      "fetched_utc": "2026-11-25T22:02:27.421038+00:00"
+    },
+    {
+      "url": "https://arm.jonpalmisc.com/pagefind/fragment/unknown_ae27df2.pf_fragment",
+      "status": 200,
+      "final_url": "https://arm.jonpalmisc.com/pagefind/fragment/unknown_ae27df2.pf_fragment",
+      "content_type": "text/html",
+      "bytes": 3133,
+      "error": "html_fallback_for_binary_asset",
+      "source": "Pagefind metadata hash",
+      "fetched_utc": "2026-11-25T22:02:37.977823+00:00"
+    },
+    {
+      "url": "https://arm.jonpalmisc.com/pagefind/fragment/unknown_b36bab8.pf_fragment",
+      "status": 200,
+      "final_url": "https://arm.jonpalmisc.com/pagefind/fragment/unknown_b36bab8.pf_fragment",
+      "content_type": "text/html",
+      "bytes": 3133,
+      "error": "html_fallback_for_binary_asset",
+      "source": "Pagefind metadata hash",
+      "fetched_utc": "2026-11-25T22:02:55.641791+00:00"
+    },
+    {
+      "url": "https://arm.jonpalmisc.com/pagefind/fragment/unknown_bb3f782.pf_fragment",
+      "status": 200,
+      "final_url": "https://arm.jonpalmisc.com/pagefind/fragment/unknown_bb3f782.pf_fragment",
+      "content_type": "text/html",
+      "bytes": 3133,
+      "error": "html_fallback_for_binary_asset",
+      "source": "Pagefind metadata hash",
+      "fetched_utc": "2026-11-25T22:03:18.729041+00:00"
+    },
+    {
+      "url": "https://arm.jonpalmisc.com/pagefind/fragment/unknown_bb43f1c.pf_fragment",
+      "status": 200,
+      "final_url": "https://arm.jonpalmisc.com/pagefind/fragment/unknown_bb43f1c.pf_fragment",
+      "content_type": "text/html",
+      "bytes": 3133,
+      "error": "html_fallback_for_binary_asset",
+      "source": "Pagefind metadata hash",
+      "fetched_utc": "2026-11-25T22:03:18.729056+00:00"
+    },
+    {
+      "url": "https://arm.jonpalmisc.com/pagefind/fragment/unknown_c1e827b.pf_fragment",
+      "status": 200,
+      "final_url": "https://arm.jonpalmisc.com/pagefind/fragment/unknown_c1e827b.pf_fragment",
+      "content_type": "text/html",
+      "bytes": 3133,
+      "error": "html_fallback_for_binary_asset",
+      "source": "Pagefind metadata hash",
+      "fetched_utc": "2026-11-25T22:03:41.892510+00:00"
+    },
+    {
+      "url": "https://arm.jonpalmisc.com/pagefind/fragment/unknown_cbc5476.pf_fragment",
+      "status": 200,
+      "final_url": "https://arm.jonpalmisc.com/pagefind/fragment/unknown_cbc5476.pf_fragment",
+      "content_type": "text/html",
+      "bytes": 3133,
+      "error": "html_fallback_for_binary_asset",
+      "source": "Pagefind metadata hash",
+      "fetched_utc": "2026-11-25T22:04:14.605048+00:00"
+    },
+    {
+      "url": "https://arm.jonpalmisc.com/pagefind/fragment/unknown_cc12ce5.pf_fragment",
+      "status": 200,
+      "final_url": "https://arm.jonpalmisc.com/pagefind/fragment/unknown_cc12ce5.pf_fragment",
+      "content_type": "text/html",
+      "bytes": 3133,
+      "error": "html_fallback_for_binary_asset",
+      "source": "Pagefind metadata hash",
+      "fetched_utc": "2026-11-25T22:04:14.605429+00:00"
+    },
+    {
+      "url": "https://arm.jonpalmisc.com/pagefind/fragment/unknown_d0889b6.pf_fragment",
+      "status": 200,
+      "final_url": "https://arm.jonpalmisc.com/pagefind/fragment/unknown_d0889b6.pf_fragment",
+      "content_type": "text/html",
+      "bytes": 3133,
+      "error": "html_fallback_for_binary_asset",
+      "source": "Pagefind metadata hash",
+      "fetched_utc": "2026-11-25T22:04:26.311943+00:00"
+    },
+    {
+      "url": "https://arm.jonpalmisc.com/pagefind/fragment/unknown_d166aec.pf_fragment",
+      "status": 200,
+      "final_url": "https://arm.jonpalmisc.com/pagefind/fragment/unknown_d166aec.pf_fragment",
+      "content_type": "text/html",
+      "bytes": 3133,
+      "error": "html_fallback_for_binary_asset",
+      "source": "Pagefind metadata hash",
+      "fetched_utc": "2026-11-25T22:04:29.338312+00:00"
+    },
+    {
+      "url": "https://arm.jonpalmisc.com/pagefind/fragment/unknown_d73070a.pf_fragment",
+      "status": 200,
+      "final_url": "https://arm.jonpalmisc.com/pagefind/fragment/unknown_d73070a.pf_fragment",
+      "content_type": "text/html",
+      "bytes": 3133,
+      "error": "html_fallback_for_binary_asset",
+      "source": "Pagefind metadata hash",
+      "fetched_utc": "2026-11-25T22:04:46.791551+00:00"
+    },
+    {
+      "url": "https://arm.jonpalmisc.com/pagefind/fragment/unknown_dad3305.pf_fragment",
+      "status": 200,
+      "final_url": "https://arm.jonpalmisc.com/pagefind/fragment/unknown_dad3305.pf_fragment",
+      "content_type": "text/html",
+      "bytes": 3133,
+      "error": "html_fallback_for_binary_asset",
+      "source": "Pagefind metadata hash",
+      "fetched_utc": "2026-11-25T22:04:58.454730+00:00"
+    },
+    {
+      "url": "https://arm.jonpalmisc.com/pagefind/fragment/unknown_dc51e98.pf_fragment",
+      "status": 200,
+      "final_url": "https://arm.jonpalmisc.com/pagefind/fragment/unknown_dc51e98.pf_fragment",
+      "content_type": "text/html",
+      "bytes": 3133,
+      "error": "html_fallback_for_binary_asset",
+      "source": "Pagefind metadata hash",
+      "fetched_utc": "2026-11-25T22:05:01.331791+00:00"
+    },
+    {
+      "url": "https://arm.jonpalmisc.com/pagefind/fragment/unknown_dd56d69.pf_fragment",
+      "status": 200,
+      "final_url": "https://arm.jonpalmisc.com/pagefind/fragment/unknown_dd56d69.pf_fragment",
+      "content_type": "text/html",
+      "bytes": 3133,
+      "error": "html_fallback_for_binary_asset",
+      "source": "Pagefind metadata hash",
+      "fetched_utc": "2026-11-25T22:05:05.854504+00:00"
+    },
+    {
+      "url": "https://arm.jonpalmisc.com/pagefind/fragment/unknown_e289b96.pf_fragment",
+      "status": 200,
+      "final_url": "https://arm.jonpalmisc.com/pagefind/fragment/unknown_e289b96.pf_fragment",
+      "content_type": "text/html",
+      "bytes": 3133,
+      "error": "html_fallback_for_binary_asset",
+      "source": "Pagefind metadata hash",
+      "fetched_utc": "2026-11-25T22:05:23.260631+00:00"
+    },
+    {
+      "url": "https://arm.jonpalmisc.com/pagefind/fragment/unknown_e56c46f.pf_fragment",
+      "status": 200,
+      "final_url": "https://arm.jonpalmisc.com/pagefind/fragment/unknown_e56c46f.pf_fragment",
+      "content_type": "text/html",
+      "bytes": 3133,
+      "error": "html_fallback_for_binary_asset",
+      "source": "Pagefind metadata hash",
+      "fetched_utc": "2026-11-25T22:05:32.049929+00:00"
+    },
+    {
+      "url": "https://arm.jonpalmisc.com/pagefind/fragment/unknown_e6deafb.pf_fragment",
+      "status": 200,
+      "final_url": "https://arm.jonpalmisc.com/pagefind/fragment/unknown_e6deafb.pf_fragment",
+      "content_type": "text/html",
+      "bytes": 3133,
+      "error": "html_fallback_for_binary_asset",
+      "source": "Pagefind metadata hash",
+      "fetched_utc": "2026-11-25T22:05:36.248056+00:00"
+    },
+    {
+      "url": "https://arm.jonpalmisc.com/pagefind/fragment/unknown_f4531cc.pf_fragment",
+      "status": 200,
+      "final_url": "https://arm.jonpalmisc.com/pagefind/fragment/unknown_f4531cc.pf_fragment",
+      "content_type": "text/html",
+      "bytes": 3133,
+      "error": "html_fallback_for_binary_asset",
+      "source": "Pagefind metadata hash",
+      "fetched_utc": "2026-11-25T22:06:21.612795+00:00"
+    },
+    {
+      "url": "https://arm.jonpalmisc.com/pagefind/fragment/unknown_f6a32ca.pf_fragment",
+      "status": 200,
+      "final_url": "https://arm.jonpalmisc.com/pagefind/fragment/unknown_f6a32ca.pf_fragment",
+      "content_type": "text/html",
+      "bytes": 3133,
+      "error": "html_fallback_for_binary_asset",
+      "source": "Pagefind metadata hash",
+      "fetched_utc": "2026-11-25T22:06:28.790733+00:00"
+    }
+  ]
+}

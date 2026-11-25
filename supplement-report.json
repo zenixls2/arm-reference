@@ -1,0 +1,10 @@
+{
+  "pagefind_fragment_urls": 4276,
+  "supplement_fetch_attempts": 1123,
+  "successful_after_supplement": 12794,
+  "pagefind_urls_still_missing": 0,
+  "fragment_parse_failures": [],
+  "missing_url_samples": [],
+  "external_or_robots_exclusions": 1163,
+  "fetched_utc": "2026-11-25T22:23:57.642629+00:00"
+}

@@ -1,0 +1,158 @@
+{
+  "origin": "https://arm.jonpalmisc.com",
+  "scope": "All reachable same-origin links/resources found in the captured HTML/CSS plus every page listed by the site's Pagefind manifest; third-party origins are excluded.",
+  "capture_window_utc": {
+    "start": "2026-11-25T21:43:16.823489+00:00",
+    "end": "2026-11-25T22:28:02.146798+00:00"
+  },
+  "manifest": {
+    "records": 12889,
+    "successful_records": 12842,
+    "expected_pagefind_route_mismatches": 47,
+    "unresolved_errors": 0,
+    "missing_files": 0,
+    "size_mismatches": 0,
+    "sha256_mismatches": 0,
+    "missing_sha256": 0,
+    "unsafe_or_non_site_paths": 0,
+    "duplicate_path_conflicts": 0,
+    "all_manifest_paths_exist": true,
+    "all_hashes_and_sizes_match": true
+  },
+  "site_tree": {
+    "files": 12842,
+    "bytes": 114703615,
+    "html_files": 8499,
+    "content_types": {
+      "text/plain": 1,
+      "text/html": 8499,
+      "application/javascript": 4,
+      "application/json": 1,
+      "text/css": 3,
+      "application/octet-stream": 4325,
+      "font/woff2": 2,
+      "image/svg+xml": 7
+    },
+    "root_page_duplicate_fallbacks": [
+      "https://arm.jonpalmisc.com/latest_sysreg/ext-errgsr.html",
+      "https://arm.jonpalmisc.com/latest_sysreg/AArch64-pmceidn_el0.html",
+      "https://arm.jonpalmisc.com/latest_sysreg/AArch32-pmceidn.html",
+      "https://arm.jonpalmisc.com/latest_sysreg/AArch64-actlralias_el1.html",
+      "https://arm.jonpalmisc.com/latest_sysreg/AArch64-tcr2alias_el1.html",
+      "https://arm.jonpalmisc.com/latest_sysreg/AArch64-tcralias_el1.html",
+      "https://arm.jonpalmisc.com/latest_sysreg/AArch64-sctlr2alias_el1.html",
+      "https://arm.jonpalmisc.com/latest_sysreg/AArch64-sctlralias_el1.html",
+      "https://arm.jonpalmisc.com/latest_sysreg/AArch64-cpacralias_el1.html",
+      "https://arm.jonpalmisc.com/latest_sysreg/AArch64-icc_igrpenn_el1.html",
+      "https://arm.jonpalmisc.com/latest_aarch64/insn.css",
+      "https://arm.jonpalmisc.com/latest_sysreg/ext.errpidr4.html",
+      "https://arm.jonpalmisc.com/latest_sysreg/ext.errpidr2.html",
+      "https://arm.jonpalmisc.com/latest_sysreg/ext.errpidr1.html",
+      "https://arm.jonpalmisc.com/latest_sysreg/None",
+      "https://arm.jonpalmisc.com/latest_sysreg/ext-irs_int_selr.html",
+      "https://arm.jonpalmisc.com/latest_sysreg/ext-irs_int_cfgr.html",
+      "https://arm.jonpalmisc.com/latest_sysreg/ext-irs_int_cactiver.html",
+      "https://arm.jonpalmisc.com/latest_sysreg/ext-irs_int_enabler.html",
+      "https://arm.jonpalmisc.com/latest_sysreg/ext-irs_int_hmr.html",
+      "https://arm.jonpalmisc.com/latest_sysreg/ext-irs_int_iaffidr.html",
+      "https://arm.jonpalmisc.com/latest_sysreg/ext-irs_int_pendingr.html",
+      "https://arm.jonpalmisc.com/latest_sysreg/ext-irs_int_priorityr.html"
+    ],
+    "root_fallback_duplicate_count": 23
+  },
+  "pagefind": {
+    "version": "1.5.2",
+    "advertised_page_count": 4276,
+    "fragment_files": 4276,
+    "valid_fragment_records": 4276,
+    "unique_fragment_page_urls": 4276,
+    "fragment_parse_errors": 0,
+    "missing_fragment_page_html": 0,
+    "title_matches_or_empty": 4091,
+    "title_mismatches": 185,
+    "content_overlap_median": 1.0,
+    "content_overlap_p10": 1.0,
+    "index_shards": 47,
+    "filter_shards": 0,
+    "wasm_files": 1,
+    "meta_files": 1,
+    "meta_hash_ids": 4323,
+    "metadata_hash_ids_equal_fragment_plus_index": true,
+    "failed_fragment_hashes_equal_index_ids": true,
+    "probe_summary": {
+      "rows": 95,
+      "valid_binary": 48,
+      "index_ids": 47,
+      "filter_ids": 0,
+      "wasm_urls": 1
+    },
+    "fragment_parse_error_samples": [],
+    "title_mismatch_samples": [
+      {
+        "url": "https://arm.jonpalmisc.com/latest_sysreg/AArch64-vtlbidosn_el2.html",
+        "fragment_title": "VTLBIDOS<n>_EL2, n = 0 - 3",
+        "html_title": "VTLBIDOS<n>_EL2 | Jon's Arm Reference"
+      },
+      {
+        "url": "https://arm.jonpalmisc.com/latest_sysreg/ext-gicd_icenablern.html",
+        "fragment_title": "GICD_ICENABLER<n>, n = 0 - 31",
+        "html_title": "GICD_ICENABLER<n> | Jon's Arm Reference"
+      },
+      {
+        "url": "https://arm.jonpalmisc.com/latest_sysreg/ext-gicd_icenablerne.html",
+        "fragment_title": "GICD_ICENABLER<n>E, n = 0 - 31",
+        "html_title": "GICD_ICENABLER<n>E | Jon's Arm Reference"
+      },
+      {
+        "url": "https://arm.jonpalmisc.com/latest_sysreg/AArch64-icv_ppi_priorityrn_el1.html",
+        "fragment_title": "ICV_PPI_PRIORITYR<n>_EL1, n = 0 - 15",
+        "html_title": "ICV_PPI_PRIORITYR<n>_EL1 | Jon's Arm Reference"
+      },
+      {
+        "url": "https://arm.jonpalmisc.com/latest_sysreg/AArch64-icv_ppi_enablern_el1.html",
+        "fragment_title": "ICV_PPI_ENABLER<n>_EL1, n = 0 - 1",
+        "html_title": "ICV_PPI_ENABLER<n>_EL1 | Jon's Arm Reference"
+      }
+    ],
+    "meta_errors": []
+  },
+  "offline_search_smoke": {
+    "passed": true,
+    "page": {
+      "title": "Jon's Arm Reference",
+      "hasSearchbox": true,
+      "resultCount": 1418
+    },
+    "worker_count": 1,
+    "pagefind_responses": 15,
+    "pagefind_status_errors": [],
+    "pagefind_failed_requests": []
+  },
+  "link_closure": {
+    "unique_same_origin_targets": 8240,
+    "successful_target_urls": 12842,
+    "robots_blocked_targets": 0,
+    "missing_target_count": 0,
+    "missing_samples": []
+  },
+  "exclusions": {
+    "records": 8574,
+    "robots_disallow": 0,
+    "external_or_non_http": 8574
+  },
+  "rights": {
+    "repository_visibility": "public",
+    "user_authorized_public_backup": true,
+    "underlying_site_license": "established; do not redistribute"
+  },
+  "homepage_notice_preserved": true,
+  "quality_gates": {
+    "manifest_integrity": true,
+    "pagefind_coverage": true,
+    "pagefind_runtime_complete": true,
+    "link_closure": true,
+    "offline_search_smoke": true,
+    "no_unresolved_fetch_errors": true
+  },
+  "complete_within_declared_scope": true
+}

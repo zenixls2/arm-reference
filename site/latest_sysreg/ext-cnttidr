@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ext="http://exslt.org/common"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>CNTTIDR | Jon's Arm Reference</title><meta name="description" content="Indicates the implemented timers in the physical address space, and their features. For each value of N from 0 to 7 it indicates whether:"></meta><meta name="viewport" content="width=device-width, initial-scale=1"></meta><link rel="stylesheet" href="/pagefind/pagefind-component-ui.css"></link><link rel="stylesheet" type="text/css" href="/static/normalize.css"></link><link rel="stylesheet" type="text/css" href="/static/main.css"></link></head><body><p class="discontinuation-notice" data-pagefind-ignore="all"><b>PER ARM'S REQUEST, THIS SITE WILL BE DISCONTINUED ON 4 DECEMBER 2026. :(</b><br></br>
+
+      Arm's lawyers have notified me to take down this site or face legal action. <br></br>
+
+      To all of the fans of this site over the years (even the ones at Arm): thank you for your support! I'm glad I could provide a resource so many people found value in. I will look into solutions that can potentially keep bookmarks and links working. <br></br>
+
+      — Jon
+    </p><a href="/">← Home</a><pagefind-searchbox></pagefind-searchbox><script type="module" src="/pagefind/pagefind-component-ui.js"></script><script type="text/javascript" src="/static/pagefind.js"></script><h1 class="register-section" data-pagefind-body="1" data-pagefind-weight="10" data-pagefind-sort="title">CNTTIDR</h1><p class="insn_subtitle" data-pagefind-body="1">Counter-timer Timer ID Register</p><div data-pagefind-body="1">
+        <p>Indicates the implemented timers in the physical address space, and their features. For each value of N from 0 to 7 it indicates whether:</p>
+
+      
+        <ul>
+<li>Frame CNTBaseN is a view of an implemented timer.
+</li><li>Frame CNTBaseN has a second view, CNTEL0BaseN.
+</li><li>Frame CNTBaseN has a virtual timer capability.
+</li></ul>
+      </div><h3>Configuration</h3><p>It is <span class="arm-defined-word">IMPLEMENTATION DEFINED</span> whether CNTTIDR is implemented in the Core power domain or in the Debug power domain.
+    </p>
+        <p>For more information, see <span class="xref">'Power and reset domains for the system level implementation of the Generic Timer'</span>.</p>
+      <h3>Attributes</h3>
+        <p>CNTTIDR is a 32-bit register.</p>
+      <h2>Field descriptions</h2><table class="regdiagram" id="fieldset_0"><thead><tr><td>31</td><td>30</td><td>29</td><td>28</td><td>27</td><td>26</td><td>25</td><td>24</td><td>23</td><td>22</td><td>21</td><td>20</td><td>19</td><td>18</td><td>17</td><td>16</td><td>15</td><td>14</td><td>13</td><td>12</td><td>11</td><td>10</td><td>9</td><td>8</td><td>7</td><td>6</td><td>5</td><td>4</td><td>3</td><td>2</td><td>1</td><td>0</td></tr></thead><tbody><tr class="firstrow"><td class="lr" colspan="4"><a href="#fieldset_0-31_0">Frame7</a></td><td class="lr" colspan="4"><a href="#fieldset_0-31_0">Frame6</a></td><td class="lr" colspan="4"><a href="#fieldset_0-31_0">Frame5</a></td><td class="lr" colspan="4"><a href="#fieldset_0-31_0">Frame4</a></td><td class="lr" colspan="4"><a href="#fieldset_0-31_0">Frame3</a></td><td class="lr" colspan="4"><a href="#fieldset_0-31_0">Frame2</a></td><td class="lr" colspan="4"><a href="#fieldset_0-31_0">Frame1</a></td><td class="lr" colspan="4"><a href="#fieldset_0-31_0">Frame0</a></td></tr></tbody></table><h4 id="fieldset_0-31_0">Frame&lt;n&gt;, bits [4n+3:4n], for n = 7 to 0:
+      </h4><div class="field"><p>A 4-bit field indicating the features of frame CNTBase&lt;n&gt;.</p>
+<p>Bit[3] of the field is <span class="arm-defined-word">RES0</span>.</p>
+<p>Bit[2], the FEL0 subfield, indicates whether frame CNTBase&lt;n&gt; has a second view, CNTEL0Base&lt;n&gt;. The possible values of this bit are:</p>
+<table class="valuetable"><thead><tr><th>Bit[2]</th><th>Meaning</th></tr></thead><tbody><tr><td><span class="binarynumber">0b0</span></td><td>Frame&lt;n&gt; does not have a second view. The <a href="ext-cntel0acr.html">CNTEL0ACR</a> register in the first view of the frame is <span class="arm-defined-word">RES0</span>.</td></tr><tr><td><span class="binarynumber">0b1</span></td><td>Frame&lt;n&gt; has a second view, CNTEL0Base&lt;n&gt;.</td></tr></tbody></table>
+<p>If bit[0] is 0, bit[2] is <span class="arm-defined-word">RES0</span>.</p>
+<p>Bit[1], the FVI subfield, indicates whether both:</p>
+<ul>
+<li>Frame CNTBase&lt;n&gt; implements the virtual timer registers <a href="ext-cntv_cval.html">CNTV_CVAL</a>, <a href="ext-cntv_tval.html">CNTV_TVAL</a>, and <a href="ext-cntv_ctl.html">CNTV_CTL</a>.
+</li><li>This CNTCTLBase frame implements the virtual timer offset register <a href="ext-cntvoffn.html">CNTVOFF&lt;n&gt;</a>.
+</li></ul>
+<p>The possible values of bit[1] are:</p>
+<table class="valuetable"><thead><tr><th>Bit[1]</th><th>Meaning</th></tr></thead><tbody><tr><td><span class="binarynumber">0b0</span></td><td>Frame&lt;n&gt; does not have virtual capability. The virtual time and offset registers are <span class="arm-defined-word">RES0</span>.</td></tr><tr><td><span class="binarynumber">0b1</span></td><td>Frame&lt;n&gt; has virtual capability. The virtual time and offset registers are implemented.</td></tr></tbody></table>
+<p>If bit[0] is 0, bit[1] is <span class="arm-defined-word">RES0</span>.</p>
+<p>Bit[0], the FI subfield, indicates whether frame CNTBase&lt;n&gt; is implemented. The possible values of this bit are:</p>
+<table class="valuetable"><thead><tr><th>Bit[0]</th><th>Meaning</th></tr></thead><tbody><tr><td><span class="binarynumber">0b0</span></td><td>Frame&lt;n&gt; is not implemented. All registers associated with the frame are <span class="arm-defined-word">RES0</span>.</td></tr><tr><td><span class="binarynumber">0b1</span></td><td>Frame&lt;n&gt; is implemented.</td></tr></tbody></table></div><h2>Accessing CNTTIDR</h2>
+        <p>In a system that supports the Realm Management Extension, it is <span class="arm-defined-word">IMPLEMENTATION DEFINED</span> whether Root and Realm accesses to this register are permitted. If not permitted, this register behaves as <span class="arm-defined-word">RES0</span> for Root and Realm accesses.</p>
+
+      
+        <p>In a system that recognizes two Security states, this register is accessible by both Secure and Non-secure accesses.</p>
+      <h4>CNTTIDR can be accessed through the memory-mapped interfaces:</h4><table class="info"><tr><th>Component</th><th>Frame</th><th>Offset</th><th>Instance</th></tr><tr><td>Timer</td><td>CNTCTLBase</td><td><span class="hexnumber">0x008</span></td><td>CNTTIDR</td></tr></table><p>Accesses to this register are <span class="access_level">RO</span>.</p><hr class="bottom_line"></hr><p class="copyconf">Version 2026.09 — Copyright © 2010-2026 Arm Limited or its affiliates.</p><small>This site is provided as a community resource and is NOT affiliated with nor endorsed by Arm Limited.</small><!-- Cloudflare Pages Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "de55e78a4e194365a81a0724c5c0ee91"}'></script><!-- Cloudflare Pages Analytics --></body></html>

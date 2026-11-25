@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ext="http://exslt.org/common"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>ITS_TRANSLATE_FRAME | Jon's Arm Reference</title><meta name="description" content="Contains translate registers used to generate translated interrupts for an ITS Domain."></meta><meta name="viewport" content="width=device-width, initial-scale=1"></meta><link rel="stylesheet" href="/pagefind/pagefind-component-ui.css"></link><link rel="stylesheet" type="text/css" href="/static/normalize.css"></link><link rel="stylesheet" type="text/css" href="/static/main.css"></link></head><body><p class="discontinuation-notice" data-pagefind-ignore="all"><b>PER ARM'S REQUEST, THIS SITE WILL BE DISCONTINUED ON 4 DECEMBER 2026. :(</b><br></br>
+
+      Arm's lawyers have notified me to take down this site or face legal action. <br></br>
+
+      To all of the fans of this site over the years (even the ones at Arm): thank you for your support! I'm glad I could provide a resource so many people found value in. I will look into solutions that can potentially keep bookmarks and links working. <br></br>
+
+      — Jon
+    </p><a href="/">← Home</a><pagefind-searchbox></pagefind-searchbox><script type="module" src="/pagefind/pagefind-component-ui.js"></script><script type="text/javascript" src="/static/pagefind.js"></script><h1 class="register-section" data-pagefind-body="1" data-pagefind-weight="10" data-pagefind-sort="title">ITS_TRANSLATE_FRAME</h1><p class="insn_subtitle" data-pagefind-body="1">ITS translate register frame</p><div data-pagefind-body="1">
+        <p>Contains translate registers used to generate translated interrupts for an ITS Domain.</p>
+
+      
+        <p>One or more ITS translate register frames are present for each supported ITS Domain.</p>
+
+      
+        <p>Arm strongly recommends that translate register frame is not accessible by PEs.
+This is because a write to an translate register may require the ITS access to memory, leading to in-out dependencies than can potentially lead to deadlocks in the system.
+The translate register frames may be mapped in stage 2 translation tables shared between an SMMU and a PE, and software in a VM may perform an access to any of the mapped translate register frames.
+If the translate register frames are not accessible by PEs, the behavior on an attempted access from a PE is <span class="arm-defined-word">IMPLEMENTATION DEFINED</span> and is likely to result in an External abort.
+If the translate register frames are accessible by PEs, writes from each PE must use a unique DeviceID that cannot spoof a write originating from a different PE or requesting device.</p>
+
+      
+        <p>Each translate register frame is only accessible in the PAS associated with the ITS Domain.</p>
+
+      
+        <p>The base address of each translate register frame is distinct from addresses of registers accessible in any other PAS.</p>
+
+      
+        <p>The base address of each translate register frame is aligned to 64KB.</p>
+      </div><h3>Configuration</h3><p>This block is present only when FEAT_GICv5_EXT is implemented.</p><h3>Attributes</h3>
+          <p>ITS_TRANSLATE_FRAME is a block of size: 64KB</p>
+        <h2>Contents</h2><table class="info"><tr><th>Offset</th><th>Name</th><th>Accessor condition</th><th>Register condition</th><th>Most permissive access</th></tr><tr><td><span class="hexnumber">0x0000</span></td><td><a href="its_translate_frame.its_translater.html">ITS_TRANSLATER</a></td><td>-</td><td>-</td><td class="pseudocode">WO</td></tr><tr><td><span class="hexnumber">0x0008</span></td><td><a href="its_translate_frame.its_rl_translater.html">ITS_RL_TRANSLATER</a></td><td>-</td><td>-</td><td class="pseudocode">WO</td></tr></table><p>Direct accesses to other offsets in this block are <span class="arm-defined-word">RAZ/WI</span>.</p><hr class="bottom_line"></hr><p class="copyconf">Version 2026.09 — Copyright © 2010-2026 Arm Limited or its affiliates.</p><small>This site is provided as a community resource and is NOT affiliated with nor endorsed by Arm Limited.</small><!-- Cloudflare Pages Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "de55e78a4e194365a81a0724c5c0ee91"}'></script><!-- Cloudflare Pages Analytics --></body></html>

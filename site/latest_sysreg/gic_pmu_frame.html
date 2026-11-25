@@ -1,0 +1,23 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ext="http://exslt.org/common"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>GIC_PMU_FRAME | Jon's Arm Reference</title><meta name="description" content="Contains GIC PMU registers."></meta><meta name="viewport" content="width=device-width, initial-scale=1"></meta><link rel="stylesheet" href="/pagefind/pagefind-component-ui.css"></link><link rel="stylesheet" type="text/css" href="/static/normalize.css"></link><link rel="stylesheet" type="text/css" href="/static/main.css"></link></head><body><p class="discontinuation-notice" data-pagefind-ignore="all"><b>PER ARM'S REQUEST, THIS SITE WILL BE DISCONTINUED ON 4 DECEMBER 2026. :(</b><br></br>
+
+      Arm's lawyers have notified me to take down this site or face legal action. <br></br>
+
+      To all of the fans of this site over the years (even the ones at Arm): thank you for your support! I'm glad I could provide a resource so many people found value in. I will look into solutions that can potentially keep bookmarks and links working. <br></br>
+
+      — Jon
+    </p><a href="/">← Home</a><pagefind-searchbox></pagefind-searchbox><script type="module" src="/pagefind/pagefind-component-ui.js"></script><script type="text/javascript" src="/static/pagefind.js"></script><h1 class="register-section" data-pagefind-body="1" data-pagefind-weight="10" data-pagefind-sort="title">GIC_PMU_FRAME</h1><p class="insn_subtitle" data-pagefind-body="1">GIC PMU register frame</p><div data-pagefind-body="1">
+        <p>Contains GIC PMU registers.</p>
+
+      
+        <p>The GIC PMU register frame is accessible in each PAS corresponding to an Interrupt Domain that the PMU can count events for.</p>
+
+      
+        <p>The base address of the GIC PMU register frame is distinct from any other GIC register frame.</p>
+
+      
+        <p>The base address of the GIC PMU register frame is aligned to 64KB.</p>
+      </div><h3>Configuration</h3><p>This block is present only when FEAT_GICv5_EXT is implemented.</p><h3>Attributes</h3>
+          <p>GIC_PMU_FRAME is a block of size: 64KB</p>
+        <h2>Contents</h2><table class="info"><tr><th>Offset</th><th>Name</th><th>Accessor condition</th><th>Register condition</th><th>Most permissive access</th></tr><tr><td><span class="hexnumber">0x400 + (8 * n) for n in 63:0</span></td><td><a href="gic_pmu_frame.gic_pmevtypern.html">GIC_PMEVTYPER&lt;n&gt;</a></td><td>-</td><td>-</td><td class="pseudocode">RW</td></tr><tr><td><span class="hexnumber">0x800 + (8 * n) for n in 63:0</span></td><td><a href="gic_pmu_frame.gic_pmevfilt2rn.html">GIC_PMEVFILT2R&lt;n&gt;</a></td><td>-</td><td>-</td><td class="pseudocode">RW</td></tr><tr><td><span class="hexnumber">0xA00 + (8 * n) for n in 63:0</span></td><td><a href="gic_pmu_frame.gic_pmevfiltrn.html">GIC_PMEVFILTR&lt;n&gt;</a></td><td>-</td><td>-</td><td class="pseudocode">RW</td></tr><tr><td><span class="hexnumber">0xD80</span></td><td><a href="gic_pmu_frame.gic_pmidr0.html">GIC_PMIDR0</a></td><td>-</td><td>-</td><td class="pseudocode">RW</td></tr></table><p>Direct accesses to other offsets in this block are <span class="arm-defined-word">RES0</span>.</p><hr class="bottom_line"></hr><p class="copyconf">Version 2026.09 — Copyright © 2010-2026 Arm Limited or its affiliates.</p><small>This site is provided as a community resource and is NOT affiliated with nor endorsed by Arm Limited.</small><!-- Cloudflare Pages Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "de55e78a4e194365a81a0724c5c0ee91"}'></script><!-- Cloudflare Pages Analytics --></body></html>

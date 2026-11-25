@@ -1,0 +1,72 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1"></meta><meta name="description" content="This instruction, when executed in Debug state:"></meta><link rel="stylesheet" href="/pagefind/pagefind-component-ui.css"></link><link rel="stylesheet" type="text/css" href="/static/normalize.css"></link><link rel="stylesheet" type="text/css" href="/static/main.css"></link><meta name="generator" content="iform.xsl"></meta><title>DCPS2 | Jon's Arm Reference</title></head><body><p class="discontinuation-notice" data-pagefind-ignore="all"><b>PER ARM'S REQUEST, THIS SITE WILL BE DISCONTINUED ON 4 DECEMBER 2026. :(</b><br></br>
+
+      Arm's lawyers have notified me to take down this site or face legal action. <br></br>
+
+      To all of the fans of this site over the years (even the ones at Arm): thank you for your support! I'm glad I could provide a resource so many people found value in. I will look into solutions that can potentially keep bookmarks and links working. <br></br>
+
+      — Jon
+    </p><a href="/">← Home</a><pagefind-searchbox></pagefind-searchbox><script type="module" src="/pagefind/pagefind-component-ui.js"></script><script type="text/javascript" src="/static/pagefind.js"></script><h1 class="instruction-section" data-pagefind-body="1" data-pagefind-weight="10" data-pagefind-sort="title">DCPS2</h1><p class="insn_subtitle" data-pagefind-body="1">Debug change PE state to EL2</p>
+      <p class="aml" data-pagefind-body="1">This instruction, when executed in Debug state:</p>
+      <ul>
+        <li>
+          If executed at EL0 or EL1, changes the current Exception level and SP to EL2 using SP_EL2.
+        </li>
+        <li>
+          Otherwise, if executed at ELx, selects <a class="armarm-xref" title="Reference to Armv8 ARM section" data-linkend="SP_ELx">SP_ELx</a>.
+        </li>
+      </ul>
+      <p class="aml" data-pagefind-body="1">The target Exception level of a DCPS2 instruction is:</p>
+      <ul>
+        <li>
+          EL2 if the instruction is executed at an Exception level that is not EL3.
+        </li>
+        <li>
+          EL3 if the instruction is executed at EL3.
+        </li>
+      </ul>
+      <p class="aml" data-pagefind-body="1">When the target Exception level of a DCPS2 instruction is ELx, on executing this instruction:</p>
+      <ul>
+        <li>
+          
+            <a class="armarm-xref" title="Reference to Armv8 ARM section" data-linkend="ELR_ELx">ELR_ELx</a> becomes <span class="arm-defined-word">UNKNOWN</span>.
+        </li>
+        <li>
+          
+            <a class="armarm-xref" title="Reference to Armv8 ARM section" data-linkend="SPSR_ELx">SPSR_ELx</a> becomes <span class="arm-defined-word">UNKNOWN</span>.
+        </li>
+        <li>
+          
+            <a class="armarm-xref" title="Reference to Armv8 ARM section" data-linkend="ESR_ELx">ESR_ELx</a> becomes <span class="arm-defined-word">UNKNOWN</span>.
+        </li>
+        <li>
+          
+            DLR_EL0 and DSPSR_EL0 become <span class="arm-defined-word">UNKNOWN</span>.
+        </li>
+        <li>
+          The endianness is set according to <a class="armarm-xref" title="Reference to Armv8 ARM section" data-linkend="SCTLR_ELx">SCTLR_ELx</a>.EE.
+        </li>
+      </ul>
+      <p class="aml" data-pagefind-body="1">This instruction is always <span class="arm-defined-word">UNDEFINED</span> in Non-debug state.</p>
+      <p class="aml" data-pagefind-body="1">This instruction is <span class="arm-defined-word">UNDEFINED</span> at the following Exception levels:</p>
+      <ul>
+        <li>
+          All Exception levels if EL2 is not implemented.
+        </li>
+        <li>
+          At EL0 and EL1 if EL2 is disabled in the current Security state.
+        </li>
+      </ul>
+      <p class="aml" data-pagefind-body="1">For more information on the operation of the DCPS&lt;n&gt; instructions, see <a class="armarm-xref" title="Reference to Armv8 ARM section" data-linkend="dcps">DCPS</a>.</p>
+    
+    <p class="desc"></p><div class="regdiagram-32"><table class="regdiagram"><thead><tr><td>31</td><td>30</td><td>29</td><td>28</td><td>27</td><td>26</td><td>25</td><td>24</td><td>23</td><td>22</td><td>21</td><td>20</td><td>19</td><td>18</td><td>17</td><td>16</td><td>15</td><td>14</td><td>13</td><td>12</td><td>11</td><td>10</td><td>9</td><td>8</td><td>7</td><td>6</td><td>5</td><td>4</td><td>3</td><td>2</td><td>1</td><td>0</td></tr></thead><tbody><tr class="firstrow"><td class="l">1</td><td>1</td><td class="r">0</td><td class="l">1</td><td>0</td><td class="r">1</td><td class="l">0</td><td class="r">0</td><td class="l">1</td><td>0</td><td class="r">1</td><td colspan="16" class="lr">imm16</td><td class="l">0</td><td>0</td><td class="r">0</td><td class="l">1</td><td class="r">0</td></tr><tr class="secondrow"><td colspan="3"></td><td colspan="3"></td><td colspan="2"></td><td colspan="3" class="droppedname">opc</td><td colspan="16"></td><td colspan="3" class="droppedname">op2</td><td colspan="2" class="droppedname">LL</td></tr></tbody></table></div><div class="encoding"><div class="encoding__label"><h4 class="encoding">Encoding</h4><a id="DCPS2_DC_exception"></a></div><p class="asm-code">DCPS2  {#<a href="#imm__2" title='Is an optional 16-bit unsigned immediate, in the range 0 to 65535, defaulting to 0 and encoded in the "imm16" field.'>&lt;imm&gt;</a>}</p></div><h4>Decode</h4><p class="pseudocode">// Empty.</p>
+  <div class="encoding-notes"></div><h2 class="explanations">Assembler Symbols</h2><div class="explanations"><table><col class="asyn-l"></col><col class="asyn-r"></col><tr><td>&lt;imm&gt;</td><td><a id="imm__2"></a>
+        
+          <p class="aml" data-pagefind-body="1">Is an optional 16-bit unsigned immediate, in the range 0 to 65535, defaulting to 0 and encoded in the "imm16" field.</p>
+        
+      </td></tr></table></div><div class="syntax-notes"></div>
+    <div class="ps"><a id=""></a><h2 class="pseudocode">Operation</h2>
+      <p class="pseudocode">if !<a href="shared_pseudocode.html#func_Halted_0" title="">Halted</a>() then Undefined(); end;
+<a href="shared_pseudocode.html#func_DCPSInstruction_1" title="">DCPSInstruction</a>(<a href="shared_pseudocode.html#global_EL2" title="">EL2</a>);</p></div>
+  <hr class="bottom_line"></hr><p class="copyconf">Version 2026.09 — Copyright © 2010-2026 Arm Limited or its affiliates.</p><small>This site is provided as a community resource and is NOT affiliated with nor endorsed by Arm Limited.</small><!-- Cloudflare Pages Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "de55e78a4e194365a81a0724c5c0ee91"}'></script><!-- Cloudflare Pages Analytics --></body></html>

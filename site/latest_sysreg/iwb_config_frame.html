@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ext="http://exslt.org/common"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>IWB_CONFIG_FRAME | Jon's Arm Reference</title><meta name="description" content="Contains control registers for an IWB."></meta><meta name="viewport" content="width=device-width, initial-scale=1"></meta><link rel="stylesheet" href="/pagefind/pagefind-component-ui.css"></link><link rel="stylesheet" type="text/css" href="/static/normalize.css"></link><link rel="stylesheet" type="text/css" href="/static/main.css"></link></head><body><p class="discontinuation-notice" data-pagefind-ignore="all"><b>PER ARM'S REQUEST, THIS SITE WILL BE DISCONTINUED ON 4 DECEMBER 2026. :(</b><br></br>
+
+      Arm's lawyers have notified me to take down this site or face legal action. <br></br>
+
+      To all of the fans of this site over the years (even the ones at Arm): thank you for your support! I'm glad I could provide a resource so many people found value in. I will look into solutions that can potentially keep bookmarks and links working. <br></br>
+
+      — Jon
+    </p><a href="/">← Home</a><pagefind-searchbox></pagefind-searchbox><script type="module" src="/pagefind/pagefind-component-ui.js"></script><script type="text/javascript" src="/static/pagefind.js"></script><h1 class="register-section" data-pagefind-body="1" data-pagefind-weight="10" data-pagefind-sort="title">IWB_CONFIG_FRAME</h1><p class="insn_subtitle" data-pagefind-body="1">IWB configuration registers frame</p><div data-pagefind-body="1">
+        <p>Contains control registers for an IWB.</p>
+
+      
+        <p>The base address is aligned to 64KB.</p>
+
+      
+        <p>Access to this register frame in a PAS associated with an unimplemented Interrupt Domain is <span class="arm-defined-word">CONSTRAINED UNPREDICTABLE</span> with a choice of:</p>
+
+      
+        <ul>
+<li>
+<p>The access is RAZ/WI</p>
+
+</li><li>
+<p>The access is made to an implemented Interrupt Domain as follows:</p>
+<ul>
+<li>
+<p>An access in the Realm PAS is translated to an access in the Non-secure Interrupt Domain</p>
+
+</li><li>
+<p>An access in the Secure PAS is translated to an access in the Non-secure Interrupt Domain</p>
+
+</li><li>
+<p>An access in the Root PAS is translated to an access in the MPPAS of the IWB</p>
+
+</li></ul>
+
+</li></ul>
+      </div><h3>Configuration</h3><p>This block is present only when FEAT_GICv5_EXT is implemented.</p><h3>Attributes</h3>
+          <p>IWB_CONFIG_FRAME is a block of size: 64KB</p>
+        <h2>Contents</h2><table class="info"><tr><th>Offset</th><th>Name</th><th>Accessor condition</th><th>Register condition</th><th>Most permissive access</th></tr><tr><td><span class="hexnumber">0x0000</span></td><td><a href="iwb_config_frame.iwb_idr0.html">IWB_IDR0</a></td><td>-</td><td>-</td><td class="pseudocode">RO</td></tr><tr><td><span class="hexnumber">0x0040</span></td><td><a href="iwb_config_frame.iwb_iidr.html">IWB_IIDR</a></td><td>-</td><td>-</td><td class="pseudocode">RO</td></tr><tr><td><span class="hexnumber">0x0044</span></td><td><a href="iwb_config_frame.iwb_aidr.html">IWB_AIDR</a></td><td>-</td><td>-</td><td class="pseudocode">RO</td></tr><tr><td><span class="hexnumber">0x0080</span></td><td><a href="iwb_config_frame.iwb_cr0.html">IWB_CR0</a></td><td>-</td><td>-</td><td class="pseudocode">RW</td></tr><tr><td><span class="hexnumber">0x00C0</span></td><td><a href="iwb_config_frame.iwb_wenable_statusr.html">IWB_WENABLE_STATUSR</a></td><td>-</td><td>-</td><td class="pseudocode">RO</td></tr><tr><td><span class="hexnumber">0x00C4</span></td><td><a href="iwb_config_frame.iwb_wdomain_statusr.html">IWB_WDOMAIN_STATUSR</a></td><td>-</td><td>-</td><td class="pseudocode">RO</td></tr><tr><td><span class="hexnumber">0x00C8</span></td><td><a href="iwb_config_frame.iwb_wresampler.html">IWB_WRESAMPLER</a></td><td>-</td><td>-</td><td class="pseudocode">WO</td></tr><tr><td><span class="hexnumber">0x0E00 + (4 * n) for n in 63:0</span></td><td><a href="None">-</a></td><td>-</td><td>-</td><td class="pseudocode">ImplementationDefined</td></tr><tr><td><span class="hexnumber">0x2000 + (4 * n) for n in 2047:0</span></td><td><a href="iwb_config_frame.iwb_wenablern.html">IWB_WENABLER&lt;n&gt;</a></td><td>-</td><td>-</td><td class="pseudocode">RW</td></tr><tr><td><span class="hexnumber">0x4000 + (4 * n) for n in 2047:0</span></td><td><a href="iwb_config_frame.iwb_wtmrn.html">IWB_WTMR&lt;n&gt;</a></td><td>-</td><td>-</td><td class="pseudocode">RW</td></tr><tr><td><span class="hexnumber">0x8000 + (4 * n) for n in 4095:0</span></td><td><a href="iwb_config_frame.iwb_wdomainrn.html">IWB_WDOMAINR&lt;n&gt;</a></td><td>-</td><td>-</td><td class="pseudocode">RW</td></tr></table><p>Direct accesses to other offsets in this block are <span class="arm-defined-word">RES0</span>.</p><hr class="bottom_line"></hr><p class="copyconf">Version 2026.09 — Copyright © 2010-2026 Arm Limited or its affiliates.</p><small>This site is provided as a community resource and is NOT affiliated with nor endorsed by Arm Limited.</small><!-- Cloudflare Pages Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "de55e78a4e194365a81a0724c5c0ee91"}'></script><!-- Cloudflare Pages Analytics --></body></html>

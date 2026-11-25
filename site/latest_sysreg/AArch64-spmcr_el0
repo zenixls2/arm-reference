@@ -1,0 +1,259 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ext="http://exslt.org/common"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>SPMCR_EL0 | Jon's Arm Reference</title><meta name="description" content="Main control register for System PMU &lt;s&gt;."></meta><meta name="viewport" content="width=device-width, initial-scale=1"></meta><link rel="stylesheet" href="/pagefind/pagefind-component-ui.css"></link><link rel="stylesheet" type="text/css" href="/static/normalize.css"></link><link rel="stylesheet" type="text/css" href="/static/main.css"></link></head><body><p class="discontinuation-notice" data-pagefind-ignore="all"><b>PER ARM'S REQUEST, THIS SITE WILL BE DISCONTINUED ON 4 DECEMBER 2026. :(</b><br></br>
+
+      Arm's lawyers have notified me to take down this site or face legal action. <br></br>
+
+      To all of the fans of this site over the years (even the ones at Arm): thank you for your support! I'm glad I could provide a resource so many people found value in. I will look into solutions that can potentially keep bookmarks and links working. <br></br>
+
+      — Jon
+    </p><a href="/">← Home</a><pagefind-searchbox></pagefind-searchbox><script type="module" src="/pagefind/pagefind-component-ui.js"></script><script type="text/javascript" src="/static/pagefind.js"></script><h1 class="register-section" data-pagefind-body="1" data-pagefind-weight="10" data-pagefind-sort="title">SPMCR_EL0</h1><p class="insn_subtitle" data-pagefind-body="1">System Performance Monitor Control Register</p><div data-pagefind-body="1">
+        <p>Main control register for System PMU &lt;s&gt;.</p>
+      </div><h3>Configuration</h3><p>This register is present only when FEAT_SPMU is implemented and FEAT_AA64 is implemented. Otherwise, direct accesses to SPMCR_EL0 are <span class="arm-defined-word">UNDEFINED</span>.</p><h3>Attributes</h3>
+        <p>SPMCR_EL0 is a 64-bit register.</p>
+      <h2>Field descriptions</h2><table class="regdiagram" id="fieldset_0"><thead><tr><td>63</td><td>62</td><td>61</td><td>60</td><td>59</td><td>58</td><td>57</td><td>56</td><td>55</td><td>54</td><td>53</td><td>52</td><td>51</td><td>50</td><td>49</td><td>48</td><td>47</td><td>46</td><td>45</td><td>44</td><td>43</td><td>42</td><td>41</td><td>40</td><td>39</td><td>38</td><td>37</td><td>36</td><td>35</td><td>34</td><td>33</td><td>32</td></tr></thead><tfoot><tr><td>31</td><td>30</td><td>29</td><td>28</td><td>27</td><td>26</td><td>25</td><td>24</td><td>23</td><td>22</td><td>21</td><td>20</td><td>19</td><td>18</td><td>17</td><td>16</td><td>15</td><td>14</td><td>13</td><td>12</td><td>11</td><td>10</td><td>9</td><td>8</td><td>7</td><td>6</td><td>5</td><td>4</td><td>3</td><td>2</td><td>1</td><td>0</td></tr></tfoot><tbody><tr class="firstrow"><td class="lr" colspan="32"><a href="#fieldset_0-63_12">RES0</a></td></tr><tr class="firstrow"><td class="lr" colspan="20"><a href="#fieldset_0-63_12">RES0</a></td><td class="lr" colspan="1"><a href="#fieldset_0-11_11-1">TRO</a></td><td class="lr" colspan="1"><a href="#fieldset_0-10_10-1">HDBG</a></td><td class="lr" colspan="1"><a href="#fieldset_0-9_9-1">FZO</a></td><td class="lr" colspan="1"><a href="#fieldset_0-8_8-1">NA</a></td><td class="lr" colspan="3"><a href="#fieldset_0-7_5">RES0</a></td><td class="lr" colspan="1"><a href="#fieldset_0-4_4-1">EX</a></td><td class="lr" colspan="2"><a href="#fieldset_0-3_2">RES0</a></td><td class="lr" colspan="1"><a href="#fieldset_0-1_1">P</a></td><td class="lr" colspan="1"><a href="#fieldset_0-0_0">E</a></td></tr></tbody></table><h4 id="fieldset_0-63_12">Bits [63:12]:
+      </h4><div class="field">
+      <p>Reserved, <span class="arm-defined-word">RES0</span>.</p>
+    </div><h4 id="fieldset_0-11_11-1">TRO, bit [11] <span class="condition">when SPMCFGR_EL1.TRO == '1'</span>:
+      </h4><div class="field">
+      <p>Trace enable. For more information on this field, see 'CoreSight PMU Architecture'.</p>
+    <p>The reset behavior of this field is:</p><ul><li>On a System PMU reset, 
+      this field resets
+       to an architecturally <span class="arm-defined-word">UNKNOWN</span> value.</li></ul><p>Accessing this field has the following behavior:</p><ul><li>When EL0 is the current Exception level, access to this field
+                            is <span class="access_level">RO</span>.
+                        </li><li>
+                  Otherwise,
+                  
+                  access to this field
+                  is <span class="access_level">RW</span>.
+                </li></ul></div><h4 id="fieldset_0-11_11-2"> <span class="condition">Otherwise</span>:
+      </h4><div class="field">
+      <p>Reserved, <span class="arm-defined-word">RES0</span>.</p>
+    </div><h4 id="fieldset_0-10_10-1">HDBG, bit [10] <span class="condition">when SPMCFGR_EL1.HDBG == '1'</span>:
+      </h4><div class="field">
+      <p>Halt-on-debug. For more information on this field, see 'CoreSight PMU Architecture'.</p>
+    <p>The reset behavior of this field is:</p><ul><li>On a System PMU reset, 
+      this field resets
+       to an architecturally <span class="arm-defined-word">UNKNOWN</span> value.</li></ul><p>Accessing this field has the following behavior:</p><ul><li>When EL0 is the current Exception level, access to this field
+                            is <span class="access_level">RO</span>.
+                        </li><li>
+                  Otherwise,
+                  
+                  access to this field
+                  is <span class="access_level">RW</span>.
+                </li></ul></div><h4 id="fieldset_0-10_10-2"> <span class="condition">Otherwise</span>:
+      </h4><div class="field">
+      <p>Reserved, <span class="arm-defined-word">RES0</span>.</p>
+    </div><h4 id="fieldset_0-9_9-1">FZO, bit [9] <span class="condition">when SPMCFGR_EL1.FZO == '1'</span>:
+      </h4><div class="field">
+      <p>Freeze-on-overflow. For more information on this field, see 'CoreSight PMU Architecture'.</p>
+    
+      <div class="note">
+        <p>If implemented by a System PMU, then freeze-on-overflow affects only the counters of System PMU &lt;s&gt;, not other System PMUs nor the PE PMU.</p>
+      </div>
+    <p>The reset behavior of this field is:</p><ul><li>On a System PMU reset, 
+      this field resets
+       to an architecturally <span class="arm-defined-word">UNKNOWN</span> value.</li></ul></div><h4 id="fieldset_0-9_9-2"> <span class="condition">Otherwise</span>:
+      </h4><div class="field">
+      <p>Reserved, <span class="arm-defined-word">RES0</span>.</p>
+    </div><h4 id="fieldset_0-8_8-1">NA, bit [8] <span class="condition">when SPMCFGR_EL1.NA == '1'</span>:
+      </h4><div class="field">
+      <p>Not accessible. For more information on this field, see 'CoreSight PMU Architecture'.</p>
+    <p>Access to this field is <span class="access_level">RO</span>.</p></div><h4 id="fieldset_0-8_8-2"> <span class="condition">Otherwise</span>:
+      </h4><div class="field">
+      <p>Reserved, <span class="arm-defined-word">RES0</span>.</p>
+    </div><h4 id="fieldset_0-7_5">Bits [7:5]:
+      </h4><div class="field">
+      <p>Reserved, <span class="arm-defined-word">RES0</span>.</p>
+    </div><h4 id="fieldset_0-4_4-1">EX, bit [4] <span class="condition">when SPMCFGR_EL1.EX == '1'</span>:
+      </h4><div class="field">
+      <p>Export enable. For more information on this field, see 'CoreSight PMU Architecture'.</p>
+    <p>The reset behavior of this field is:</p><ul><li>On a System PMU reset, 
+      this field resets
+       to an architecturally <span class="arm-defined-word">UNKNOWN</span> value.</li></ul></div><h4 id="fieldset_0-4_4-2"> <span class="condition">Otherwise</span>:
+      </h4><div class="field">
+      <p>Reserved, <span class="arm-defined-word">RES0</span>.</p>
+    </div><h4 id="fieldset_0-3_2">Bits [3:2]:
+      </h4><div class="field">
+      <p>Reserved, <span class="arm-defined-word">RES0</span>.</p>
+    </div><h4 id="fieldset_0-1_1">P, bit [1]:
+      </h4><div class="field">
+      <p>Event counter reset.</p>
+    <table class="valuetable"><tr><th>P</th><th>Meaning</th></tr><tr><td class="bitfield">0b0</td><td>
+          <p>Write is ignored.</p>
+        </td></tr><tr><td class="bitfield">0b1</td><td>
+          <p>Reset all event counters in System PMU &lt;s&gt; to zero.</p>
+        </td></tr></table>
+      <div class="note">
+        <p>Resetting the event counters does not affect any overflow flags.</p>
+      </div>
+    <p>Access to this field is <span class="access_level">WO/RAZ</span>.</p></div><h4 id="fieldset_0-0_0">E, bit [0]:
+      </h4><div class="field">
+      <p>Count enable. This field controls System PMU &lt;s&gt;.</p>
+    <table class="valuetable"><tr><th>E</th><th>Meaning</th></tr><tr><td class="bitfield">0b0</td><td>
+          <p>Monitor is disabled.</p>
+        </td></tr><tr><td class="bitfield">0b1</td><td>
+          <p>Monitor is enabled.</p>
+        </td></tr></table>
+      <p>Performance monitor overflow IRQs are only signaled by System PMU &lt;s&gt; when this field is 1.</p>
+    <p>The reset behavior of this field is:</p><ul><li>On a System PMU reset, 
+      this field resets
+       to <span class="binarynumber">'0'</span>.
+</li></ul></div><div class="access_mechanisms"><h2>Access Instructions</h2>
+        <p>To access SPMCR_EL0 for System PMU &lt;s&gt;, set <a href="AArch64-spmselr_el0.html">SPMSELR_EL0</a>.SYSPMUSEL to s.</p>
+
+      
+        <p>SPMCR_EL0 reads-as-zero and ignores writes if System PMU &lt;s&gt; is not implemented.</p>
+      <p>Accesses to this register use the following encodings in the System register encoding space:</p><div class="access_block"><div class="encoding"><p class="asm-code">MRS &lt;Xt&gt;, SPMCR_EL0</p></div></div><p style="text-align: right">
+      (op0 = 0b10, op1 = 0b011, CRn = 0b1001, CRm = 0b1100, op2 = 0b000)
+      </p><p class="pseudocode">
+if !(IsFeatureImplemented(FEAT_SPMU) &amp;&amp; IsFeatureImplemented(FEAT_AA64)) then
+    Undefined();
+elsif HaveEL(EL3) &amp;&amp; PSTATE.EL != EL3 &amp;&amp; EL3SDDUndefPriority() &amp;&amp; MDCR_EL3().EnPM2 == '0' then
+    Undefined();
+elsif HaveEL(EL3) &amp;&amp; PSTATE.EL != EL3 &amp;&amp; EL3SDDUndefPriority() &amp;&amp; SPMACCESSR_EL3()[UInt(SPMSELR_EL0().SYSPMUSEL) * 2+:2] == '00' then
+    Undefined();
+elsif PSTATE.EL == EL0 then
+    if MDSCR_EL1().EnSPM == '0' then
+        AArch64_SystemAccessTraptoEL1orEL2(0x18);
+    elsif EffectivelyAtEL0NotInHost() &amp;&amp; SPMACCESSR_EL1()[UInt(SPMSELR_EL0().SYSPMUSEL) * 2+:2] == '00' then
+        AArch64_SystemAccessTraptoEL1orEL2(0x18);
+    elsif EL2Enabled() &amp;&amp; EffectivelyAtEL0NotInHost() &amp;&amp; IsFeatureImplemented(FEAT_FGT2) &amp;&amp; ((HaveEL(EL3) &amp;&amp; SCR_EL3().FGTEn2 == '0') || HDFGRTR2_EL2().nSPMCR_EL0 == '0') then
+        AArch64_SystemAccessTrap(EL2, 0x18);
+    elsif EL2Enabled() &amp;&amp; MDCR_EL2().EnSPM == '0' then
+        AArch64_SystemAccessTrap(EL2, 0x18);
+    elsif EL2Enabled() &amp;&amp; SPMACCESSR_EL2()[UInt(SPMSELR_EL0().SYSPMUSEL) * 2+:2] == '00' then
+        AArch64_SystemAccessTrap(EL2, 0x18);
+    elsif HaveEL(EL3) &amp;&amp; MDCR_EL3().EnPM2 == '0' then
+        if EL3SDDUndef() then
+            Undefined();
+        else
+            AArch64_SystemAccessTrap(EL3, 0x18);
+        end;
+    elsif HaveEL(EL3) &amp;&amp; SPMACCESSR_EL3()[UInt(SPMSELR_EL0().SYSPMUSEL) * 2+:2] == '00' then
+        if EL3SDDUndef() then
+            Undefined();
+        else
+            AArch64_SystemAccessTrap(EL3, 0x18);
+        end;
+    else
+        X{64}(t) = SPMCR_EL0(UInt(SPMSELR_EL0().SYSPMUSEL));
+    end;
+elsif PSTATE.EL == EL1 then
+    if EL2Enabled() &amp;&amp; IsFeatureImplemented(FEAT_FGT2) &amp;&amp; ((HaveEL(EL3) &amp;&amp; SCR_EL3().FGTEn2 == '0') || HDFGRTR2_EL2().nSPMCR_EL0 == '0') then
+        AArch64_SystemAccessTrap(EL2, 0x18);
+    elsif EL2Enabled() &amp;&amp; MDCR_EL2().EnSPM == '0' then
+        AArch64_SystemAccessTrap(EL2, 0x18);
+    elsif EL2Enabled() &amp;&amp; SPMACCESSR_EL2()[UInt(SPMSELR_EL0().SYSPMUSEL) * 2+:2] == '00' then
+        AArch64_SystemAccessTrap(EL2, 0x18);
+    elsif HaveEL(EL3) &amp;&amp; MDCR_EL3().EnPM2 == '0' then
+        if EL3SDDUndef() then
+            Undefined();
+        else
+            AArch64_SystemAccessTrap(EL3, 0x18);
+        end;
+    elsif HaveEL(EL3) &amp;&amp; SPMACCESSR_EL3()[UInt(SPMSELR_EL0().SYSPMUSEL) * 2+:2] == '00' then
+        if EL3SDDUndef() then
+            Undefined();
+        else
+            AArch64_SystemAccessTrap(EL3, 0x18);
+        end;
+    else
+        X{64}(t) = SPMCR_EL0(UInt(SPMSELR_EL0().SYSPMUSEL));
+    end;
+elsif PSTATE.EL == EL2 then
+    if HaveEL(EL3) &amp;&amp; MDCR_EL3().EnPM2 == '0' then
+        if EL3SDDUndef() then
+            Undefined();
+        else
+            AArch64_SystemAccessTrap(EL3, 0x18);
+        end;
+    elsif HaveEL(EL3) &amp;&amp; SPMACCESSR_EL3()[UInt(SPMSELR_EL0().SYSPMUSEL) * 2+:2] == '00' then
+        if EL3SDDUndef() then
+            Undefined();
+        else
+            AArch64_SystemAccessTrap(EL3, 0x18);
+        end;
+    else
+        X{64}(t) = SPMCR_EL0(UInt(SPMSELR_EL0().SYSPMUSEL));
+    end;
+elsif PSTATE.EL == EL3 then
+    X{64}(t) = SPMCR_EL0(UInt(SPMSELR_EL0().SYSPMUSEL));
+end;
+                </p><div class="access_block"><div class="encoding"><p class="asm-code">MSR SPMCR_EL0, &lt;Xt&gt;</p></div></div><p style="text-align: right">
+      (op0 = 0b10, op1 = 0b011, CRn = 0b1001, CRm = 0b1100, op2 = 0b000)
+      </p><p class="pseudocode">
+if !(IsFeatureImplemented(FEAT_SPMU) &amp;&amp; IsFeatureImplemented(FEAT_AA64)) then
+    Undefined();
+elsif HaveEL(EL3) &amp;&amp; PSTATE.EL != EL3 &amp;&amp; EL3SDDUndefPriority() &amp;&amp; MDCR_EL3().EnPM2 == '0' then
+    Undefined();
+elsif HaveEL(EL3) &amp;&amp; PSTATE.EL != EL3 &amp;&amp; EL3SDDUndefPriority() &amp;&amp; SPMACCESSR_EL3()[UInt(SPMSELR_EL0().SYSPMUSEL) * 2+:2] != '11' then
+    Undefined();
+elsif PSTATE.EL == EL0 then
+    if MDSCR_EL1().EnSPM == '0' then
+        AArch64_SystemAccessTraptoEL1orEL2(0x18);
+    elsif EffectivelyAtEL0NotInHost() &amp;&amp; SPMACCESSR_EL1()[UInt(SPMSELR_EL0().SYSPMUSEL) * 2+:2] != '11' then
+        AArch64_SystemAccessTraptoEL1orEL2(0x18);
+    elsif EL2Enabled() &amp;&amp; EffectivelyAtEL0NotInHost() &amp;&amp; IsFeatureImplemented(FEAT_FGT2) &amp;&amp; ((HaveEL(EL3) &amp;&amp; SCR_EL3().FGTEn2 == '0') || HDFGWTR2_EL2().nSPMCR_EL0 == '0') then
+        AArch64_SystemAccessTrap(EL2, 0x18);
+    elsif EL2Enabled() &amp;&amp; MDCR_EL2().EnSPM == '0' then
+        AArch64_SystemAccessTrap(EL2, 0x18);
+    elsif EL2Enabled() &amp;&amp; SPMACCESSR_EL2()[UInt(SPMSELR_EL0().SYSPMUSEL) * 2+:2] != '11' then
+        AArch64_SystemAccessTrap(EL2, 0x18);
+    elsif HaveEL(EL3) &amp;&amp; MDCR_EL3().EnPM2 == '0' then
+        if EL3SDDUndef() then
+            Undefined();
+        else
+            AArch64_SystemAccessTrap(EL3, 0x18);
+        end;
+    elsif HaveEL(EL3) &amp;&amp; SPMACCESSR_EL3()[UInt(SPMSELR_EL0().SYSPMUSEL) * 2+:2] != '11' then
+        if EL3SDDUndef() then
+            Undefined();
+        else
+            AArch64_SystemAccessTrap(EL3, 0x18);
+        end;
+    else
+        SPMCR_EL0(UInt(SPMSELR_EL0().SYSPMUSEL)) = X{64}(t);
+    end;
+elsif PSTATE.EL == EL1 then
+    if EL2Enabled() &amp;&amp; IsFeatureImplemented(FEAT_FGT2) &amp;&amp; ((HaveEL(EL3) &amp;&amp; SCR_EL3().FGTEn2 == '0') || HDFGWTR2_EL2().nSPMCR_EL0 == '0') then
+        AArch64_SystemAccessTrap(EL2, 0x18);
+    elsif EL2Enabled() &amp;&amp; MDCR_EL2().EnSPM == '0' then
+        AArch64_SystemAccessTrap(EL2, 0x18);
+    elsif EL2Enabled() &amp;&amp; SPMACCESSR_EL2()[UInt(SPMSELR_EL0().SYSPMUSEL) * 2+:2] != '11' then
+        AArch64_SystemAccessTrap(EL2, 0x18);
+    elsif HaveEL(EL3) &amp;&amp; MDCR_EL3().EnPM2 == '0' then
+        if EL3SDDUndef() then
+            Undefined();
+        else
+            AArch64_SystemAccessTrap(EL3, 0x18);
+        end;
+    elsif HaveEL(EL3) &amp;&amp; SPMACCESSR_EL3()[UInt(SPMSELR_EL0().SYSPMUSEL) * 2+:2] != '11' then
+        if EL3SDDUndef() then
+            Undefined();
+        else
+            AArch64_SystemAccessTrap(EL3, 0x18);
+        end;
+    else
+        SPMCR_EL0(UInt(SPMSELR_EL0().SYSPMUSEL)) = X{64}(t);
+    end;
+elsif PSTATE.EL == EL2 then
+    if HaveEL(EL3) &amp;&amp; MDCR_EL3().EnPM2 == '0' then
+        if EL3SDDUndef() then
+            Undefined();
+        else
+            AArch64_SystemAccessTrap(EL3, 0x18);
+        end;
+    elsif HaveEL(EL3) &amp;&amp; SPMACCESSR_EL3()[UInt(SPMSELR_EL0().SYSPMUSEL) * 2+:2] != '11' then
+        if EL3SDDUndef() then
+            Undefined();
+        else
+            AArch64_SystemAccessTrap(EL3, 0x18);
+        end;
+    else
+        SPMCR_EL0(UInt(SPMSELR_EL0().SYSPMUSEL)) = X{64}(t);
+    end;
+elsif PSTATE.EL == EL3 then
+    SPMCR_EL0(UInt(SPMSELR_EL0().SYSPMUSEL)) = X{64}(t);
+end;
+                </p></div><hr class="bottom_line"></hr><p class="copyconf">Version 2026.09 — Copyright © 2010-2026 Arm Limited or its affiliates.</p><small>This site is provided as a community resource and is NOT affiliated with nor endorsed by Arm Limited.</small><!-- Cloudflare Pages Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "de55e78a4e194365a81a0724c5c0ee91"}'></script><!-- Cloudflare Pages Analytics --></body></html>

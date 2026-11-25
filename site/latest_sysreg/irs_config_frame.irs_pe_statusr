@@ -1,0 +1,51 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ext="http://exslt.org/common"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>IRS_PE_STATUSR | Jon's Arm Reference</title><meta name="description" content="IRS PE Status Register"></meta><meta name="viewport" content="width=device-width, initial-scale=1"></meta><link rel="stylesheet" href="/pagefind/pagefind-component-ui.css"></link><link rel="stylesheet" type="text/css" href="/static/normalize.css"></link><link rel="stylesheet" type="text/css" href="/static/main.css"></link></head><body><p class="discontinuation-notice" data-pagefind-ignore="all"><b>PER ARM'S REQUEST, THIS SITE WILL BE DISCONTINUED ON 4 DECEMBER 2026. :(</b><br></br>
+
+      Arm's lawyers have notified me to take down this site or face legal action. <br></br>
+
+      To all of the fans of this site over the years (even the ones at Arm): thank you for your support! I'm glad I could provide a resource so many people found value in. I will look into solutions that can potentially keep bookmarks and links working. <br></br>
+
+      — Jon
+    </p><a href="/">← Home</a><pagefind-searchbox></pagefind-searchbox><script type="module" src="/pagefind/pagefind-component-ui.js"></script><script type="text/javascript" src="/static/pagefind.js"></script><h1 class="register-section" data-pagefind-body="1" data-pagefind-weight="10" data-pagefind-sort="title">IRS_PE_STATUSR</h1><p class="insn_subtitle" data-pagefind-body="1">IRS PE Status Register</p><div data-pagefind-body="1">
+        <p>IRS PE Status Register</p>
+      </div><h3>Configuration</h3><p>This register is present only when FEAT_GICv5_EXT is implemented. Otherwise, direct accesses to IRS_PE_STATUSR are <span class="arm-defined-word">RES0</span>.</p><h3>Attributes</h3>
+        <p>IRS_PE_STATUSR is a 32-bit register.</p>
+      <p>This  register is part of the <a href="irs_config_frame.html">IRS_CONFIG_FRAME</a> block.</p><h2>Field descriptions</h2><table class="regdiagram" id="fieldset_0"><thead><tr><td>31</td><td>30</td><td>29</td><td>28</td><td>27</td><td>26</td><td>25</td><td>24</td><td>23</td><td>22</td><td>21</td><td>20</td><td>19</td><td>18</td><td>17</td><td>16</td><td>15</td><td>14</td><td>13</td><td>12</td><td>11</td><td>10</td><td>9</td><td>8</td><td>7</td><td>6</td><td>5</td><td>4</td><td>3</td><td>2</td><td>1</td><td>0</td></tr></thead><tbody><tr class="firstrow"><td class="lr" colspan="29"><a href="#fieldset_0-31_3">RES0</a></td><td class="lr" colspan="1"><a href="#fieldset_0-2_2">ONLINE</a></td><td class="lr" colspan="1"><a href="#fieldset_0-1_1">V</a></td><td class="lr" colspan="1"><a href="#fieldset_0-0_0">IDLE</a></td></tr></tbody></table><div class="text_before_fields">
+    <p>The fields in this register return information about the PE specified in the last write to <a href="irs_config_frame.irs_pe_selr.html">IRS_PE_SELR</a> and the status of the last write to <a href="irs_config_frame.irs_pe_cr0.html">IRS_PE_CR0</a>.</p>
+  </div><h4 id="fieldset_0-31_3">Bits [31:3]:
+      </h4><div class="field">
+      <p>Reserved, <span class="arm-defined-word">RES0</span>.</p>
+    </div><h4 id="fieldset_0-2_2">ONLINE, bit [2]:
+      </h4><div class="field"><p>Whether the PE is online or offline.</p>
+<p>When the IRS determines that there is a candidate HPPI for the PE and the PE is offline the IRS generates a Wake Request to the PE.</p>
+<p>When the IRS determines that there is a candidate HPPI for the PE and the PE is online the IRS Forwards the candidate HPPI to the PE.</p>
+<p>When {V, IDLE} is not '<span class="binarynumber">0b11</span>', the value of this field is <span class="arm-defined-word">UNKNOWN</span>.</p><table class="valuetable"><tr><th>ONLINE</th><th>Meaning</th></tr><tr><td class="bitfield">0b0</td><td>
+          <p>The PE is offline.</p>
+        </td></tr><tr><td class="bitfield">0b1</td><td>
+          <p>The PE is online.</p>
+        </td></tr></table><p>The reset behavior of this field is:</p><ul><li>On a GIC reset, 
+      this field resets
+       to an <span class="arm-defined-word">UNKNOWN</span> value.</li></ul></div><h4 id="fieldset_0-1_1">V, bit [1]:
+      </h4><div class="field"><p>Whether the value last written to <a href="irs_config_frame.irs_pe_selr.html">IRS_PE_SELR</a> selected a valid PE.</p>
+<p>When IDLE is 0, the value of this field is <span class="arm-defined-word">UNKNOWN</span>.</p><table class="valuetable"><tr><th>V</th><th>Meaning</th></tr><tr><td class="bitfield">0b0</td><td>
+          <p>The PE selected using <a href="irs_config_frame.irs_pe_selr.html">IRS_PE_SELR</a> is not valid.</p>
+        </td></tr><tr><td class="bitfield">0b1</td><td>
+          <p>The PE selected using <a href="irs_config_frame.irs_pe_selr.html">IRS_PE_SELR</a> is valid.</p>
+        </td></tr></table>
+      <p>This field resets to 0 to indicate that there was no write to <a href="irs_config_frame.irs_pe_selr.html">IRS_PE_SELR</a> that selected a valid PE since the IRS was reset.</p>
+    <p>The reset behavior of this field is:</p><ul><li>On a GIC reset, 
+      this field resets
+       to <span class="binarynumber">'0'</span>.
+</li></ul></div><h4 id="fieldset_0-0_0">IDLE, bit [0]:
+      </h4><div class="field"><p>Following a write to <a href="irs_config_frame.irs_pe_selr.html">IRS_PE_SELR</a>, when this field returns 1 and V is 1, a read from <a href="irs_config_frame.irs_pe_cr0.html">IRS_PE_CR0</a> returns the configuration value for the PE when the accesses are performed on the same IRS.</p>
+<p>Following a write to <a href="irs_config_frame.irs_pe_cr0.html">IRS_PE_CR0</a>, when this field returns 1, the effects of the write have completed.</p><table class="valuetable"><tr><th>IDLE</th><th>Meaning</th></tr><tr><td class="bitfield">0b0</td><td>
+          <p>The effects of writing to <a href="irs_config_frame.irs_pe_selr.html">IRS_PE_SELR</a> and <a href="irs_config_frame.irs_pe_cr0.html">IRS_PE_CR0</a> are not guaranteed to be complete.</p>
+        </td></tr><tr><td class="bitfield">0b1</td><td>
+          <p>The effects of writing to <a href="irs_config_frame.irs_pe_selr.html">IRS_PE_SELR</a> and <a href="irs_config_frame.irs_pe_cr0.html">IRS_PE_CR0</a> are complete.</p>
+        </td></tr></table><p>The reset behavior of this field is:</p><ul><li>On a GIC reset, 
+      this field resets
+       to <span class="binarynumber">'1'</span>.
+</li></ul></div><div class="access_mechanisms"><h2>Access Instructions</h2><p>Accesses to this register use the following encodings:</p><div class="access_block"><p>Accessible at offset <span class="hexnumber">0x0144</span> from IRS_CONFIG_FRAME</p></div><p>Accesses to this register are <span class="access_level">RO</span>.</p><p style="text-align: right">
+      ()
+      </p></div><hr class="bottom_line"></hr><p class="copyconf">Version 2026.09 — Copyright © 2010-2026 Arm Limited or its affiliates.</p><small>This site is provided as a community resource and is NOT affiliated with nor endorsed by Arm Limited.</small><!-- Cloudflare Pages Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "de55e78a4e194365a81a0724c5c0ee91"}'></script><!-- Cloudflare Pages Analytics --></body></html>

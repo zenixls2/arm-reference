@@ -1,0 +1,92 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:ext="http://exslt.org/common"><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>ICC_MGRPEN1 | Jon's Arm Reference</title><meta name="description" content="Controls whether Group 1 interrupts are enabled or not."></meta><meta name="viewport" content="width=device-width, initial-scale=1"></meta><link rel="stylesheet" href="/pagefind/pagefind-component-ui.css"></link><link rel="stylesheet" type="text/css" href="/static/normalize.css"></link><link rel="stylesheet" type="text/css" href="/static/main.css"></link></head><body><p class="discontinuation-notice" data-pagefind-ignore="all"><b>PER ARM'S REQUEST, THIS SITE WILL BE DISCONTINUED ON 4 DECEMBER 2026. :(</b><br></br>
+
+      Arm's lawyers have notified me to take down this site or face legal action. <br></br>
+
+      To all of the fans of this site over the years (even the ones at Arm): thank you for your support! I'm glad I could provide a resource so many people found value in. I will look into solutions that can potentially keep bookmarks and links working. <br></br>
+
+      — Jon
+    </p><a href="/">← Home</a><pagefind-searchbox></pagefind-searchbox><script type="module" src="/pagefind/pagefind-component-ui.js"></script><script type="text/javascript" src="/static/pagefind.js"></script><h1 class="register-section" data-pagefind-body="1" data-pagefind-weight="10" data-pagefind-sort="title">ICC_MGRPEN1</h1><p class="insn_subtitle" data-pagefind-body="1">Interrupt Controller Monitor Interrupt Group 1 Enable register</p><div data-pagefind-body="1">
+        <p>Controls whether Group 1 interrupts are enabled or not.</p>
+      </div><h3>Configuration</h3><p>This register is present only when FEAT_AA32EL3 is implemented, GICv3 is implemented, and EL3 is implemented. Otherwise, direct accesses to ICC_MGRPEN1 are <span class="arm-defined-word">UNDEFINED</span>.</p><h3>Attributes</h3>
+        <p>ICC_MGRPEN1 is a 32-bit register.</p>
+      <h2>Field descriptions</h2><table class="regdiagram" id="fieldset_0"><thead><tr><td>31</td><td>30</td><td>29</td><td>28</td><td>27</td><td>26</td><td>25</td><td>24</td><td>23</td><td>22</td><td>21</td><td>20</td><td>19</td><td>18</td><td>17</td><td>16</td><td>15</td><td>14</td><td>13</td><td>12</td><td>11</td><td>10</td><td>9</td><td>8</td><td>7</td><td>6</td><td>5</td><td>4</td><td>3</td><td>2</td><td>1</td><td>0</td></tr></thead><tbody><tr class="firstrow"><td class="lr" colspan="30"><a href="#fieldset_0-31_2">RES0</a></td><td class="lr" colspan="1"><a href="#fieldset_0-1_1">EnableGrp1S</a></td><td class="lr" colspan="1"><a href="#fieldset_0-0_0">EnableGrp1NS</a></td></tr></tbody></table><h4 id="fieldset_0-31_2">Bits [31:2]:
+      </h4><div class="field">
+      <p>Reserved, <span class="arm-defined-word">RES0</span>.</p>
+    </div><h4 id="fieldset_0-1_1">EnableGrp1S, bit [1]:
+      </h4><div class="field">
+      <p>Enables Group 1 interrupts for the Secure state.</p>
+    <table class="valuetable"><tr><th>EnableGrp1S</th><th>Meaning</th></tr><tr><td class="bitfield">0b0</td><td>
+          <p>Secure Group 1 interrupts are disabled.</p>
+        </td></tr><tr><td class="bitfield">0b1</td><td>
+          <p>Secure Group 1 interrupts are enabled.</p>
+        </td></tr></table><p>The Secure <a href="AArch32-icc_igrpen1.html">ICC_IGRPEN1</a>.Enable bit is a read/write alias of the ICC_MGRPEN1.EnableGrp1S bit.</p>
+<p>If the highest priority pending interrupt for that PE is a Group 1 interrupt using 1 of N model, then the interrupt will target another PE as a result of the Enable bit changing from 1 to 0.</p><p>The reset behavior of this field is:</p><ul><li>On a Warm reset, 
+      this field resets
+       to <span class="binarynumber">'0'</span>.
+</li></ul></div><h4 id="fieldset_0-0_0">EnableGrp1NS, bit [0]:
+      </h4><div class="field">
+      <p>Enables Group 1 interrupts for the Non-secure state.</p>
+    <table class="valuetable"><tr><th>EnableGrp1NS</th><th>Meaning</th></tr><tr><td class="bitfield">0b0</td><td>
+          <p>Non-secure Group 1 interrupts are disabled.</p>
+        </td></tr><tr><td class="bitfield">0b1</td><td>
+          <p>Non-secure Group 1 interrupts are enabled.</p>
+        </td></tr></table><p>The Non-secure <a href="AArch32-icc_igrpen1.html">ICC_IGRPEN1</a>.Enable bit is a read/write alias of the ICC_MGRPEN1.EnableGrp1NS bit.</p>
+<p>If the highest priority pending interrupt for that PE is a Group 1 interrupt using 1 of N model, then the interrupt will target another PE as a result of the Enable bit changing from 1 to 0.</p><p>The reset behavior of this field is:</p><ul><li>On a Warm reset, 
+      this field resets
+       to <span class="binarynumber">'0'</span>.
+</li></ul></div><div class="access_mechanisms"><h2>Access Instructions</h2>
+        <p>If an interrupt is pending within the CPU interface when an Enable bit becomes 0, the interrupt must be released to allow the Distributor to forward the interrupt to a different PE.</p>
+
+      
+        <p>This register is only accessible when executing in Monitor mode.</p>
+      <p>Accesses to this register use the following encodings in the System register encoding space:</p><div class="access_block"><div class="encoding"><p class="asm-code">MRC{&lt;c&gt;}{&lt;q&gt;} &lt;coproc&gt;, {#}&lt;opc1&gt;, &lt;Rt&gt;, &lt;CRn&gt;, &lt;CRm&gt;{, {#}&lt;opc2&gt;}</p></div></div><p style="text-align: right">
+      (coproc = 0b1111, opc1 = 0b110, CRn = 0b1100, CRm = 0b1100, opc2 = 0b111)
+      </p><p class="pseudocode">
+if !(IsFeatureImplemented(FEAT_AA32EL3) &amp;&amp; IsFeatureImplemented(FEAT_GICv3) &amp;&amp; HaveEL(EL3)) then
+    Undefined();
+elsif PSTATE.EL == EL0 then
+    Undefined();
+elsif PSTATE.EL == EL1 then
+    if EL2Enabled() &amp;&amp; IsFeatureImplemented(FEAT_AA64EL2) &amp;&amp; !ELUsingAArch32(EL2) &amp;&amp; HSTR_EL2().T12 == '1' then
+        AArch64_AArch32SystemAccessTrap(EL2, 0x03);
+    elsif EL2Enabled() &amp;&amp; IsFeatureImplemented(FEAT_AA32EL2) &amp;&amp; ELUsingAArch32(EL2) &amp;&amp; HSTR().T12 == '1' then
+        AArch32_TakeHypTrapException(0x03);
+    else
+        Undefined();
+    end;
+elsif PSTATE.EL == EL2 then
+    Undefined();
+elsif PSTATE.EL == EL3 then
+    if ICC_MSRE().SRE == '0' then
+        Undefined();
+    else
+        R(t) = ICC_MGRPEN1();
+    end;
+end;
+                </p><div class="access_block"><div class="encoding"><p class="asm-code">MCR{&lt;c&gt;}{&lt;q&gt;} &lt;coproc&gt;, {#}&lt;opc1&gt;, &lt;Rt&gt;, &lt;CRn&gt;, &lt;CRm&gt;{, {#}&lt;opc2&gt;}</p></div></div><p style="text-align: right">
+      (coproc = 0b1111, opc1 = 0b110, CRn = 0b1100, CRm = 0b1100, opc2 = 0b111)
+      </p><p class="pseudocode">
+if !(IsFeatureImplemented(FEAT_AA32EL3) &amp;&amp; IsFeatureImplemented(FEAT_GICv3) &amp;&amp; HaveEL(EL3)) then
+    Undefined();
+elsif PSTATE.EL == EL0 then
+    Undefined();
+elsif PSTATE.EL == EL1 then
+    if EL2Enabled() &amp;&amp; IsFeatureImplemented(FEAT_AA64EL2) &amp;&amp; !ELUsingAArch32(EL2) &amp;&amp; HSTR_EL2().T12 == '1' then
+        AArch64_AArch32SystemAccessTrap(EL2, 0x03);
+    elsif EL2Enabled() &amp;&amp; IsFeatureImplemented(FEAT_AA32EL2) &amp;&amp; ELUsingAArch32(EL2) &amp;&amp; HSTR().T12 == '1' then
+        AArch32_TakeHypTrapException(0x03);
+    else
+        Undefined();
+    end;
+elsif PSTATE.EL == EL2 then
+    Undefined();
+elsif PSTATE.EL == EL3 then
+    if ICC_MSRE().SRE == '0' then
+        Undefined();
+    else
+        ICC_MGRPEN1() = R(t);
+    end;
+end;
+                </p></div><hr class="bottom_line"></hr><p class="copyconf">Version 2026.09 — Copyright © 2010-2026 Arm Limited or its affiliates.</p><small>This site is provided as a community resource and is NOT affiliated with nor endorsed by Arm Limited.</small><!-- Cloudflare Pages Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "de55e78a4e194365a81a0724c5c0ee91"}'></script><!-- Cloudflare Pages Analytics --></body></html>
